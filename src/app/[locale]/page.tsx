@@ -108,58 +108,67 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   SCHEMATIC · HBK-DS-2026
                 </div>
 
-                <svg viewBox="0 0 420 280" className="w-full h-auto text-bone" role="img" aria-label="Waste to energy process flow schematic diagram">
+                <svg viewBox="0 0 440 290" className="w-full h-auto text-bone" role="img" aria-label="Waste to energy and bio-slurry process flow schematic diagram">
                   <defs>
                     <pattern id="heroGrid" width="20" height="20" patternUnits="userSpaceOnUse">
                       <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#eae5d8" strokeWidth="0.5" strokeOpacity="0.08" />
                     </pattern>
                   </defs>
 
-                  <rect width="420" height="280" fill="url(#heroGrid)" />
+                  <rect width="440" height="290" fill="url(#heroGrid)" />
 
                   {/* Organic Feed Inlet */}
                   <g>
-                    <rect x="25" y="110" width="60" height="60" fill="#372b22" stroke="#a85532" strokeWidth="1.5" />
-                    <text x="55" y="145" textAnchor="middle" fill="#eae5d8" fontSize="9" fontFamily="monospace">FEED</text>
-                    <path d="M85 140 H135" stroke="#a85532" strokeWidth="3" fill="none" strokeDasharray="4 3" />
+                    <rect x="20" y="110" width="55" height="55" fill="#372b22" stroke="#a85532" strokeWidth="1.5" />
+                    <text x="47.5" y="142" textAnchor="middle" fill="#eae5d8" fontSize="9" fontFamily="monospace">FEED</text>
+                    <path d="M75 137.5 H125" stroke="#a85532" strokeWidth="3" fill="none" strokeDasharray="4 3" />
                   </g>
 
                   {/* Digester Vessel */}
                   <g>
-                    <circle cx="205" cy="140" r="55" fill="#121412" stroke="#5db7c4" strokeWidth="2" />
-                    <path d="M152 140 A53 53 0 0 0 258 140 Z" fill="#6e7445" opacity="0.6" />
-                    <path d="M152 140 A53 53 0 0 1 258 140 Z" fill="#5db7c4" opacity="0.25" className="animate-flow-pulse" />
-                    <circle cx="205" cy="115" r="3" fill="#5db7c4" />
-                    <circle cx="190" cy="125" r="2" fill="#5db7c4" />
-                    <circle cx="220" cy="122" r="2.5" fill="#5db7c4" />
-                    <text x="205" y="175" textAnchor="middle" fill="#eae5d8" fontSize="9" fontFamily="monospace">DIGESTER</text>
+                    <circle cx="190" cy="137.5" r="55" fill="#121412" stroke="#5db7c4" strokeWidth="2" />
+                    <path d="M137 137.5 A53 53 0 0 0 243 137.5 Z" fill="#6e7445" opacity="0.6" />
+                    <path d="M137 137.5 A53 53 0 0 1 243 137.5 Z" fill="#5db7c4" opacity="0.25" className="animate-flow-pulse" />
+                    <circle cx="190" cy="110" r="3" fill="#5db7c4" />
+                    <circle cx="175" cy="120" r="2" fill="#5db7c4" />
+                    <circle cx="205" cy="118" r="2.5" fill="#5db7c4" />
+                    <text x="190" y="165" textAnchor="middle" fill="#eae5d8" fontSize="9" fontFamily="monospace">DIGESTER</text>
                   </g>
 
-                  {/* H2S Filter & Manometer */}
+                  {/* Output 1: Biogas Pipeline (Top -> Right) */}
                   <g>
-                    <path d="M205 85 V45 H300 V110" stroke="#5db7c4" strokeWidth="3" fill="none" strokeDasharray="8 4">
+                    <path d="M190 82.5 V42.5 H280 V85" stroke="#5db7c4" strokeWidth="3" fill="none" strokeDasharray="8 4">
                       <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.8s" repeatCount="indefinite" />
                     </path>
-                    <rect x="285" y="65" width="30" height="35" fill="#121412" stroke="#e5b83b" strokeWidth="1.5" />
-                    <text x="300" y="86" textAnchor="middle" fill="#e5b83b" fontSize="8" fontFamily="monospace">H2S</text>
+                    <rect x="265" y="60" width="30" height="30" fill="#121412" stroke="#e5b83b" strokeWidth="1.5" />
+                    <text x="280" y="78" textAnchor="middle" fill="#e5b83b" fontSize="8" fontFamily="monospace">H2S</text>
+                    
+                    <path d="M280 85 V110 H400" stroke="#5db7c4" strokeWidth="3" fill="none" />
+                    <circle cx="400" cy="110" r="5" fill="#e5b83b" />
+                    <text x="395" y="98" textAnchor="end" fill="#5db7c4" fontSize="8" fontFamily="monospace" fontWeight="bold">GAS ENERGY</text>
                   </g>
 
-                  {/* Gas Output Manifold */}
+                  {/* Output 2: Bio-Slurry Pipeline & Expansion Chamber (Bottom -> Right) */}
                   <g>
-                    <path d="M300 110 V140 H380" stroke="#5db7c4" strokeWidth="3" fill="none" />
-                    <circle cx="380" cy="140" r="6" fill="#e5b83b" />
-                    <text x="380" y="162" textAnchor="middle" fill="#5db7c4" fontSize="9" fontFamily="monospace">ENERGY</text>
+                    <path d="M243 150 H300 V190 H390" stroke="#6e7445" strokeWidth="3" fill="none" strokeDasharray="6 3">
+                      <animate attributeName="stroke-dashoffset" from="18" to="0" dur="2.4s" repeatCount="indefinite" />
+                    </path>
+                    <rect x="285" y="170" width="30" height="35" fill="#121412" stroke="#6e7445" strokeWidth="1.5" />
+                    <text x="300" y="191" textAnchor="middle" fill="#6e7445" fontSize="7" fontFamily="monospace">OVERFLOW</text>
+                    <circle cx="390" cy="190" r="5" fill="#6e7445" />
+                    <text x="395" y="210" textAnchor="end" fill="#6e7445" fontSize="8" fontFamily="monospace" fontWeight="bold">BIO-SLURRY</text>
                   </g>
 
                   {/* Technical Legend Annotations */}
-                  <line x1="30" y1="230" x2="390" y2="230" stroke="#eae5d8" strokeWidth="0.5" strokeOpacity="0.2" />
-                  <text x="30" y="250" fill="#5db7c4" fontSize="8" fontFamily="monospace">INPUT: Manure / Kitchen waste</text>
-                  <text x="220" y="250" fill="#e5b83b" fontSize="8" fontFamily="monospace">OUTPUT: Biogas + Bio-slurry</text>
+                  <line x1="20" y1="240" x2="420" y2="240" stroke="#eae5d8" strokeWidth="0.5" strokeOpacity="0.2" />
+                  <text x="20" y="260" fill="#a85532" fontSize="8" fontFamily="monospace">FEED: Organic waste</text>
+                  <text x="160" y="260" fill="#5db7c4" fontSize="8" fontFamily="monospace">GAS: Cooking / Power</text>
+                  <text x="300" y="260" fill="#6e7445" fontSize="8" fontFamily="monospace">SLURRY: Crop fertilizer</text>
                 </svg>
 
                 <div className="mt-4 flex items-center justify-between border-t border-bone/10 pt-3 text-[0.7rem] mono-label text-bone/50">
-                  <span>SYSTEM: CLOSED-LOOP ANAEROBIC</span>
-                  <span className="text-methane">EFFICIENT DIGESTION</span>
+                  <span>SYSTEM: DUAL OUTPUT RECOVERY</span>
+                  <span className="text-methane">ENERGY + FERTILIZER</span>
                 </div>
               </div>
             </div>

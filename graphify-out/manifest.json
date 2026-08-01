@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "src/app/[locale]/page.tsx": {
-    "mtime": 1785600795.3715315,
-    "ast_hash": "f64acd10b180a89d8626f1d04474bb91",
+    "mtime": 1785605576.5503235,
+    "ast_hash": "5158378922469a2d74261e7e2ce595cc",
     "semantic_hash": ""
   },
   "src/app/[locale]/products/[slug]/page.tsx": {
