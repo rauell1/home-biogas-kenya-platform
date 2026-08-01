@@ -30,7 +30,7 @@ export default async function SourceRecordsPage() {
             </div>
             <p className="mt-2 text-sm text-ink/75 line-clamp-3">{s.rawText.slice(0, 320)}</p>
             <p className="mono-label mt-2 text-ink/50">
-              capacity {s.possibleCapacityM3 ?? "—"} · feedstocks {s.possibleFeedstocks.join(", ") || "—"} · identity {s.companyIdentityStatus} · review {s.reviewStatus}
+              capacity {s.possibleCapacityM3 ?? " - "} · feedstocks {s.possibleFeedstocks.join(", ") || " - "} · identity {s.companyIdentityStatus} · review {s.reviewStatus}
             </p>
             {reviewer && (
               <form action={reviewSourceAction} className="mt-3 flex flex-wrap gap-2 items-center">

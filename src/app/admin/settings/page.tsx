@@ -16,7 +16,7 @@ export default async function SettingsPage() {
     ["Object storage", process.env.BLOB_READ_WRITE_TOKEN || process.env.CLOUDINARY_CLOUD_NAME ? "configured" : "not configured"],
     ["Rate limiting", process.env.UPSTASH_REDIS_REST_URL ? "Upstash Redis" : "in-process fallback"],
     ["Bot protection", process.env.TURNSTILE_SECRET_KEY ? "Turnstile" : "honeypot + rate limit"],
-    ["Bootstrap window", bootstrap.available ? "OPEN — no staff accounts exist" : "closed"],
+    ["Bootstrap window", bootstrap.available ? "OPEN  -  no staff accounts exist" : "closed"],
     ["Bootstrap email", bootstrap.expectedEmail ?? "not restricted"],
     ["Approved LinkedIn page", SOCIALS.linkedin],
     ["Approved Facebook page", SOCIALS.facebook],

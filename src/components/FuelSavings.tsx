@@ -25,7 +25,7 @@ export default function FuelSavings({ disclaimer }: { disclaimer: string }) {
       </label>
 
       <label className="block mt-8">
-        <span className="field-label">Share of that fuel biogas could replace — {share}%</span>
+        <span className="field-label">Share of that fuel biogas could replace  -  {share}%</span>
         <input
           type="range"
           min={10}
@@ -41,16 +41,16 @@ export default function FuelSavings({ disclaimer }: { disclaimer: string }) {
           <>
             <p className="mono-label text-ink/45">Indicative monthly saving</p>
             <p className="display-figure mt-2 text-clay">
-              KES {low.toLocaleString()} – {high.toLocaleString()}
+              KES {low.toLocaleString()} - {high.toLocaleString()}
             </p>
           </>
         ) : (
           <p className="mono-data text-oxide">Enter your current monthly spend to see an indicative range.</p>
         )}
         <ul className="mt-6 space-y-2 text-sm text-ink/72">
-          <li className="flex gap-2"><span className="text-olive">—</span>Assumes the digester is fed consistently every day.</li>
-          <li className="flex gap-2"><span className="text-olive">—</span>Assumes appliances are correctly sized and gas is filtered.</li>
-          <li className="flex gap-2"><span className="text-olive">—</span>A 30% allowance is applied for seasonal and operational variation.</li>
+          <li className="flex gap-2"><span className="text-olive"> - </span>Assumes the digester is fed consistently every day.</li>
+          <li className="flex gap-2"><span className="text-olive"> - </span>Assumes appliances are correctly sized and gas is filtered.</li>
+          <li className="flex gap-2"><span className="text-olive"> - </span>A 30% allowance is applied for seasonal and operational variation.</li>
         </ul>
       </div>
 

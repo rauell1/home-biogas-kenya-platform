@@ -1,4 +1,4 @@
-# Home Biogas Kenya — Final Consolidated Platform
+# Home Biogas Kenya  -  Final Consolidated Platform
 
 This package consolidates the strongest work from the A2 and B2 directions and uses the uploaded B1 prototype only as a learning reference.
 

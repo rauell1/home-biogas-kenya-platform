@@ -11,7 +11,7 @@ export default async function SolutionsPage({ params }: { params: Promise<{ loca
       <PageHeader
         eyebrow="Solutions"
         title="What we design, build and maintain"
-        lede="Engineering services across the full chain — from the first feasibility study to long-term maintenance of a running plant."
+        lede="Engineering services across the full chain  -  from the first feasibility study to long-term maintenance of a running plant."
         meta={[
           { label: "Service groups", value: String(SERVICE_GROUPS.length) },
           { label: "Services", value: String(total) },

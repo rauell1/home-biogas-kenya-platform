@@ -136,11 +136,11 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
             <dl className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 border-t border-ink/12 pt-6">
               <div className="sm:col-span-2 lg:col-span-1">
                 <dt className="mono-label text-ink/45">Capacity</dt>
-                <dd className="display-figure mt-1 text-clay">{active.capacityM3 ? `${Number(active.capacityM3)} m³` : "—"}</dd>
+                <dd className="display-figure mt-1 text-clay">{active.capacityM3 ? `${Number(active.capacityM3)} m³` : " - "}</dd>
               </div>
               <div>
                 <dt className="mono-label text-ink/45">Technology</dt>
-                <dd className="mono-data mt-1.5">{pretty(active.plantType ?? "—")}</dd>
+                <dd className="mono-data mt-1.5">{pretty(active.plantType ?? " - ")}</dd>
               </div>
               <div>
                 <dt className="mono-label text-ink/45">Status</dt>
@@ -148,15 +148,15 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
               </div>
               <div>
                 <dt className="mono-label text-ink/45">Location</dt>
-                <dd className="mono-data mt-1.5">{[active.locality, active.county].filter(Boolean).join(", ") || "—"}</dd>
+                <dd className="mono-data mt-1.5">{[active.locality, active.county].filter(Boolean).join(", ") || " - "}</dd>
               </div>
               <div>
                 <dt className="mono-label text-ink/45">Feedstock</dt>
-                <dd className="mono-data mt-1.5">{active.feedstocks.join(", ") || "—"}</dd>
+                <dd className="mono-data mt-1.5">{active.feedstocks.join(", ") || " - "}</dd>
               </div>
               <div>
                 <dt className="mono-label text-ink/45">Applications</dt>
-                <dd className="mono-data mt-1.5">{active.applications.join(", ") || "—"}</dd>
+                <dd className="mono-data mt-1.5">{active.applications.join(", ") || " - "}</dd>
               </div>
             </dl>
 

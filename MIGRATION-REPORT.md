@@ -5,7 +5,7 @@ The archive was treated strictly as an art-direction reference. No prototype cod
 
 ## Preserved
 - Headline: “Waste contains energy. We engineer the system that releases it.”
-- Numbered chapter structure across the homepage (01–06).
+- Numbered chapter structure across the homepage (01-06).
 - Editorial palette: bone, field cream, ink, raw concrete, kiln clay, deep soil, methane blue, digestate olive, safety yellow, oxide red.
 - Monospaced technical labels alongside display and editorial typography.
 - Large capacity figures (16 m³, 32 m³) treated as engineering data, not decoration.

@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-forbidden-dashes.mjs && next build",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "node scripts/check-forbidden-dashes.mjs && eslint .",
+    "check:punctuation": "node scripts/check-forbidden-dashes.mjs",
     "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

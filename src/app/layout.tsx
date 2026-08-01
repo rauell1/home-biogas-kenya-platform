@@ -31,7 +31,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Home Biogas Kenya — Waste contains energy",
+    default: "Home Biogas Kenya  -  Waste contains energy",
     template: "%s · Home Biogas Kenya",
   },
   description:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Home Biogas Kenya — Waste contains energy",
+    title: "Home Biogas Kenya  -  Waste contains energy",
     description: "Biogas and organic-waste systems for homes, farms, institutions and commercial facilities.",
     images: [{ url: "/brand/home-biogas-kenya-logo.png", width: 460, height: 219, alt: "Home Biogas Kenya" }],
   },

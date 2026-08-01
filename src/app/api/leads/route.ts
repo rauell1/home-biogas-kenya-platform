@@ -62,12 +62,12 @@ export async function POST(request: Request) {
 
   await sendMail({
     to: data.email || process.env.EMAIL_REPLY_TO || "",
-    subject: `Home Biogas Kenya — assessment request ${reference}`,
+    subject: `Home Biogas Kenya  -  assessment request ${reference}`,
     text: `Thank you ${data.fullName}. Your reference is ${reference}. Our engineering team will contact you within two working days.`,
   });
   await sendMail({
     to: process.env.EMAIL_REPLY_TO || "",
-    subject: `New lead ${reference} — ${data.fullName}`,
+    subject: `New lead ${reference}  -  ${data.fullName}`,
     text: `County: ${data.county}\nPhone: ${data.phone}\nNotes: ${data.notes ?? ""}`,
   });
 

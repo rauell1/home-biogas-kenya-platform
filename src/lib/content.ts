@@ -107,7 +107,7 @@ export const APPLICATIONS: AppItem[] = [
 export const PLANT_COMPONENTS = [
   { id: "mixing-tank", name: "Mixing tank", technical: "Feed slurry prepared at roughly 1:1 water-to-manure by volume before entry.", simple: "Waste and water are mixed here before entering the plant." },
   { id: "inlet", name: "Feed inlet", technical: "Gravity inlet pipe discharging below liquid level to avoid gas escape.", simple: "The mixed waste flows down into the digester." },
-  { id: "digester", name: "Digester", technical: "Sealed anaerobic chamber; retention time typically 30–60 days depending on temperature and feedstock.", simple: "Bacteria break down the waste without air and make gas." },
+  { id: "digester", name: "Digester", technical: "Sealed anaerobic chamber; retention time typically 30-60 days depending on temperature and feedstock.", simple: "Bacteria break down the waste without air and make gas." },
   { id: "gas-storage", name: "Gas holder", technical: "Dome volume stores gas and displaces slurry into the expansion chamber as pressure rises.", simple: "Gas collects in the top of the dome." },
   { id: "gas-outlet", name: "Main gas outlet", technical: "Dome crown take-off, sized to peak appliance demand.", simple: "The gas leaves the plant through this pipe." },
   { id: "valve", name: "Main valve", technical: "Isolation valve for maintenance, leak testing and emergency shut-off.", simple: "A tap to shut the gas off." },

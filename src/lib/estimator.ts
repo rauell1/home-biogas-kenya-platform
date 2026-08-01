@@ -136,7 +136,7 @@ export function estimate(input: EstimatorInput): EstimatorResult {
       "Fresh material mixed with water at approximately 1:1 by volume.",
       "Feedstock availability ranges are typical published values, not site measurements.",
       "Gas yields vary with temperature, dry-matter content, contamination and feeding discipline.",
-      "Digester volume includes a 20–30% allowance for gas storage and freeboard.",
+      "Digester volume includes a 20-30% allowance for gas storage and freeboard.",
     ],
   };
 }

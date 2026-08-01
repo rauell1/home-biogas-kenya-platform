@@ -60,7 +60,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      {/* ---------- Chapter 01 — Hero ---------- */}
+      {/* ---------- Chapter 01  -  Hero ---------- */}
       <section className="relative isolate grain overflow-hidden bg-soil text-bone border-b border-bone/10">
         <div
           aria-hidden
@@ -80,7 +80,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="shell relative pt-16 pb-16 md:pt-24 md:pb-20 min-h-[88vh] flex flex-col justify-between">
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="chapter-marker text-methane">Chapter 01 — {t.chapters[0]}</span>
+              <span className="chapter-marker text-methane">Chapter 01  -  {t.chapters[0]}</span>
               <span className="tech-badge">{t.heroKicker}</span>
             </div>
 
@@ -194,19 +194,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* ---------- Chapter 02 — Digester ---------- */}
+      {/* ---------- Chapter 02  -  Digester ---------- */}
       <Chapter n="02" title={t.chapters[1]} kicker="Hover, tap or use the keyboard to inspect every component" dark>
         <DigesterCutaway />
       </Chapter>
 
-      {/* ---------- Chapter 03 — Applications ---------- */}
+      {/* ---------- Chapter 03  -  Applications ---------- */}
       <Chapter n="03" title={t.chapters[2]} kicker="One gas line. Nine productive end uses.">
         <ApplicationScene locale={locale} />
       </Chapter>
 
       <ShopPreview locale={locale} />
 
-      {/* ---------- Chapter 04 — Projects ---------- */}
+      {/* ---------- Chapter 04  -  Projects ---------- */}
       <Chapter n="04" title={t.chapters[3]} kicker="Only technically reviewed projects with cleared media rights appear here">
         {projects.length === 0 && (
           <div className="mb-8 border border-clay/30 bg-clay/10 p-5 rounded-sm">
@@ -268,19 +268,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* ---------- Chapter 05 — Configurator ---------- */}
+      {/* ---------- Chapter 05  -  Configurator ---------- */}
       <Chapter n="05" title={t.chapters[4]} kicker="No estimate is produced without your measured quantity">
         <Configurator locale={locale} disclaimer={t.disclaimer} />
       </Chapter>
 
-      {/* ---------- Chapter 06 — Start ---------- */}
+      {/* ---------- Chapter 06  -  Start ---------- */}
       <Chapter n="06" title={t.chapters[5]} dark flush>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end bg-ink/60 border border-bone/15 p-8 md:p-14">
           <div>
             <p className="mono-label text-methane mb-3">Site Survey & Project Kickoff</p>
             <p className="lede text-bone/85 max-w-2xl">
               Bring us your waste stream, your energy demand and your site. We survey, design and build the system that
-              connects them — then train the people who run it.
+              connects them  -  then train the people who run it.
             </p>
           </div>
           <div className="lg:text-right">

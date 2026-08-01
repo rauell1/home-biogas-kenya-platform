@@ -30,11 +30,11 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
       <h1 className="display-lg mt-1">{lead.fullName}</h1>
       <dl className="mt-6 grid gap-4 sm:grid-cols-3 mono-data">
         <div><dt className="text-ink/50">PHONE</dt><dd className="mt-1">{lead.phone}</dd></div>
-        <div><dt className="text-ink/50">WHATSAPP</dt><dd className="mt-1">{lead.whatsapp ?? "—"}</dd></div>
-        <div><dt className="text-ink/50">EMAIL</dt><dd className="mt-1">{lead.email ?? "—"}</dd></div>
-        <div><dt className="text-ink/50">COUNTY</dt><dd className="mt-1">{lead.county ?? "—"}</dd></div>
-        <div><dt className="text-ink/50">TIMELINE</dt><dd className="mt-1">{lead.timeline ?? "—"}</dd></div>
-        <div><dt className="text-ink/50">BUDGET</dt><dd className="mt-1">{lead.budgetRange ?? "—"}</dd></div>
+        <div><dt className="text-ink/50">WHATSAPP</dt><dd className="mt-1">{lead.whatsapp ?? " - "}</dd></div>
+        <div><dt className="text-ink/50">EMAIL</dt><dd className="mt-1">{lead.email ?? " - "}</dd></div>
+        <div><dt className="text-ink/50">COUNTY</dt><dd className="mt-1">{lead.county ?? " - "}</dd></div>
+        <div><dt className="text-ink/50">TIMELINE</dt><dd className="mt-1">{lead.timeline ?? " - "}</dd></div>
+        <div><dt className="text-ink/50">BUDGET</dt><dd className="mt-1">{lead.budgetRange ?? " - "}</dd></div>
       </dl>
       {lead.notes && <p className="mt-6 border-l-4 border-ink/20 pl-4 text-sm">{lead.notes}</p>}
       {lead.configurator != null && (

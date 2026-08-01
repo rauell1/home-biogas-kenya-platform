@@ -221,7 +221,7 @@ export async function inviteStaffAction(_prev: FormState, formData: FormData): P
     })
     .returning();
   const link = `${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/auth/invite/${token}`;
-  await sendMail({ to: email, subject: "Home Biogas Kenya — staff invitation", text: `You have been invited as ${role}. Accept within 7 days: ${link}` });
+  await sendMail({ to: email, subject: "Home Biogas Kenya  -  staff invitation", text: `You have been invited as ${role}. Accept within 7 days: ${link}` });
   await audit(user, "invitation.created", "invitation", row.id, { email, role });
   revalidatePath("/admin/users");
   return { ok: `Invitation created. Link: ${link}` };

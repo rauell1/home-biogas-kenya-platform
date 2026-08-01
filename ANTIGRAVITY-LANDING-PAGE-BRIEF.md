@@ -99,7 +99,7 @@ The result should feel cohesive from the first viewport through the final call t
 - Make the process chain legible as a continuous transformation from organic waste to useful gas and bio-slurry, not merely a horizontal list.
 - Improve the handoff between the hero, digester cutaway, application scene, project explorer, services, configurator, and final CTA.
 - Retain chapter-based editorial storytelling, but vary section composition enough to prevent repetitive “heading then content” blocks.
-- Add subtle visual continuity—lines, numbered markers, pipe-like paths, material textures, or measured technical annotations—using CSS or lightweight SVG.
+- Add subtle visual continuity - lines, numbered markers, pipe-like paths, material textures, or measured technical annotations - using CSS or lightweight SVG.
 
 ### 3. Interactive modules
 
@@ -139,7 +139,7 @@ The result should feel cohesive from the first viewport through the final call t
 ### 8. Content and encoding
 
 - Preserve both English and Kiswahili behavior. Any new user-facing copy must be represented in the locale dictionaries rather than hard-coded in only one language.
-- Correct visible mojibake such as `mÂ³`, `â€”`, `â†’`, `Â©`, or malformed en-dashes encountered in files you touch, replacing it with correct UTF-8 text (`m³`, `—`, `→`, `©`, `–`). Confirm that files remain UTF-8.
+- Correct visible mojibake such as `mÂ³`, `â€”`, `â†’`, `Â©`, or malformed en-dashes encountered in files you touch, replacing it with correct UTF-8 text (`m³`, ` - `, `→`, `©`, `-`). Confirm that files remain UTF-8.
 - Keep copy concise, factual, and rooted in the existing service/process data.
 
 ### 9. Code quality and scope

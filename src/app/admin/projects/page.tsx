@@ -43,8 +43,8 @@ export default async function AdminProjects() {
                   </Link>
                   <span className="mono-label block text-ink/40 mt-1">{p.slug}</span>
                 </td>
-                <td className="px-4 mono-data text-ink/70">{p.county ?? "—"}</td>
-                <td className="px-4 mono-data">{p.capacityM3 ? `${Number(p.capacityM3)} m³` : "—"}</td>
+                <td className="px-4 mono-data text-ink/70">{p.county ?? " - "}</td>
+                <td className="px-4 mono-data">{p.capacityM3 ? `${Number(p.capacityM3)} m³` : " - "}</td>
                 <td className="px-4"><StatusPill value={p.technicalReviewStatus} /></td>
                 <td className="px-4"><StatusPill value={p.mediaRightsStatus} /></td>
                 <td className="px-4"><StatusPill value={p.workflowState} /></td>

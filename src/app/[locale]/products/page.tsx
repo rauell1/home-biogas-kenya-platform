@@ -24,7 +24,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         lede="Browse the equipment we supply and the plant sizes we build. Prices are confirmed only after availability, demand and site requirements have been checked."
         meta={[
           { label: "Catalogue", value: `${PRODUCTS.length} items` },
-          { label: "Plant sizes", value: "4–32 m³ shown" },
+          { label: "Plant sizes", value: "4-32 m³ shown" },
           { label: "Pricing", value: "Available on enquiry" },
           { label: "Support", value: "Supply · Installation · Training" },
         ]}

@@ -126,7 +126,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                   return (
                     <label key={id} className="block">
                       <span className="field-label">
-                        {opt.label} — {opt.unit}
+                        {opt.label}  -  {opt.unit}
                       </span>
                       <input
                         type="number"
@@ -201,19 +201,19 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                   <div className="border border-ink/15 bg-bone p-6">
                     <p className="mono-label text-ink/45">Possible system range</p>
                     <p className="display-figure mt-2 text-clay">
-                      {result.digesterM3Min}–{result.digesterM3Max} m³
+                      {result.digesterM3Min}-{result.digesterM3Max} m³
                     </p>
                     <dl className="mt-6 grid grid-cols-2 gap-5 border-t border-ink/12 pt-5">
                       <div>
                         <dt className="mono-label text-ink/45">Fresh material</dt>
                         <dd className="mono-data mt-1">
-                          {result.freshKgPerDayMin}–{result.freshKgPerDayMax} kg/day
+                          {result.freshKgPerDayMin}-{result.freshKgPerDayMax} kg/day
                         </dd>
                       </div>
                       <div>
                         <dt className="mono-label text-ink/45">Indicative biogas</dt>
                         <dd className="mono-data mt-1">
-                          {result.gasM3PerDayMin}–{result.gasM3PerDayMax} m³/day
+                          {result.gasM3PerDayMin}-{result.gasM3PerDayMax} m³/day
                         </dd>
                       </div>
                     </dl>
@@ -222,7 +222,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                   <ul className="mt-3 space-y-1.5 text-sm">
                     {result.technologies.map((t) => (
                       <li key={t} className="flex gap-2">
-                        <span className="text-methane">—</span>
+                        <span className="text-methane"> - </span>
                         {t}
                       </li>
                     ))}
@@ -233,7 +233,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                   <ul className="mt-3 space-y-2 text-sm text-ink/75">
                     {result.assumptions.map((a) => (
                       <li key={a} className="flex gap-2">
-                        <span className="text-olive">—</span>
+                        <span className="text-olive"> - </span>
                         {a}
                       </li>
                     ))}

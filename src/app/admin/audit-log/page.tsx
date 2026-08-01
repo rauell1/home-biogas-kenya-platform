@@ -22,7 +22,7 @@ export default async function AuditLogPage() {
               <td className="py-2 mono-data">{l.createdAt.toISOString().slice(0, 16).replace("T", " ")}</td>
               <td className="mono-data">{l.actorEmail}</td>
               <td className="mono-data">{l.action}</td>
-              <td className="mono-data">{l.entityType ?? "—"}</td>
+              <td className="mono-data">{l.entityType ?? " - "}</td>
             </tr>
           ))}
         </tbody>

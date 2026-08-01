@@ -29,7 +29,7 @@ export default function AboutPage() {
           </p>
           <p>
             A plant that produces gas but cannot deliver it at the pressure an appliance needs is a failed plant. So we
-            treat the digester, the gas train and the end use as one engineered system — and we train the people who
+            treat the digester, the gas train and the end use as one engineered system  -  and we train the people who
             will run it every day.
           </p>
           <p className="note">
@@ -65,7 +65,7 @@ export default function AboutPage() {
         <div className="shell section">
           <div className="max-w-3xl">
             <p className="chapter-marker text-clay">Systems we work with</p>
-            <h2 className="display-xl mt-4">A technology selected for the site—not forced onto it</h2>
+            <h2 className="display-xl mt-4">A technology selected for the site - not forced onto it</h2>
             <p className="lede mt-6 text-ink/72">
               The company materials identify four principal digester families. Final selection follows a site survey,
               measured daily feedstock and the energy demand the system must serve.

@@ -40,7 +40,7 @@ export default async function LeadsPage() {
                   </Link>
                 </td>
                 <td className="px-4 font-medium">{l.fullName}</td>
-                <td className="px-4 mono-data text-ink/70">{l.county ?? "—"}</td>
+                <td className="px-4 mono-data text-ink/70">{l.county ?? " - "}</td>
                 <td className="px-4"><StatusPill value={l.stage} /></td>
                 <td className="px-4 mono-data text-ink/60">{l.createdAt.toISOString().slice(0, 10)}</td>
               </tr>

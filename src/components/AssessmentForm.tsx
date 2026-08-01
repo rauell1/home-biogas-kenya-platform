@@ -111,7 +111,7 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
       </div>
 
       <label className="block">
-        <span className="field-label">Notes — waste stream, energy need, site</span>
+        <span className="field-label">Notes  -  waste stream, energy need, site</span>
         <textarea name="notes" rows={5} className="field-input" />
       </label>
 

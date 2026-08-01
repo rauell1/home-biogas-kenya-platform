@@ -8,7 +8,9 @@ export default function BrandLogo({ className = "" }: { className?: string }) {
       width={460}
       height={219}
       priority
-      className={`h-auto w-[150px] object-contain ${className}`}
+      unoptimized
+      sizes="(max-width: 640px) 150px, 190px"
+      className={`h-auto w-[160px] object-contain ${className}`}
     />
   );
 }

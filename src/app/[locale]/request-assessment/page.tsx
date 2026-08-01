@@ -8,7 +8,7 @@ export default async function RequestAssessment({ params }: { params: Promise<{ 
   return (
     <>
       <PageHeader
-        eyebrow="Chapter 06 — Start a project"
+        eyebrow="Chapter 06  -  Start a project"
         title="Request a site assessment"
         lede="Answers from the configurator are attached automatically if you used it. You will receive a reference number immediately."
         meta={[

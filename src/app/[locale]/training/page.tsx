@@ -18,7 +18,7 @@ export default async function TrainingPage({ params }: { params: Promise<{ local
         lede="A plant is only as good as the person feeding it. We train operators, masons and technicians on real systems."
         meta={[
           { label: "Courses", value: String(COURSES.length) },
-          { label: "Duration", value: "1–5 days" },
+          { label: "Duration", value: "1-5 days" },
           { label: "Format", value: "Practical, on plant" },
           { label: "Language", value: "English · Kiswahili" },
         ]}

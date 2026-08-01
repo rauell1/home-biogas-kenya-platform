@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
             </div>
             <div>
               <dt className="mono-label text-bone/45">Technology</dt>
-              <dd className="mono-data mt-2">{pretty(project.plantType ?? "—")}</dd>
+              <dd className="mono-data mt-2">{pretty(project.plantType ?? " - ")}</dd>
             </div>
             <div>
               <dt className="mono-label text-bone/45">Location</dt>
@@ -73,11 +73,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
             </div>
             <div>
               <dt className="mono-label text-bone/45">Completed</dt>
-              <dd className="mono-data mt-2">{project.completionDate ?? "—"}</dd>
+              <dd className="mono-data mt-2">{project.completionDate ?? " - "}</dd>
             </div>
             <div>
               <dt className="mono-label text-bone/45">Sector</dt>
-              <dd className="mono-data mt-2">{pretty(project.clientCategory ?? "—")}</dd>
+              <dd className="mono-data mt-2">{pretty(project.clientCategory ?? " - ")}</dd>
             </div>
             <div>
               <dt className="mono-label text-bone/45">Feedstock</dt>

@@ -12,13 +12,13 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
   return (
     <>
       <PageHeader
-        eyebrow="Chapter 04 — Built in Kenya"
+        eyebrow="Chapter 04  -  Built in Kenya"
         title="A verified project portfolio"
         lede="Only technically reviewed projects with approved media rights are published. Every outcome carries its evidence type."
         meta={[
           { label: "Published projects", value: String(projects.length) },
           { label: "Counties", value: String(new Set(projects.map((p) => p.county).filter(Boolean)).size) },
-          { label: "Largest system", value: capacities.length ? `${Math.max(...capacities)} m³` : "—" },
+          { label: "Largest system", value: capacities.length ? `${Math.max(...capacities)} m³` : " - " },
           { label: "Verification", value: "Technical review + media rights" },
         ]}
       />

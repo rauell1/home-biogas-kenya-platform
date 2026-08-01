@@ -92,11 +92,11 @@ VALUES
  'Rumen content, blood and washdown water measured over the operating week, with strong daily variation.',
  'Potential to offset thermal energy and generate electricity if gas is filtered.',
  'Recommended pre-treatment, screening and a staged anaerobic process with an effluent compliance plan.',
- 'Not applicable — study phase only.',
+ 'Not applicable  -  study phase only.',
  'Filtration and moisture removal identified as mandatory before any engine use.',
- 'Not applicable — study phase only.',
+ 'Not applicable  -  study phase only.',
  'Effluent handling and discharge compliance assessed against regulatory requirements.',
- 'Not applicable — study phase only.',
+ 'Not applicable  -  study phase only.',
  '[{"claim":"Waste volumes characterised across an operating week","evidence":"Company measurement"},{"claim":"Energy recovery potential identified","evidence":"Company estimate"}]',
  'company_owned', 'approved', 'published', now());
 
