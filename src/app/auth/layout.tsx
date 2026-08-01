@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandLogo from "@/components/BrandLogo";
+import { COMPANY } from "@/lib/content";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,21 +12,26 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       />
       <div aria-hidden className="absolute inset-0 grid-lines opacity-40" />
 
-      <header className="relative shell py-6 flex items-center justify-between">
-        <Link href="/en" className="inline-block bg-white p-2">
-          <BrandLogo className="w-[150px]" />
-        </Link>
-        <Link href="/en" className="mono-label text-bone/50 hover:text-methane">
-          ← Public site
-        </Link>
+      <header className="relative z-10 border-b border-ink/10 bg-cream text-ink">
+        <div className="shell flex h-[72px] items-center justify-between gap-6">
+          <Link href="/en" className="flex h-full shrink-0 items-center" aria-label="Home Biogas Kenya public site">
+            <BrandLogo className="!h-[56px] !w-auto max-w-[132px] sm:!h-[60px] sm:max-w-[142px]" />
+          </Link>
+          <Link href="/en" className="mono-label text-ink/55 transition-colors hover:text-clay">
+            ← Public site
+          </Link>
+        </div>
       </header>
 
       <main className="relative flex-1 flex items-center justify-center px-5 py-12">
-        <div className="w-full max-w-md border border-bone/15 bg-ink/60 backdrop-blur-sm p-8 md:p-10">{children}</div>
+        <div className="relative w-full max-w-md border border-bone/15 border-t-methane bg-ink/70 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.2)] backdrop-blur-sm md:p-10">
+          {children}
+        </div>
       </main>
 
-      <footer className="relative shell py-6 mono-label text-bone/35">
-        Invitation-controlled access · Home Biogas Kenya
+      <footer className="relative shell flex flex-wrap items-center justify-between gap-3 py-6 mono-label text-bone/40">
+        <span>Invitation-controlled access · Home Biogas Kenya</span>
+        <a href={`mailto:${COMPANY.email}`} className="transition-colors hover:text-methane">{COMPANY.email}</a>
       </footer>
     </div>
   );

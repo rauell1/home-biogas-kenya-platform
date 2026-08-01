@@ -57,7 +57,7 @@ export default function AuthForm({
         ),
       )}
       <button type="submit" disabled={pending} className="btn btn-accent w-full disabled:opacity-50">
-        {pending ? "Working…" : submitLabel}
+        {pending ? "Working..." : submitLabel}
       </button>
     </form>
   );

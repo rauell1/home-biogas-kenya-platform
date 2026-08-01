@@ -28,6 +28,5 @@
   "26": "auth-client.ts",
   "27": "drizzle.config.ts",
   "28": "eslint.config.mjs",
-  "29": "Configurator.tsx",
   "33": "check-forbidden-dashes.mjs"
 }

@@ -9,6 +9,7 @@
   "7": "dependencies",
   "8": "Neon",
   "9": "Design direction and implementation requirements",
+  "10": "queries.ts",
   "11": "Lakebase Postgres",
   "12": "B1 → Production migration report",
   "13": "Home Biogas Kenya — Final Consolidated Platform",
@@ -27,5 +28,6 @@
   "26": "auth-client.ts",
   "27": "drizzle.config.ts",
   "28": "eslint.config.mjs",
+  "29": "Configurator.tsx",
   "33": "check-forbidden-dashes.mjs"
 }
