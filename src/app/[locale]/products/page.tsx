@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { COMPANY, DIGESTER_TECHNOLOGIES } from "@/lib/content";
+import BrandLogo from "@/components/BrandLogo";
+import { COMPANY, DIGESTER_TECHNOLOGIES, SOCIALS } from "@/lib/content";
 import { PLANT_SIZES, PRODUCTS } from "@/lib/catalogue";
 
 function inquiryLinks(name: string) {
@@ -50,7 +51,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                     <Image src={product.image} alt={product.name} fill sizes="(min-width: 1280px) 30vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
                   ) : (
                     <div className="grid h-full place-items-center grid-lines bg-ink p-8 text-center text-bone">
-                      <span className="display-md">{product.name}</span>
+                      <div className="bg-white p-4"><BrandLogo className="w-[190px]" /></div>
                     </div>
                   )}
                   <span className="absolute left-4 top-4 bg-ink px-2.5 py-1 mono-label text-bone">{product.category}</span>
@@ -69,6 +70,32 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
             );
           })}
         </div>
+      </section>
+
+      <section className="shell section border-t border-ink/15">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="chapter-marker text-clay">Installed systems</p>
+            <h2 className="display-xl mt-5">Built for real Kenyan homes, farms and institutions</h2>
+          </div>
+          <div>
+            <p className="lede text-ink/70">These company images show the main system formats we install. Recent official project updates include 8, 12 and 16 m³ plants serving cooking, poultry brooding, lighting, hot water and farm machinery.</p>
+            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm font-semibold text-clay underline underline-offset-4">See official project updates on LinkedIn</a>
+          </div>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            { title: "Fixed-dome construction", image: "/catalogue/fixed-dome-construction.jpg", note: "Durable, site-built masonry systems designed after a feedstock and demand assessment." },
+            { title: "Installed flexible system", image: "/catalogue/installed-flexible-system.jpg", note: "Rapid-installation flexible digesters for suitable household and farm applications." },
+            { title: "Compact portable plant", image: "/catalogue/portable-digester.jpg", note: "A compact system option where measured organic input and site conditions allow." },
+          ].map((system) => (
+            <article key={system.title} className="panel overflow-hidden">
+              <div className="relative aspect-[4/3] bg-white"><Image src={system.image} alt={system.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" /></div>
+              <div className="p-6"><h3 className="display-md">{system.title}</h3><p className="mt-3 text-sm text-ink/68">{system.note}</p></div>
+            </article>
+          ))}
+        </div>
+        <p className="mt-5 text-xs text-ink/55">Images are from Home Biogas Kenya company materials. Project claims are referenced from the company’s official social updates.</p>
       </section>
 
       <section className="bg-ink text-bone">

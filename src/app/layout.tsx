@@ -36,6 +36,15 @@ export const metadata: Metadata = {
   },
   description:
     "Home Biogas Kenya designs and builds biogas and organic-waste systems for homes, farms, institutions and commercial facilities.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
+  openGraph: {
+    title: "Home Biogas Kenya — Waste contains energy",
+    description: "Biogas and organic-waste systems for homes, farms, institutions and commercial facilities.",
+    images: [{ url: "/brand/home-biogas-kenya-logo.png", width: 460, height: 219, alt: "Home Biogas Kenya" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

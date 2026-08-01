@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "src/app/[locale]/products/page.tsx": {
-    "mtime": 1785596941.8516865,
-    "ast_hash": "e055f573ad2e547850f678ac50e95d37",
+    "mtime": 1785599819.0210295,
+    "ast_hash": "597d87f63ac7a639bfd9866f0e2efaa4",
     "semantic_hash": ""
   },
   "src/app/[locale]/projects/[slug]/page.tsx": {
@@ -310,9 +310,9 @@
     "semantic_hash": "d05a0053b3cd74ff4e3c14a28cad3c58"
   },
   "src/app/layout.tsx": {
-    "mtime": 1785592110.4263926,
-    "ast_hash": "6aeca088a97c9edb29a50a091c40db8e",
-    "semantic_hash": "6aeca088a97c9edb29a50a091c40db8e"
+    "mtime": 1785599827.002324,
+    "ast_hash": "8a5e97d5d68c3be0cc1f2dd655da207e",
+    "semantic_hash": ""
   },
   "src/app/page.tsx": {
     "mtime": 1785588296.0,
@@ -535,8 +535,8 @@
     "semantic_hash": ""
   },
   "src/lib/catalogue.ts": {
-    "mtime": 1785596892.9588218,
-    "ast_hash": "38ad0b96068a6e6da39755408db587c8",
+    "mtime": 1785599817.8927376,
+    "ast_hash": "30b3121e57cc344bfa1b100575264358",
     "semantic_hash": ""
   },
   "public/brand/home-biogas-kenya-logo.png": {
@@ -572,6 +572,56 @@
   "public/catalogue/valves.jpg": {
     "mtime": 1785596827.6076381,
     "ast_hash": "403ed0ad09db56b011b656e91926fc8c",
+    "semantic_hash": ""
+  },
+  "public/catalogue/biogas-engine.jpg": {
+    "mtime": 1785599937.8330216,
+    "ast_hash": "784db9fdca072ee021f941829dfb9de8",
+    "semantic_hash": ""
+  },
+  "public/catalogue/biogas-generator.jpg": {
+    "mtime": 1785599913.4011743,
+    "ast_hash": "40841339d3acd5ef5b304b36ff7c82e0",
+    "semantic_hash": ""
+  },
+  "public/catalogue/biogas-lamp.jpg": {
+    "mtime": 1785599913.2467659,
+    "ast_hash": "406f870a3446ee7908383569cd2ab04b",
+    "semantic_hash": ""
+  },
+  "public/catalogue/fixed-dome-construction.jpg": {
+    "mtime": 1785599651.838192,
+    "ast_hash": "aabffb61a20d2da964f156b515ee05f5",
+    "semantic_hash": ""
+  },
+  "public/catalogue/flexible-pvc-system.jpg": {
+    "mtime": 1785599651.6333556,
+    "ast_hash": "7aa654ecb4eb1504753c6379b838ac3a",
+    "semantic_hash": ""
+  },
+  "public/catalogue/food-waste-system.jpg": {
+    "mtime": 1785599651.564569,
+    "ast_hash": "2f0ea68559dbcc32ee0f531567e9dbec",
+    "semantic_hash": ""
+  },
+  "public/catalogue/installed-flexible-system.jpg": {
+    "mtime": 1785599651.735678,
+    "ast_hash": "ae1bbf7816ae1c6aed5428f624e1f6df",
+    "semantic_hash": ""
+  },
+  "public/catalogue/poultry-brooder.jpg": {
+    "mtime": 1785599913.1586342,
+    "ast_hash": "b56be80ae2788a2a70350b40668cd64b",
+    "semantic_hash": ""
+  },
+  "public/catalogue/water-heater.jpg": {
+    "mtime": 1785599937.7591517,
+    "ast_hash": "d40e12e88d2dbc2c3a2e9cdd8ad88b0b",
+    "semantic_hash": ""
+  },
+  "src/app/icon.png": {
+    "mtime": 1785599652.3199904,
+    "ast_hash": "597175b330bc069b59eb70b8e66b507c",
     "semantic_hash": ""
   }
 }

@@ -100,24 +100,24 @@
     "semantic_hash": "15b7e347cc83cc7d3b3549c3c57694d6"
   },
   "src/app/[locale]/layout.tsx": {
-    "mtime": 1785588296.0,
-    "ast_hash": "30eb4cb96d6697bd15fbc26e2ea0b04d",
-    "semantic_hash": "30eb4cb96d6697bd15fbc26e2ea0b04d"
+    "mtime": 1785597021.0329611,
+    "ast_hash": "889d95a1ca831584921e475fbff38b86",
+    "semantic_hash": ""
   },
   "src/app/[locale]/page.tsx": {
-    "mtime": 1785595328.9489534,
-    "ast_hash": "5a84ad2b87a7e9504eec4b4e201b34a6",
-    "semantic_hash": "5a84ad2b87a7e9504eec4b4e201b34a6"
+    "mtime": 1785596997.5394526,
+    "ast_hash": "4f726db80c26221e749cba9c36131377",
+    "semantic_hash": ""
   },
   "src/app/[locale]/products/[slug]/page.tsx": {
-    "mtime": 1785588296.0,
-    "ast_hash": "945d194ddc905ed1184cbaa82eedfaa0",
-    "semantic_hash": "945d194ddc905ed1184cbaa82eedfaa0"
+    "mtime": 1785596942.9966307,
+    "ast_hash": "2492030750230257df6084a4b1061dc4",
+    "semantic_hash": ""
   },
   "src/app/[locale]/products/page.tsx": {
-    "mtime": 1785595978.6469257,
-    "ast_hash": "38451bd1a32ba12700be7c2697020f71",
-    "semantic_hash": "38451bd1a32ba12700be7c2697020f71"
+    "mtime": 1785596941.8516865,
+    "ast_hash": "e055f573ad2e547850f678ac50e95d37",
+    "semantic_hash": ""
   },
   "src/app/[locale]/projects/[slug]/page.tsx": {
     "mtime": 1785588296.0,
@@ -200,9 +200,9 @@
     "semantic_hash": "f110ccfe278856d9f078dba7afbcd329"
   },
   "src/app/admin/layout.tsx": {
-    "mtime": 1785588296.0,
-    "ast_hash": "65e72ae77cae2e29658c3e7721b6939f",
-    "semantic_hash": "65e72ae77cae2e29658c3e7721b6939f"
+    "mtime": 1785597023.609642,
+    "ast_hash": "cf9029231407d165e29f8e9821274e05",
+    "semantic_hash": ""
   },
   "src/app/admin/leads/[id]/page.tsx": {
     "mtime": 1785588296.0,
@@ -295,9 +295,9 @@
     "semantic_hash": "b20393dc4fc908eceae0c1303c55cb05"
   },
   "src/app/auth/layout.tsx": {
-    "mtime": 1785588296.0,
-    "ast_hash": "e5e645c2a442ef98f2e9cdc969bca191",
-    "semantic_hash": "e5e645c2a442ef98f2e9cdc969bca191"
+    "mtime": 1785597022.318631,
+    "ast_hash": "880891b9fe81e181c4fa3a1ea67c96cc",
+    "semantic_hash": ""
   },
   "src/app/auth/pending/page.tsx": {
     "mtime": 1785588296.0,
@@ -360,9 +360,9 @@
     "semantic_hash": "de05413cc438443c8f394611efe532ce"
   },
   "src/components/SiteNav.tsx": {
-    "mtime": 1785595221.4364967,
-    "ast_hash": "fe8cded0a14d42d48e39c88ae3478812",
-    "semantic_hash": "fe8cded0a14d42d48e39c88ae3478812"
+    "mtime": 1785596894.2200997,
+    "ast_hash": "0e7b63f8caf6036617a362ceca3585a1",
+    "semantic_hash": ""
   },
   "src/components/admin/AdminHeader.tsx": {
     "mtime": 1785588296.0,
@@ -425,9 +425,9 @@
     "semantic_hash": "33279b9ef3f7edd2dcb986fd5c3a8fe8"
   },
   "src/lib/email.ts": {
-    "mtime": 1785588296.0,
-    "ast_hash": "9cd9cf87ddefdce954baa6fb7fd5df2b",
-    "semantic_hash": "9cd9cf87ddefdce954baa6fb7fd5df2b"
+    "mtime": 1785597047.4290445,
+    "ast_hash": "9b45a965ad07c5952f93bdf4daf3b36b",
+    "semantic_hash": ""
   },
   "src/lib/estimator.ts": {
     "mtime": 1785588296.0,
@@ -440,9 +440,9 @@
     "semantic_hash": "8d3098d6b955ae76a66b03f34942f5c8"
   },
   "src/lib/i18n.ts": {
-    "mtime": 1785595314.6786287,
-    "ast_hash": "fbfdea4e38b3f46f4e9fc6635d6c2463",
-    "semantic_hash": "fbfdea4e38b3f46f4e9fc6635d6c2463"
+    "mtime": 1785596998.6855936,
+    "ast_hash": "deaa6cdf0698719915b4edcbbfd102ed",
+    "semantic_hash": ""
   },
   "src/lib/legacy-auth.ts": {
     "mtime": 1785588800.0,
@@ -505,8 +505,8 @@
     "semantic_hash": ""
   },
   "ANTIGRAVITY-LANDING-PAGE-BRIEF.md": {
-    "mtime": 1785594411.7591743,
-    "ast_hash": "f49dae2ee900f0b08acf27189edb3c58",
+    "mtime": 1785596246.4854653,
+    "ast_hash": "0421b5424c271a77e09cc669cbb1ddbb",
     "semantic_hash": ""
   },
   "FINAL-CHANGELOG.md": {
@@ -522,6 +522,56 @@
   "README.md": {
     "mtime": 1785588872.0,
     "ast_hash": "f1e9bd374e5eded815f0fc975b0b1cc7",
+    "semantic_hash": ""
+  },
+  "src/components/BrandLogo.tsx": {
+    "mtime": 1785596891.792501,
+    "ast_hash": "65b8c980030717db9a2c3e3b210f4f27",
+    "semantic_hash": ""
+  },
+  "src/components/ShopPreview.tsx": {
+    "mtime": 1785596996.3792174,
+    "ast_hash": "2e0a43556ba1b24d93cd376a5d2a9ffb",
+    "semantic_hash": ""
+  },
+  "src/lib/catalogue.ts": {
+    "mtime": 1785596892.9588218,
+    "ast_hash": "38ad0b96068a6e6da39755408db587c8",
+    "semantic_hash": ""
+  },
+  "public/brand/home-biogas-kenya-logo.png": {
+    "mtime": 1785596827.543522,
+    "ast_hash": "4a980f626bcf4ba5cdfb08f0b8449607",
+    "semantic_hash": ""
+  },
+  "public/catalogue/double-cooker.jpg": {
+    "mtime": 1785596827.5954647,
+    "ast_hash": "c385f7fe8b56cdafa348b240136a2a1b",
+    "semantic_hash": ""
+  },
+  "public/catalogue/gas-filter.jpg": {
+    "mtime": 1785596827.6013598,
+    "ast_hash": "6a78e3e032c9459af36eaf50f2b1d2f7",
+    "semantic_hash": ""
+  },
+  "public/catalogue/gas-pipe-kit.jpg": {
+    "mtime": 1785596848.956731,
+    "ast_hash": "c686b643c80e53c6516a173db3b94210",
+    "semantic_hash": ""
+  },
+  "public/catalogue/portable-digester.jpg": {
+    "mtime": 1785596848.965042,
+    "ast_hash": "e3fcc45b9cea1333572637eeb422d9e7",
+    "semantic_hash": ""
+  },
+  "public/catalogue/single-cooker.jpg": {
+    "mtime": 1785596848.96062,
+    "ast_hash": "028bae2b2c4569464a251c5646372e66",
+    "semantic_hash": ""
+  },
+  "public/catalogue/valves.jpg": {
+    "mtime": 1785596827.6076381,
+    "ast_hash": "403ed0ad09db56b011b656e91926fc8c",
     "semantic_hash": ""
   }
 }

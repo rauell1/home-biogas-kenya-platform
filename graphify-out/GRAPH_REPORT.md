@@ -1,16 +1,16 @@
 # Graph Report - home-biogas-kenya-final  (2026-08-01)
 
 ## Corpus Check
-- 108 files · ~52,462 words
+- 108 files · ~67,365 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 516 nodes · 991 edges · 28 communities (22 shown, 6 thin omitted)
+- 516 nodes · 994 edges · 28 communities (22 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2e248957`
+- Built from commit: `1f761035`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -145,7 +145,7 @@ Nodes (15): LocaleLayout(), RequestAssessment(), FuelSavingsPage(), Configurator
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `db` connect `schema.ts` to `content.ts`, `admin.ts`, `actions/auth.ts`, `leads/route.ts`?**
-  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
 - **Why does `PageHeader()` connect `content.ts` to `[locale]/layout.tsx`?**
   _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Why does `requirePermission()` connect `schema.ts` to `admin.ts`?**
@@ -155,6 +155,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `schema.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.055900621118012424 - nodes in this community are weakly interconnected._
 - **Should `content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.05 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05031645569620253 - nodes in this community are weakly interconnected._
 - **Should `admin.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.12762762762762764 - nodes in this community are weakly interconnected._
