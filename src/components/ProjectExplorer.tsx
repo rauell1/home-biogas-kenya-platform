@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 export type ExplorerProject = {
@@ -16,6 +17,7 @@ export type ExplorerProject = {
   projectStatus: string;
   summary: string | null;
   theme: string | null;
+  heroImage?: string | null;
 };
 
 const FILTERS = [
@@ -129,6 +131,17 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
               className="absolute right-0 top-0 h-32 w-32 opacity-[0.07]"
               style={{ background: "radial-gradient(circle at top right, #121412, transparent 70%)" }}
             />
+            {active.heroImage && (
+              <div className="relative mb-8 h-56 md:h-72 w-full overflow-hidden border border-ink/15 bg-ink/10 shadow-inner">
+                <Image
+                  src={active.heroImage}
+                  alt={active.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 700px"
+                  className="object-cover"
+                />
+              </div>
+            )}
             <p className="chapter-marker text-clay">{active.theme ?? "Project"}</p>
             <h3 className="display-xl mt-5">{active.title}</h3>
             <p className="lede mt-5 max-w-2xl text-ink/78">{active.summary}</p>

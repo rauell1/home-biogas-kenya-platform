@@ -643,5 +643,10 @@
     "mtime": 1785601247.122192,
     "ast_hash": "8c97001bcea2762c2bdb33b9e30c1de5",
     "semantic_hash": ""
+  },
+  "scripts/seed-db.mjs": {
+    "mtime": 1785605963.0205846,
+    "ast_hash": "4a1969d8521d9c886049f30a54c36453",
+    "semantic_hash": ""
   }
 }

@@ -238,6 +238,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             projectStatus: p.projectStatus,
             summary: p.summary,
             theme: p.theme,
+            heroImage: p.heroImage,
           }))}
         />
       </Chapter>

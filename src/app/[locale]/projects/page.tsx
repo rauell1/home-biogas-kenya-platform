@@ -39,6 +39,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
             projectStatus: p.projectStatus,
             summary: p.summary,
             theme: p.theme,
+            heroImage: p.heroImage,
           }))}
         />
       </div>

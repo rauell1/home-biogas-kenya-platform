@@ -1,16 +1,16 @@
 # Graph Report - home-biogas-kenya-final  (2026-08-01)
 
 ## Corpus Check
-- 111 files · ~77,072 words
+- 112 files · ~77,715 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 528 nodes · 1011 edges · 30 communities (24 shown, 6 thin omitted)
+- 531 nodes · 1013 edges · 32 communities (25 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f06c266f`
+- Built from commit: `c56b5ae9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,6 +39,8 @@
 - postcss.config.mjs
 - [locale]/layout.tsx
 - auth-client.ts
+- users/page.tsx
+- seed-db.mjs
 - check-forbidden-dashes.mjs
 
 ## God Nodes (most connected - your core abstractions)
@@ -54,37 +56,37 @@
 10. `scripts` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `InviteForm()` --indirect_call--> `inviteStaffAction()`  [INFERRED]
+  src/components/admin/InviteForm.tsx → src/app/actions/admin.ts
 - `UsersPage()` --calls--> `requirePermission()`  [EXTRACTED]
   src/app/admin/users/page.tsx → src/lib/guard.ts
+- `InvitePage()` --calls--> `hashToken()`  [EXTRACTED]
+  src/app/auth/invite/[token]/page.tsx → src/lib/legacy-auth.ts
 - `AboutPage()` --references--> `SERVICE_GROUPS`  [EXTRACTED]
   src/app/[locale]/about/page.tsx → src/lib/content.ts
 - `ApplicationDetail()` --references--> `APPLICATIONS`  [EXTRACTED]
   src/app/[locale]/applications/[slug]/page.tsx → src/lib/content.ts
-- `HomePage()` --calls--> `getDict()`  [EXTRACTED]
-  src/app/[locale]/page.tsx → src/lib/i18n.ts
-- `HomePage()` --calls--> `getPublishedProjects()`  [EXTRACTED]
-  src/app/[locale]/page.tsx → src/lib/queries.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (30 total, 6 thin omitted)
+## Communities (32 total, 7 thin omitted)
 
 ### Community 0 - "schema.ts"
 Cohesion: 0.06
-Nodes (62): Approvals(), dynamic, ArticlesPage(), dynamic, AuditLogPage(), dynamic, Dashboard(), dynamic (+54 more)
+Nodes (54): Approvals(), dynamic, ArticlesPage(), dynamic, AuditLogPage(), dynamic, Dashboard(), dynamic (+46 more)
 
 ### Community 1 - "content.ts"
 Cohesion: 0.07
-Nodes (32): AboutPage(), ApplicationDetail(), dynamic, HomePage(), inquiryLinks(), ProductsPage(), ProductDetail(), SolutionsPage() (+24 more)
+Nodes (34): dynamic, SettingsPage(), AboutPage(), ApplicationDetail(), dynamic, HomePage(), inquiryLinks(), ProductsPage() (+26 more)
 
 ### Community 2 - "admin.ts"
-Cohesion: 0.13
-Nodes (31): addLeadActivityAction(), approveTechnicalAction(), createSurveyAction(), FormState, importSourceAction(), inviteStaffAction(), listField(), projectSchema (+23 more)
+Cohesion: 0.14
+Nodes (28): addLeadActivityAction(), approveTechnicalAction(), createSurveyAction(), FormState, importSourceAction(), inviteStaffAction(), listField(), projectSchema (+20 more)
 
 ### Community 3 - "actions/auth.ts"
-Cohesion: 0.12
-Nodes (29): acceptInvitationAction(), ActionState, bootstrapAction(), ensureNeonAuthUser(), requestPasswordResetAction(), signInAction(), signOutAction(), { GET, POST } (+21 more)
+Cohesion: 0.14
+Nodes (25): acceptInvitationAction(), ActionState, bootstrapAction(), ensureNeonAuthUser(), requestPasswordResetAction(), signInAction(), signOutAction(), { GET, POST } (+17 more)
 
 ### Community 4 - "devDependencies"
 Cohesion: 0.05
@@ -139,32 +141,36 @@ Cohesion: 0.40
 Nodes (3): config, FRAME_ANCESTORS, SECURITY_HEADERS
 
 ### Community 23 - "[locale]/layout.tsx"
-Cohesion: 0.10
-Nodes (20): dynamic, GROUPS, Item, LocaleLayout(), RequestAssessment(), FuelSavingsPage(), ConfiguratorPage(), AssessmentForm() (+12 more)
+Cohesion: 0.12
+Nodes (16): LocaleLayout(), RequestAssessment(), FuelSavingsPage(), ConfiguratorPage(), AssessmentForm(), FIELDS, BrandLogo(), FuelSavings() (+8 more)
+
+### Community 29 - "users/page.tsx"
+Cohesion: 0.15
+Nodes (17): AdminLayout(), dynamic, GROUPS, Item, dynamic, UsersPage(), dynamic, InvitePage() (+9 more)
 
 ### Community 33 - "check-forbidden-dashes.mjs"
 Cohesion: 0.40
 Nodes (3): excludedDirectories, textExtensions, violations
 
 ## Knowledge Gaps
-- **207 isolated node(s):** `nextConfig`, `name`, `private`, `dev`, `build` (+202 more)
+- **209 isolated node(s):** `nextConfig`, `name`, `private`, `dev`, `build` (+204 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `db` connect `schema.ts` to `queries.ts`, `admin.ts`, `actions/auth.ts`, `leads/route.ts`?**
+- **Why does `db` connect `schema.ts` to `admin.ts`, `actions/auth.ts`, `leads/route.ts`, `queries.ts`, `users/page.tsx`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `PageHeader()` connect `content.ts` to `schema.ts`, `queries.ts`, `[locale]/layout.tsx`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
-- **Why does `requirePermission()` connect `schema.ts` to `admin.ts`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `requirePermission()` connect `schema.ts` to `content.ts`, `admin.ts`, `users/page.tsx`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `nextConfig`, `name`, `private` to the rest of the system?**
-  _207 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _209 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `schema.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.05742821473158552 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06394027913015254 - nodes in this community are weakly interconnected._
 - **Should `content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.0701344243132671 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06557377049180328 - nodes in this community are weakly interconnected._
 - **Should `admin.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12762762762762764 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.14393939393939395 - nodes in this community are weakly interconnected._

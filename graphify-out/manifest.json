@@ -55,8 +55,8 @@
     "semantic_hash": "e09d4170464a4ee9d73df0da73f405a6"
   },
   "scripts/seed.sql": {
-    "mtime": 1785600795.360152,
-    "ast_hash": "7e63432a80ab275d22513eab6955f95f",
+    "mtime": 1785606245.7930908,
+    "ast_hash": "f49d30f688db13e1940239e5902c7b27",
     "semantic_hash": ""
   },
   "skills-lock.json": {
@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "src/app/[locale]/page.tsx": {
-    "mtime": 1785605576.5503235,
-    "ast_hash": "5158378922469a2d74261e7e2ce595cc",
+    "mtime": 1785606325.9329472,
+    "ast_hash": "58050f6fc5b9806507d3a17be7f10027",
     "semantic_hash": ""
   },
   "src/app/[locale]/products/[slug]/page.tsx": {
@@ -120,13 +120,13 @@
     "semantic_hash": ""
   },
   "src/app/[locale]/projects/[slug]/page.tsx": {
-    "mtime": 1785600795.389107,
-    "ast_hash": "54de7d9a66b1c6fc4c3fb4009058a988",
+    "mtime": 1785606372.0030563,
+    "ast_hash": "90b2a0aecb56af4bec5c6c44144cd5d0",
     "semantic_hash": ""
   },
   "src/app/[locale]/projects/page.tsx": {
-    "mtime": 1785600795.385106,
-    "ast_hash": "4314f7811560e101bdee4b34ba4751aa",
+    "mtime": 1785606344.7301638,
+    "ast_hash": "7cf4dc6add95b30ee15d89a05f1a4c1f",
     "semantic_hash": ""
   },
   "src/app/[locale]/request-assessment/page.tsx": {
@@ -355,8 +355,8 @@
     "semantic_hash": "dd4c3b70e7f717230a2ad795e241f48d"
   },
   "src/components/ProjectExplorer.tsx": {
-    "mtime": 1785600795.3901093,
-    "ast_hash": "ec3c73401198003ff8b728b2f8b63ad2",
+    "mtime": 1785606307.8578923,
+    "ast_hash": "9e37b4502b7e56ac89b7280c0a5e8b08",
     "semantic_hash": ""
   },
   "src/components/SiteNav.tsx": {

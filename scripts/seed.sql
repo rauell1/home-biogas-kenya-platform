@@ -7,7 +7,7 @@ DELETE FROM articles;
 INSERT INTO projects (title, slug, theme, county, locality, client_category, plant_type, capacity_m3,
   feedstocks, applications, completion_date, project_status, summary, challenge, site_conditions,
   feedstock_assessment, energy_demand, engineering_response, construction_sequence, gas_handling,
-  appliance_connections, slurry_management, commissioning, outcomes, media_rights_status,
+  appliance_connections, slurry_management, commissioning, outcomes, hero_image, media_rights_status,
   technical_review_status, workflow_state, published_at)
 VALUES
 ('Kerarapon 16 m³ system', 'kerarapon-16m3-system', 'One plant. Multiple productive uses.', 'Kajiado', 'Kerarapon',
@@ -26,6 +26,7 @@ VALUES
  'Digested slurry overflows to a lined store and is applied to fodder and vegetable plots.',
  'Charged with manure and water, leak tested, first gas flared, then appliances commissioned and the operator trained.',
  '[{"claim":"Household cooking fuel purchases reduced","evidence":"Client-reported"},{"claim":"Plant operating on daily manure feeding","evidence":"Company site observation"}]',
+ '/catalogue/fixed-dome-construction.jpg',
  'company_owned', 'approved', 'published', now()),
 
 ('Gataka 12 m³ poultry and pig-waste system', 'gataka-12m3-poultry-pig-system', 'Two livestock waste streams. One circular farm system.',
@@ -44,6 +45,7 @@ VALUES
  'Slurry is stored and applied to farm plots, reducing fertiliser purchases.',
  'Charged, leak tested and handed over with feeding and safety training.',
  '[{"claim":"Both waste streams now handled on site","evidence":"Company site observation"},{"claim":"Brooding heat supplied by biogas","evidence":"Client-reported"}]',
+ '/catalogue/installed-flexible-system.jpg',
  'company_owned', 'approved', 'published', now()),
 
 ('Ammodump Kwenia Eco Lodge 8 m³ and 12 m³ phases', 'kwenia-eco-lodge-phases', 'A system trusted enough to expand.',
@@ -62,6 +64,7 @@ VALUES
  'Slurry stored and used on the grounds.',
  'Both phases charged, tested and commissioned with staff training.',
  '[{"claim":"Second phase commissioned after the first performed as expected","evidence":"Company records"}]',
+ '/catalogue/flexible-pvc-system.jpg',
  'company_owned', 'approved', 'published', now()),
 
 ('Nairobi school 32 m³ project', 'nairobi-school-32m3-project', 'Institutional-scale energy and waste management.',
@@ -80,6 +83,7 @@ VALUES
  'Effluent managed in line with institutional sanitation requirements.',
  'Charged, tested and commissioned with kitchen-staff training.',
  '[{"claim":"Daily kitchen and sanitation waste treated on site","evidence":"Company site observation"}]',
+ '/catalogue/food-waste-system.jpg',
  'company_owned', 'approved', 'published', now()),
 
 ('Slaughterhouse feasibility study', 'slaughterhouse-feasibility-study', 'Managing difficult organic waste through engineered treatment.',
@@ -98,6 +102,7 @@ VALUES
  'Effluent handling and discharge compliance assessed against regulatory requirements.',
  'Not applicable  -  study phase only.',
  '[{"claim":"Waste volumes characterised across an operating week","evidence":"Company measurement"},{"claim":"Energy recovery potential identified","evidence":"Company estimate"}]',
+ '/catalogue/biogas-engine.jpg',
  'company_owned', 'approved', 'published', now());
 
 INSERT INTO articles (slug, title, excerpt, body, workflow_state, published_at) VALUES

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPublishedProject, getPublishedProjects, type ProjectRow } from "@/lib/queries";
 
@@ -110,6 +111,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
         </nav>
 
         <div className="max-w-3xl">
+          {project.heroImage && (
+            <div className="relative mb-10 h-72 md:h-96 w-full overflow-hidden border border-ink/15 bg-ink/10 shadow-md">
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
+              />
+            </div>
+          )}
           {sections.map((s, i) => (
             <section key={String(s.key)} id={`s-${String(s.key)}`} className={i > 0 ? "mt-12" : ""}>
               <div className="flex items-baseline gap-4 border-b border-ink/12 pb-2">
