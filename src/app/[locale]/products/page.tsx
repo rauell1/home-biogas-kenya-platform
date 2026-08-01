@@ -1,49 +1,110 @@
+import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import { COMPANY, DIGESTER_TECHNOLOGIES } from "@/lib/content";
+import { PLANT_SIZES, PRODUCTS } from "@/lib/catalogue";
 
-export const PRODUCTS = [
-  { slug: "food-waste-biodigester", name: "Food-waste biodigester", spec: "Compact system for measured daily kitchen-waste input" },
-  { slug: "flexible-pvc-biodigester", name: "Flexible PVC biodigester", spec: "Rapid-installation tubular system in multiple capacities" },
-  { slug: "fixed-dome-biodigester", name: "Fixed-dome concrete biodigester", spec: "Site-built system sized after survey and feedstock measurement" },
-  { slug: "two-burner-biogas-cooker", name: "Two-burner biogas cooker", spec: "Low-pressure burners, cast iron grate, 8–12 mbar" },
-  { slug: "four-burner-cooker-and-oven", name: "Four-burner cooker and oven", spec: "Institutional range with biogas oven cavity" },
-  { slug: "biogas-water-heater", name: "Biogas water heater", spec: "Instant heating for kitchens and dairies" },
-  { slug: "poultry-brooder", name: "Poultry brooder", spec: "Radiant brooder with flame-failure protection" },
-  { slug: "biogas-lamp", name: "Biogas lamp", spec: "Mantle lamp for off-grid lighting" },
-  { slug: "h2s-gas-filter", name: "H₂S gas filter", spec: "Refillable media housing for engine protection" },
-  { slug: "condensate-trap", name: "Condensate trap", spec: "Pipeline low-point water drain" },
-  { slug: "pressure-gauge-manometer", name: "Pressure gauge / manometer", spec: "U-tube pressure indication for operators" },
-  { slug: "biogas-generator", name: "Biogas generator", spec: "Converted stationary engine and alternator set" },
-];
+function inquiryLinks(name: string) {
+  const message = encodeURIComponent(`Hello Home Biogas Kenya, I would like to enquire about ${name}.`);
+  return {
+    whatsapp: `https://wa.me/${COMPANY.phone.replace(/\D/g, "")}?text=${message}`,
+    email: `mailto:${COMPANY.email}?subject=${encodeURIComponent(`Enquiry: ${name}`)}&body=${message}`,
+  };
+}
 
 export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+
   return (
     <>
       <PageHeader
-        eyebrow="Products"
-        title="Appliances and gas equipment"
-        lede="Supplied, installed and commissioned with correctly sized piping, isolation valves, condensate management and user training."
+        eyebrow="Shop & catalogue"
+        title="Biogas appliances, equipment and plant systems"
+        lede="Browse the equipment we supply and the plant sizes we build. Prices are confirmed only after availability, demand and site requirements have been checked."
         meta={[
           { label: "Catalogue", value: `${PRODUCTS.length} items` },
-          { label: "System selection", value: "Confirmed after assessment" },
-          { label: "Engine uses", value: "Require filtration" },
-          { label: "Availability", value: "Confirmed on quotation" },
+          { label: "Plant sizes", value: "4–32 m³ shown" },
+          { label: "Pricing", value: "Available on enquiry" },
+          { label: "Support", value: "Supply · Installation · Training" },
         ]}
       />
-      <div className="shell section">
-        <ul className="border-t border-ink/15">
-          {PRODUCTS.map((p, i) => (
-            <li key={p.slug}>
-              <Link href={`/${locale}/products/${p.slug}`} className="row-link md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-6 group">
-                <span className="mono-label text-clay">{String(i + 1).padStart(2, "0")}</span>
-                <span className="display-md group-hover:text-clay transition-colors">{p.name}</span>
-                <span className="mono-label text-ink/50">{p.spec}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      <section className="shell section">
+        <div className="flex flex-wrap items-end justify-between gap-5 border-b border-ink/15 pb-6">
+          <div>
+            <p className="chapter-marker text-clay">Appliance shop</p>
+            <h2 className="display-lg mt-4">Ask, confirm, then order</h2>
+          </div>
+          <p className="max-w-md text-sm text-ink/65">
+            No checkout or public prices: speak directly with the engineering team to confirm compatibility, availability and installation.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {PRODUCTS.map((product) => {
+            const links = inquiryLinks(product.name);
+            return (
+              <article key={product.slug} className="panel group flex flex-col overflow-hidden">
+                <Link href={`/${locale}/products/${product.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-white">
+                  {product.image ? (
+                    <Image src={product.image} alt={product.name} fill sizes="(min-width: 1280px) 30vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
+                  ) : (
+                    <div className="grid h-full place-items-center grid-lines bg-ink p-8 text-center text-bone">
+                      <span className="display-md">{product.name}</span>
+                    </div>
+                  )}
+                  <span className="absolute left-4 top-4 bg-ink px-2.5 py-1 mono-label text-bone">{product.category}</span>
+                </Link>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="display-md">{product.name}</h3>
+                  <p className="mt-3 flex-1 text-sm text-ink/68">{product.spec}</p>
+                  <p className="mono-label mt-5 text-clay">Price on enquiry</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">WhatsApp</a>
+                    <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="btn btn-outline btn-sm">Call</a>
+                    <a href={links.email} className="btn btn-outline btn-sm">Email</a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="bg-ink text-bone">
+        <div className="shell section">
+          <p className="chapter-marker text-methane">Plant sizes</p>
+          <div className="mt-5 grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-end">
+            <div>
+              <h2 className="display-xl">From household systems to institutional plants</h2>
+              <p className="lede mt-6 text-bone/70">Capacity is not selected from a price list. Daily feedstock, retention time, site conditions and actual energy demand determine the design.</p>
+            </div>
+            <div className="grid grid-cols-3 gap-px bg-bone/15 border border-bone/15 sm:grid-cols-5">
+              {PLANT_SIZES.map((size) => (
+                <div key={size} className="bg-ink p-4 text-center">
+                  <span className="display-md text-methane">{size}</span>
+                  <span className="mono-label ml-1 text-bone/50">m³</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-px bg-bone/15 border border-bone/15 sm:grid-cols-2 xl:grid-cols-4">
+            {DIGESTER_TECHNOLOGIES.map((technology, index) => (
+              <article key={technology.name} className="bg-ink p-6">
+                <p className="mono-label text-methane">Type {String(index + 1).padStart(2, "0")}</p>
+                <h3 className="display-md mt-5">{technology.name}</h3>
+                <p className="mt-3 text-sm text-bone/65">{technology.description}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href={`/${locale}/request-assessment`} className="btn btn-accent">Request plant assessment</Link>
+            <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="btn btn-outline-invert">Call {COMPANY.phone}</a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

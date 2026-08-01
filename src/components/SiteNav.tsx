@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function SiteNav({
   locale,
@@ -56,9 +57,8 @@ export default function SiteNav({
       }`}
     >
       <div className="shell flex h-[72px] items-center justify-between gap-6">
-        <Link href={`/${locale}`} className="group flex items-baseline gap-2" aria-label="Home Biogas Kenya home">
-          <span className="display-md tracking-tight">HOMEBIOGAS</span>
-          <span className="mono-label text-clay">KE</span>
+        <Link href={`/${locale}`} className="group" aria-label="Home Biogas Kenya home">
+          <BrandLogo className="w-[132px] sm:w-[150px]" />
         </Link>
 
         <nav aria-label="Primary" className="hidden xl:flex items-center gap-7 text-[0.9rem]">

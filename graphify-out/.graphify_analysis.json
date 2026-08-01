@@ -15,11 +15,12 @@
       "src_app_admin_dashboard_page_dashboard",
       "src_app_admin_dashboard_page_dynamic",
       "src_app_admin_dashboard_page_scalar",
+      "src_app_admin_layout",
       "src_app_admin_layout_adminlayout",
-      "src_app_admin_leads_id_page",
-      "src_app_admin_leads_id_page_dynamic",
+      "src_app_admin_layout_dynamic",
+      "src_app_admin_layout_groups",
+      "src_app_admin_layout_item",
       "src_app_admin_leads_id_page_leaddetail",
-      "src_app_admin_leads_id_page_stages",
       "src_app_admin_leads_page",
       "src_app_admin_leads_page_dynamic",
       "src_app_admin_leads_page_leadspage",
@@ -33,6 +34,9 @@
       "src_app_admin_projects_page",
       "src_app_admin_projects_page_adminprojects",
       "src_app_admin_projects_page_dynamic",
+      "src_app_admin_settings_page",
+      "src_app_admin_settings_page_dynamic",
+      "src_app_admin_settings_page_settingspage",
       "src_app_admin_site_surveys_id_page",
       "src_app_admin_site_surveys_id_page_checklist",
       "src_app_admin_site_surveys_id_page_dynamic",
@@ -44,15 +48,19 @@
       "src_app_admin_source_records_page_dynamic",
       "src_app_admin_source_records_page_sourcerecordspage",
       "src_app_admin_system_health_page",
+      "src_app_admin_system_health_page_checkdb",
       "src_app_admin_system_health_page_dynamic",
       "src_app_admin_system_health_page_systemhealth",
-      "src_app_admin_users_page_userspage",
       "src_app_api_health_route",
       "src_app_api_health_route_dynamic",
       "src_app_api_health_route_get",
       "src_app_locale_knowledge_articles_slug_page",
       "src_app_locale_knowledge_articles_slug_page_articlepage",
       "src_app_locale_knowledge_articles_slug_page_dynamic",
+      "src_app_locale_knowledge_page",
+      "src_app_locale_knowledge_page_dynamic",
+      "src_app_locale_knowledge_page_guides",
+      "src_app_locale_knowledge_page_knowledgepage",
       "src_components_admin_adminheader",
       "src_components_admin_adminheader_adminheader",
       "src_components_admin_statuspill",
@@ -65,20 +73,16 @@
       "src_db_schema",
       "src_db_schema_articles",
       "src_db_schema_auditlogs",
-      "src_db_schema_leadactivities",
       "src_db_schema_leads",
       "src_db_schema_loginevents",
       "src_db_schema_projectmedia",
+      "src_db_schema_projects",
       "src_db_schema_services",
-      "src_db_schema_sessions",
       "src_db_schema_sitesurveys",
       "src_db_schema_sourcerecords",
-      "src_db_schema_staffprofiles",
       "src_lib_guard",
       "src_lib_guard_requirepermission",
       "src_lib_guard_requireuser",
-      "src_lib_legacy_auth",
-      "src_lib_legacy_auth_sessionuser",
       "src_lib_rbac_can"
     ],
     "1": [
@@ -91,10 +95,9 @@
       "src_app_locale_applications_slug_page_generatestaticparams",
       "src_app_locale_contact_page",
       "src_app_locale_contact_page_contactpage",
-      "src_app_locale_knowledge_page",
-      "src_app_locale_knowledge_page_dynamic",
-      "src_app_locale_knowledge_page_guides",
-      "src_app_locale_knowledge_page_knowledgepage",
+      "src_app_locale_layout",
+      "src_app_locale_layout_generatestaticparams",
+      "src_app_locale_layout_localelayout",
       "src_app_locale_page",
       "src_app_locale_page_chapter",
       "src_app_locale_page_dynamic",
@@ -105,6 +108,8 @@
       "src_app_locale_products_slug_page",
       "src_app_locale_products_slug_page_generatestaticparams",
       "src_app_locale_products_slug_page_productdetail",
+      "src_app_locale_request_assessment_page",
+      "src_app_locale_request_assessment_page_requestassessment",
       "src_app_locale_solutions_page",
       "src_app_locale_solutions_page_solutionspage",
       "src_app_locale_solutions_slug_page",
@@ -114,6 +119,10 @@
       "src_app_locale_tools_feedstock_checker_page_feedstockchecker",
       "src_app_locale_tools_feedstock_checker_page_rows",
       "src_app_locale_tools_feedstock_checker_page_tone",
+      "src_app_locale_tools_fuel_savings_estimator_page",
+      "src_app_locale_tools_fuel_savings_estimator_page_fuelsavingspage",
+      "src_app_locale_tools_solution_configurator_page",
+      "src_app_locale_tools_solution_configurator_page_configuratorpage",
       "src_app_locale_training_page",
       "src_app_locale_training_page_courses",
       "src_app_locale_training_page_trainingpage",
@@ -122,21 +131,37 @@
       "src_app_locale_training_slug_page_generatestaticparams",
       "src_components_applicationscene",
       "src_components_applicationscene_applicationscene",
+      "src_components_assessmentform",
+      "src_components_assessmentform_assessmentform",
+      "src_components_assessmentform_fields",
       "src_components_digestercutaway",
       "src_components_digestercutaway_digestercutaway",
       "src_components_digestercutaway_feedstocks",
       "src_components_digestercutaway_hotspots",
+      "src_components_fuelsavings",
+      "src_components_fuelsavings_fuelsavings",
       "src_components_pageheader",
       "src_components_pageheader_pageheader",
+      "src_components_sitenav",
+      "src_components_sitenav_sitenav",
       "src_lib_content",
       "src_lib_content_all_services",
       "src_lib_content_appitem",
       "src_lib_content_applications",
+      "src_lib_content_company",
+      "src_lib_content_digester_technologies",
       "src_lib_content_plant_components",
       "src_lib_content_process_chain",
       "src_lib_content_service_groups",
       "src_lib_content_servicegroup",
-      "src_lib_content_socials"
+      "src_lib_content_socials",
+      "src_lib_i18n",
+      "src_lib_i18n_dict",
+      "src_lib_i18n_dictionaries",
+      "src_lib_i18n_getdict",
+      "src_lib_i18n_islocale",
+      "src_lib_i18n_locale",
+      "src_lib_i18n_locales"
     ],
     "2": [
       "src_app_actions_admin",
@@ -157,15 +182,15 @@
       "src_app_actions_admin_setuserroleaction",
       "src_app_actions_admin_setuserstatusaction",
       "src_app_actions_admin_updateleadaction",
-      "src_app_admin_layout",
-      "src_app_admin_layout_dynamic",
-      "src_app_admin_layout_groups",
-      "src_app_admin_layout_item",
+      "src_app_admin_leads_id_page",
+      "src_app_admin_leads_id_page_dynamic",
+      "src_app_admin_leads_id_page_stages",
       "src_app_admin_projects_id_page",
       "src_app_admin_projects_id_page_dynamic",
       "src_app_admin_projects_id_page_states",
       "src_app_admin_users_page",
       "src_app_admin_users_page_dynamic",
+      "src_app_admin_users_page_userspage",
       "src_components_admin_articleform",
       "src_components_admin_articleform_articleform",
       "src_components_admin_inviteform",
@@ -177,10 +202,9 @@
       "src_components_admin_projectform_text_fields",
       "src_components_admin_sourceimportform",
       "src_components_admin_sourceimportform_sourceimportform",
-      "src_db_schema_projects",
+      "src_db_schema_leadactivities",
       "src_lib_guard_assertpermission",
       "src_lib_legacy_auth_audit",
-      "src_lib_legacy_auth_newtoken",
       "src_lib_rbac",
       "src_lib_rbac_base",
       "src_lib_rbac_permission",
@@ -199,9 +223,6 @@
       "src_app_actions_auth_requestpasswordresetaction",
       "src_app_actions_auth_signinaction",
       "src_app_actions_auth_signoutaction",
-      "src_app_admin_settings_page",
-      "src_app_admin_settings_page_dynamic",
-      "src_app_admin_settings_page_settingspage",
       "src_app_api_auth_path_route",
       "src_app_api_auth_path_route_get_post",
       "src_app_auth_forgot_password_page",
@@ -216,59 +237,25 @@
       "src_components_authform_authform",
       "src_components_authform_field",
       "src_db_schema_invitations",
+      "src_db_schema_sessions",
+      "src_db_schema_staffprofiles",
       "src_lib_auth",
       "src_lib_auth_auth",
       "src_lib_bootstrap",
       "src_lib_bootstrap_bootstrapemailallowed",
       "src_lib_bootstrap_getbootstrapstate",
+      "src_lib_legacy_auth",
       "src_lib_legacy_auth_createsession",
       "src_lib_legacy_auth_destroysession",
       "src_lib_legacy_auth_getcurrentuser",
       "src_lib_legacy_auth_hashpassword",
       "src_lib_legacy_auth_hashtoken",
+      "src_lib_legacy_auth_newtoken",
       "src_lib_legacy_auth_recordlogin",
+      "src_lib_legacy_auth_sessionuser",
       "src_lib_legacy_auth_verifypassword"
     ],
     "4": [
-      "src_app_locale_layout",
-      "src_app_locale_layout_generatestaticparams",
-      "src_app_locale_layout_localelayout",
-      "src_app_locale_request_assessment_page",
-      "src_app_locale_request_assessment_page_requestassessment",
-      "src_app_locale_tools_fuel_savings_estimator_page",
-      "src_app_locale_tools_fuel_savings_estimator_page_fuelsavingspage",
-      "src_app_locale_tools_solution_configurator_page",
-      "src_app_locale_tools_solution_configurator_page_configuratorpage",
-      "src_components_assessmentform",
-      "src_components_assessmentform_assessmentform",
-      "src_components_assessmentform_fields",
-      "src_components_configurator",
-      "src_components_configurator_apps",
-      "src_components_configurator_configurator",
-      "src_components_configurator_site_fields",
-      "src_components_configurator_steps",
-      "src_components_fuelsavings",
-      "src_components_fuelsavings_fuelsavings",
-      "src_components_sitenav",
-      "src_components_sitenav_sitenav",
-      "src_lib_estimator",
-      "src_lib_estimator_estimate",
-      "src_lib_estimator_estimatorinput",
-      "src_lib_estimator_estimatorresult",
-      "src_lib_estimator_feedstock_options",
-      "src_lib_estimator_feedstockid",
-      "src_lib_estimator_gas_per_kg",
-      "src_lib_estimator_kg_per_unit",
-      "src_lib_estimator_round",
-      "src_lib_i18n",
-      "src_lib_i18n_dict",
-      "src_lib_i18n_dictionaries",
-      "src_lib_i18n_getdict",
-      "src_lib_i18n_islocale",
-      "src_lib_i18n_locale",
-      "src_lib_i18n_locales"
-    ],
-    "5": [
       "drizzle_kit",
       "eslint",
       "eslint_config_next",
@@ -306,7 +293,7 @@
       "types_react_dom",
       "typescript"
     ],
-    "6": [
+    "5": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_esnext",
@@ -336,6 +323,36 @@
       "tsconfig_compileroptions_target",
       "tsconfig_exclude",
       "tsconfig_include"
+    ],
+    "6": [
+      "src_app_api_leads_route",
+      "src_app_api_leads_route_post",
+      "src_components_configurator",
+      "src_components_configurator_apps",
+      "src_components_configurator_configurator",
+      "src_components_configurator_site_fields",
+      "src_components_configurator_steps",
+      "src_lib_email",
+      "src_lib_email_mail",
+      "src_lib_email_sendmail",
+      "src_lib_estimator",
+      "src_lib_estimator_estimate",
+      "src_lib_estimator_estimatorinput",
+      "src_lib_estimator_estimatorresult",
+      "src_lib_estimator_feedstock_options",
+      "src_lib_estimator_feedstockid",
+      "src_lib_estimator_gas_per_kg",
+      "src_lib_estimator_kg_per_unit",
+      "src_lib_estimator_round",
+      "src_lib_rate_limit",
+      "src_lib_rate_limit_bucket",
+      "src_lib_rate_limit_globalforlimit",
+      "src_lib_rate_limit_ratelimit",
+      "src_lib_validation",
+      "src_lib_validation_generatereference",
+      "src_lib_validation_leadinput",
+      "src_lib_validation_leadschema",
+      "tests_unit_test"
     ],
     "7": [
       "better_auth",
@@ -367,6 +384,53 @@
       "zod"
     ],
     "8": [
+      "agents_skills_neon_skill",
+      "agents_skills_neon_skill_architecture_how_to_use_neon",
+      "agents_skills_neon_skill_backend_primitives",
+      "agents_skills_neon_skill_branch_configuration",
+      "agents_skills_neon_skill_branch_first_dev_flow",
+      "agents_skills_neon_skill_choosing_the_right_skill",
+      "agents_skills_neon_skill_fetching_docs_as_markdown",
+      "agents_skills_neon_skill_finding_the_right_page",
+      "agents_skills_neon_skill_getting_started_with_neon",
+      "agents_skills_neon_skill_gotchas",
+      "agents_skills_neon_skill_how_checkout_composes_with_neon_ts",
+      "agents_skills_neon_skill_installing_the_right_skill",
+      "agents_skills_neon_skill_manage_neon_resources",
+      "agents_skills_neon_skill_neon",
+      "agents_skills_neon_skill_neon_auth_invalid_domain",
+      "agents_skills_neon_skill_neon_documentation",
+      "agents_skills_neon_skill_neon_for_agentic_platforms",
+      "agents_skills_neon_skill_neon_infrastructure_as_code",
+      "agents_skills_neon_skill_opting_out_of_local_env_vars",
+      "agents_skills_neon_skill_provision_services_with_neon_config",
+      "agents_skills_neon_skill_public_beta_service_availability",
+      "agents_skills_neon_skill_type_safe_config_invalid_setups_don_t_compile",
+      "agents_skills_neon_skill_type_safe_env_vars_with_parseenv",
+      "agents_skills_neon_skill_updating_skills",
+      "agents_skills_neon_skill_useful_cli_commands"
+    ],
+    "9": [
+      "antigravity_landing_page_brief",
+      "antigravity_landing_page_brief_1_hero",
+      "antigravity_landing_page_brief_2_narrative_flow",
+      "antigravity_landing_page_brief_3_interactive_modules",
+      "antigravity_landing_page_brief_4_services_and_proof",
+      "antigravity_landing_page_brief_5_navigation_footer_and_ctas",
+      "antigravity_landing_page_brief_6_responsive_behavior",
+      "antigravity_landing_page_brief_7_accessibility_and_motion",
+      "antigravity_landing_page_brief_8_content_and_encoding",
+      "antigravity_landing_page_brief_9_code_quality_and_scope",
+      "antigravity_landing_page_brief_antigravity_brief_understand_the_platform_and_beautify_the_landing_page",
+      "antigravity_landing_page_brief_definition_of_done",
+      "antigravity_landing_page_brief_design_direction_and_implementation_requirements",
+      "antigravity_landing_page_brief_existing_visual_language_to_preserve_and_elevate",
+      "antigravity_landing_page_brief_expected_deliverables",
+      "antigravity_landing_page_brief_landing_page_objective",
+      "antigravity_landing_page_brief_required_first_steps",
+      "antigravity_landing_page_brief_system_context"
+    ],
+    "10": [
       "src_app_locale_projects_page",
       "src_app_locale_projects_page_dynamic",
       "src_app_locale_projects_page_projectspage",
@@ -385,23 +449,48 @@
       "src_lib_queries_getpublishedprojects",
       "src_lib_queries_projectrow"
     ],
-    "9": [
-      "src_app_api_leads_route",
-      "src_app_api_leads_route_post",
-      "src_lib_email",
-      "src_lib_email_mail",
-      "src_lib_email_sendmail",
-      "src_lib_rate_limit",
-      "src_lib_rate_limit_bucket",
-      "src_lib_rate_limit_globalforlimit",
-      "src_lib_rate_limit_ratelimit",
-      "src_lib_validation",
-      "src_lib_validation_generatereference",
-      "src_lib_validation_leadinput",
-      "src_lib_validation_leadschema",
-      "tests_unit_test"
+    "11": [
+      "agents_skills_neon_postgres_skill",
+      "agents_skills_neon_postgres_skill_1_select_the_organization_and_project",
+      "agents_skills_neon_postgres_skill_2_get_the_connection_string",
+      "agents_skills_neon_postgres_skill_3_pick_the_connection_method_and_driver",
+      "agents_skills_neon_postgres_skill_4_set_up_the_schema",
+      "agents_skills_neon_postgres_skill_autoscaling",
+      "agents_skills_neon_postgres_skill_branching",
+      "agents_skills_neon_postgres_skill_connection_pooling",
+      "agents_skills_neon_postgres_skill_instant_restore",
+      "agents_skills_neon_postgres_skill_ip_allow_lists",
+      "agents_skills_neon_postgres_skill_lakebase_postgres",
+      "agents_skills_neon_postgres_skill_logical_replication",
+      "agents_skills_neon_postgres_skill_read_replicas",
+      "agents_skills_neon_postgres_skill_scale_to_zero",
+      "agents_skills_neon_postgres_skill_setup_flow",
+      "agents_skills_neon_postgres_skill_when_to_use_pooled_vs_direct_connections"
     ],
-    "10": [
+    "12": [
+      "migration_report",
+      "migration_report_accessibility_concerns_found_and_fixed",
+      "migration_report_b1_production_migration_report",
+      "migration_report_conceptually_reusable_vs_rebuilt",
+      "migration_report_content_requiring_verification",
+      "migration_report_missing_assets_broken_references",
+      "migration_report_preserved",
+      "migration_report_redesigned",
+      "migration_report_removed",
+      "migration_report_security_concerns_found_and_fixed"
+    ],
+    "13": [
+      "readme",
+      "readme_better_auth",
+      "readme_company_identity",
+      "readme_content_verification",
+      "readme_first_administrator",
+      "readme_home_biogas_kenya_final_consolidated_platform",
+      "readme_neon_setup",
+      "readme_production_checklist",
+      "readme_what_is_included"
+    ],
+    "14": [
       "src_app_layout",
       "src_app_layout_display",
       "src_app_layout_editorial",
@@ -410,77 +499,100 @@
       "src_app_layout_rootlayout",
       "src_app_layout_sans"
     ],
-    "11": [
+    "15": [
+      "final_changelog",
+      "final_changelog_added_or_consolidated",
+      "final_changelog_final_consolidation_changelog",
+      "final_changelog_foundation_selected",
+      "final_changelog_learnings_incorporated_from_a_and_b",
+      "final_changelog_removed_from_earlier_prototypes"
+    ],
+    "16": [
       "src_middleware",
       "src_middleware_config",
       "src_middleware_frame_ancestors",
       "src_middleware_middleware",
       "src_middleware_security_headers"
     ],
-    "12": [
+    "17": [
       "src_app_locale_knowledge_guides_slug_page",
       "src_app_locale_knowledge_guides_slug_page_generatestaticparams",
       "src_app_locale_knowledge_guides_slug_page_guidepage",
       "src_app_locale_knowledge_guides_slug_page_guides"
     ],
-    "13": [
+    "18": [
+      "agents_rules_graphify",
+      "agents_rules_graphify_graphify"
+    ],
+    "19": [
+      "agents_workflows_graphify",
+      "agents_workflows_graphify_workflow_graphify"
+    ],
+    "20": [
       "next_config",
       "next_config_nextconfig"
     ],
-    "14": [
+    "21": [
       "postcss_config",
       "postcss_config_postcssconfig"
     ],
-    "15": [
+    "22": [
       "src_app_admin_page",
       "src_app_admin_page_adminindex"
     ],
-    "16": [
+    "23": [
       "src_app_auth_layout",
       "src_app_auth_layout_authlayout"
     ],
-    "17": [
+    "24": [
       "src_app_auth_pending_page",
       "src_app_auth_pending_page_pendingpage"
     ],
-    "18": [
+    "25": [
       "src_app_page",
       "src_app_page_root"
     ],
-    "19": [
+    "26": [
       "src_lib_auth_client",
       "src_lib_auth_client_authclient"
     ],
-    "20": [
+    "27": [
       "drizzle_config"
     ],
-    "21": [
+    "28": [
       "eslint_config"
     ]
   },
   "cohesion": {
-    "0": 0.0658876987990912,
-    "1": 0.06868686868686869,
-    "2": 0.09306122448979592,
-    "3": 0.11861861861861862,
-    "4": 0.08558558558558559,
-    "5": 0.05555555555555555,
-    "6": 0.06896551724137931,
+    "0": 0.05906553041434029,
+    "1": 0.051228070175438595,
+    "2": 0.09693877551020408,
+    "3": 0.12280701754385964,
+    "4": 0.05555555555555555,
+    "5": 0.06896551724137931,
+    "6": 0.1111111111111111,
     "7": 0.07407407407407407,
-    "8": 0.19852941176470587,
-    "9": 0.24175824175824176,
-    "10": 0.2857142857142857,
-    "11": 0.4,
-    "12": 0.5,
-    "13": 1.0,
-    "14": 1.0,
-    "15": 1.0,
-    "16": 1.0,
-    "17": 1.0,
+    "8": 0.08,
+    "9": 0.1111111111111111,
+    "10": 0.19852941176470587,
+    "11": 0.125,
+    "12": 0.2,
+    "13": 0.2222222222222222,
+    "14": 0.2857142857142857,
+    "15": 0.3333333333333333,
+    "16": 0.4,
+    "17": 0.5,
     "18": 1.0,
     "19": 1.0,
     "20": 1.0,
-    "21": 1.0
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0
   },
   "gods": [
     {
@@ -504,11 +616,6 @@
       "degree": 18
     },
     {
-      "id": "src_components_pageheader_pageheader",
-      "label": "PageHeader()",
-      "degree": 17
-    },
-    {
       "id": "src_lib_rbac_can",
       "label": "can()",
       "degree": 17
@@ -519,9 +626,14 @@
       "degree": 17
     },
     {
+      "id": "src_components_pageheader_pageheader",
+      "label": "PageHeader()",
+      "degree": 13
+    },
+    {
       "id": "src_components_admin_adminheader_adminheader",
       "label": "AdminHeader()",
-      "degree": 14
+      "degree": 13
     },
     {
       "id": "src_lib_i18n_getdict",
@@ -536,15 +648,15 @@
   ],
   "surprises": [
     {
-      "source": "AboutPage()",
-      "target": "SERVICE_GROUPS",
+      "source": "UsersPage()",
+      "target": "requirePermission()",
       "source_files": [
-        "src/app/[locale]/about/page.tsx",
-        "src/lib/content.ts"
+        "src/app/admin/users/page.tsx",
+        "src/lib/guard.ts"
       ],
       "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "peripheral node `AboutPage()` unexpectedly reaches hub `SERVICE_GROUPS`"
+      "relation": "calls",
+      "why": "bridges separate communities; peripheral node `UsersPage()` unexpectedly reaches hub `requirePermission()`"
     },
     {
       "source": "ApplicationDetail()",
@@ -558,28 +670,6 @@
       "why": "peripheral node `ApplicationDetail()` unexpectedly reaches hub `APPLICATIONS`"
     },
     {
-      "source": "HomePage()",
-      "target": "getDict()",
-      "source_files": [
-        "src/app/[locale]/page.tsx",
-        "src/lib/i18n.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "bridges separate communities"
-    },
-    {
-      "source": "HomePage()",
-      "target": "getPublishedProjects()",
-      "source_files": [
-        "src/app/[locale]/page.tsx",
-        "src/lib/queries.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "bridges separate communities"
-    },
-    {
       "source": "ProjectsPage()",
       "target": "getPublishedProjects()",
       "source_files": [
@@ -589,43 +679,65 @@
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "peripheral node `ProjectsPage()` unexpectedly reaches hub `getPublishedProjects()`"
+    },
+    {
+      "source": "RequestAssessment()",
+      "target": "getDict()",
+      "source_files": [
+        "src/app/[locale]/request-assessment/page.tsx",
+        "src/lib/i18n.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `RequestAssessment()` unexpectedly reaches hub `getDict()`"
+    },
+    {
+      "source": "SolutionsPage()",
+      "target": "SERVICE_GROUPS",
+      "source_files": [
+        "src/app/[locale]/solutions/page.tsx",
+        "src/lib/content.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `SolutionsPage()` unexpectedly reaches hub `SERVICE_GROUPS`"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `db` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 8`, `Community 9`?",
-      "why": "High betweenness centrality (0.061) - this node is a cross-community bridge."
+      "question": "Why does `db` connect `schema.ts` to `queries.ts`, `admin.ts`, `actions/auth.ts`, `leads/route.ts`?",
+      "why": "High betweenness centrality (0.041) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `PageHeader()` connect `Community 1` to `Community 8`, `Community 4`?",
-      "why": "High betweenness centrality (0.050) - this node is a cross-community bridge."
+      "question": "Why does `requirePermission()` connect `schema.ts` to `admin.ts`?",
+      "why": "High betweenness centrality (0.022) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `requirePermission()` connect `Community 0` to `Community 2`, `Community 3`?",
-      "why": "High betweenness centrality (0.031) - this node is a cross-community bridge."
+      "question": "Why does `can()` connect `schema.ts` to `admin.ts`, `leads/route.ts`?",
+      "why": "High betweenness centrality (0.010) - this node is a cross-community bridge."
     },
     {
       "type": "isolated_nodes",
       "question": "What connects `nextConfig`, `name`, `private` to the rest of the system?",
-      "why": "137 weakly-connected nodes found - possible documentation gaps or missing edges."
+      "why": "200 weakly-connected nodes found - possible documentation gaps or missing edges."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `Community 0` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.0658876987990912 - nodes in this community are weakly interconnected."
+      "question": "Should `schema.ts` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05906553041434029 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `Community 1` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.06868686868686869 - nodes in this community are weakly interconnected."
+      "question": "Should `content.ts` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.051228070175438595 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `Community 2` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.09306122448979592 - nodes in this community are weakly interconnected."
+      "question": "Should `admin.ts` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09693877551020408 - nodes in this community are weakly interconnected."
     }
   ]
 }

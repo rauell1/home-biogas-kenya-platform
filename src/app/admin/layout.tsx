@@ -2,6 +2,7 @@ import Link from "next/link";
 import { requireUser } from "@/lib/guard";
 import { ROLE_LABELS, type Role, can } from "@/lib/rbac";
 import { signOutAction } from "@/app/actions/auth";
+import BrandLogo from "@/components/BrandLogo";
 
 export const dynamic = "force-dynamic";
 
@@ -65,8 +66,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <aside className="relative bg-ink text-bone lg:min-h-screen lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto">
         <div aria-hidden className="absolute inset-0 grid-lines opacity-25" />
         <div className="relative p-6">
-          <Link href="/en" className="display-md">
-            HOMEBIOGAS<span className="text-methane">.</span>KE
+          <Link href="/en" className="inline-block bg-white p-2">
+            <BrandLogo className="w-[145px]" />
           </Link>
           <p className="mono-label text-bone/40 mt-1.5">Operations console</p>
 

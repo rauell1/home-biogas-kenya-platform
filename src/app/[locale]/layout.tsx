@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getDict, isLocale, locales } from "@/lib/i18n";
 import { SOCIALS, PROCESS_CHAIN } from "@/lib/content";
 import SiteNav from "@/components/SiteNav";
+import BrandLogo from "@/components/BrandLogo";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -25,7 +26,7 @@ export default async function LocaleLayout({
       links: [
         [t.nav.solutions, `/${locale}/solutions`],
         [t.nav.applications, `/${locale}/applications`],
-        ["Products", `/${locale}/products`],
+        [t.nav.products, `/${locale}/products`],
         [t.nav.training, `/${locale}/training`],
       ],
     },
@@ -67,9 +68,7 @@ export default async function LocaleLayout({
         <div className="shell relative pt-20 pb-10">
           <div className="grid gap-14 lg:grid-cols-[1.4fr_2fr]">
             <div>
-              <p className="display-lg">
-                HOMEBIOGAS<span className="text-methane">.</span>KE
-              </p>
+              <div className="inline-block bg-white p-3"><BrandLogo className="w-[190px]" /></div>
               <p className="editorial mt-4 max-w-sm text-bone/70">{t.footerNote}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a className="btn btn-outline-invert btn-sm" href={SOCIALS.linkedin} rel="noopener noreferrer" target="_blank">

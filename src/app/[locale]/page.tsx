@@ -5,6 +5,7 @@ import DigesterCutaway from "@/components/DigesterCutaway";
 import ApplicationScene from "@/components/ApplicationScene";
 import ProjectExplorer from "@/components/ProjectExplorer";
 import Configurator from "@/components/Configurator";
+import ShopPreview from "@/components/ShopPreview";
 import { getPublishedProjects } from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -202,6 +203,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Chapter n="03" title={t.chapters[2]} kicker="One gas line. Nine productive end uses.">
         <ApplicationScene locale={locale} />
       </Chapter>
+
+      <ShopPreview locale={locale} />
 
       {/* ---------- Chapter 04 — Projects ---------- */}
       <Chapter n="04" title={t.chapters[3]} kicker="Only technically reviewed projects with cleared media rights appear here">

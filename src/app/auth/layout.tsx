@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,8 +12,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       <div aria-hidden className="absolute inset-0 grid-lines opacity-40" />
 
       <header className="relative shell py-6 flex items-center justify-between">
-        <Link href="/en" className="display-md">
-          HOMEBIOGAS<span className="text-methane">.</span>KE
+        <Link href="/en" className="inline-block bg-white p-2">
+          <BrandLogo className="w-[150px]" />
         </Link>
         <Link href="/en" className="mono-label text-bone/50 hover:text-methane">
           ← Public site
