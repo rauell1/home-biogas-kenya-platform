@@ -10,9 +10,13 @@ type Dict = {
   heroTitleA: string;
   heroTitleB: string;
   heroLead: string;
+  heroKicker: string;
   ctaPrimary: string;
   ctaSecondary: string;
   chapters: string[];
+  capabilityTitle: string;
+  capabilityLead: string;
+  zeroProjectsNotice: string;
   disclaimer: string;
   footerNote: string;
 };
@@ -30,6 +34,7 @@ export const dictionaries: Record<Locale, Dict> = {
       contact: "Contact",
       request: "Request assessment",
     },
+    heroKicker: "Kenyan Biogas Engineering",
     heroTitleA: "Waste contains energy.",
     heroTitleB: "We engineer the system that releases it.",
     heroLead:
@@ -44,6 +49,11 @@ export const dictionaries: Record<Locale, Dict> = {
       "Configure a possible solution",
       "Start a project",
     ],
+    capabilityTitle: "From feasibility study to commissioning and maintenance",
+    capabilityLead:
+      "We design, construct, commission and maintain closed-loop anaerobic digesters engineered for East African agricultural and institutional waste streams.",
+    zeroProjectsNotice:
+      "No verified projects published in the database yet. Every project record undergoes rigorous technical review and media clearance before publication.",
     disclaimer:
       "This is a preliminary educational assessment and not a final engineering design, performance guarantee or quotation. Final sizing requires a Home Biogas Kenya site survey and technical assessment.",
     footerNote: "Engineering-led renewable energy and organic-waste solutions.",
@@ -60,6 +70,7 @@ export const dictionaries: Record<Locale, Dict> = {
       contact: "Wasiliana",
       request: "Omba tathmini",
     },
+    heroKicker: "Uhandisi wa Biogesi Kenya",
     heroTitleA: "Taka zina nishati.",
     heroTitleB: "Tunabuni mfumo unaoiachilia.",
     heroLead:
@@ -74,6 +85,11 @@ export const dictionaries: Record<Locale, Dict> = {
       "Panga suluhisho linalowezekana",
       "Anza mradi",
     ],
+    capabilityTitle: "Kuanzia utafiti wa uwezekano hadi ujenzi na matengenezo",
+    capabilityLead:
+      "Tunabuni, tunajenga na kutunza mitambo ya biogesi iliyoundwa kwa ajili ya taka za kilimo na taasisi nchini Kenya.",
+    zeroProjectsNotice:
+      "Bado hakuna miradi iliyothibitishwa iliyochapishwa. Miradi yote hupitia ukaguzi wa kiufundi kabla ya kuchapishwa.",
     disclaimer:
       "Hii ni tathmini ya awali ya kielimu, si muundo wa mwisho wa uhandisi, dhamana ya utendaji wala nukuu ya bei. Ukubwa wa mwisho unahitaji uchunguzi wa eneo na tathmini ya kiufundi ya Home Biogas Kenya.",
     footerNote: "Suluhisho za nishati mbadala na taka za kikaboni zinazoongozwa na uhandisi.",

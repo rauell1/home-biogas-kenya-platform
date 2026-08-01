@@ -350,6 +350,66 @@ body {
   color: color-mix(in srgb, var(--color-ink) 78%, transparent);
 }
 
+/* ---------- Industrial Organic Technical Utilities ---------- */
+
+.tech-card {
+  position: relative;
+  background: var(--color-bone);
+  border: 1px solid var(--hairline);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-card:hover {
+  border-color: color-mix(in srgb, var(--color-clay) 40%, transparent);
+}
+
+.stat-card {
+  position: relative;
+  padding: 1.25rem;
+  background: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  border: 1px solid var(--hairline-invert);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: color-mix(in srgb, var(--color-methane) 50%, transparent);
+  background: color-mix(in srgb, var(--color-ink) 65%, transparent);
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--color-methane);
+  border-left: 2px solid var(--color-methane);
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  background: color-mix(in srgb, var(--color-methane) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-methane) 35%, transparent);
+  color: var(--color-methane);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@keyframes flowPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+.animate-flow-pulse {
+  animation: flowPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 /* ---------- Accessibility ---------- */
 
 a:focus-visible,

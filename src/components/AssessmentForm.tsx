@@ -25,7 +25,8 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
     const raw = window.sessionStorage.getItem("hbk_config");
     if (raw) {
       try {
-        setConfig(JSON.parse(raw));
+        const parsed = JSON.parse(raw);
+        queueMicrotask(() => setConfig(parsed));
       } catch {
         /* ignore malformed session data */
       }

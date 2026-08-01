@@ -6,17 +6,19 @@ import AdminHeader from "@/components/admin/AdminHeader";
 
 export const dynamic = "force-dynamic";
 
-export default async function SystemHealth() {
-  await requireUser();
-  let dbStatus = "ok";
-  let latency = 0;
+async function checkDb() {
   const started = Date.now();
   try {
     await db.execute(sql`select 1`);
-    latency = Date.now() - started;
+    return { dbStatus: "ok", latency: Date.now() - started };
   } catch {
-    dbStatus = "unavailable";
+    return { dbStatus: "unavailable", latency: 0 };
   }
+}
+
+export default async function SystemHealth() {
+  await requireUser();
+  const { dbStatus, latency } = await checkDb();
   return (
     <div className="max-w-2xl">
       <AdminHeader eyebrow="Diagnostics" title="System health" description="Live checks of the database and supporting services." />

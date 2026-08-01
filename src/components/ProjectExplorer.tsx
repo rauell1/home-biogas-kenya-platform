@@ -48,7 +48,20 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
   const activeFilterCount = Object.values(filters).filter(Boolean).length;
 
   if (items.length === 0) {
-    return <p className="mono-data text-ink/55">No published projects yet.</p>;
+    return (
+      <div className="tech-card p-8 md:p-12 text-center max-w-xl mx-auto">
+        <p className="mono-label text-clay">Verification & Review Standard</p>
+        <h3 className="display-md mt-2">No published project records currently match public clearance</h3>
+        <p className="editorial mt-3 text-ink/75">
+          All verified engineering installations undergo multi-step technical and media-rights review before public display.
+        </p>
+        <div className="mt-6 flex justify-center">
+          <Link href={`/${locale}/request-assessment`} className="btn btn-primary btn-sm">
+            Request a site assessment for your facility →
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
