@@ -1,5 +1,5 @@
 {
-  "0": "schema.ts",
+  "0": "index.ts",
   "1": "content.ts",
   "2": "admin.ts",
   "3": "actions/auth.ts",
@@ -22,7 +22,7 @@
   "20": "next.config.ts",
   "21": "postcss.config.mjs",
   "22": "admin/page.tsx",
-  "23": "getDict",
+  "23": "i18n.ts",
   "24": "pending/page.tsx",
   "25": "app/page.tsx",
   "26": "auth-client.ts",
@@ -35,5 +35,12 @@
   "33": "check-forbidden-dashes.mjs",
   "34": "products/page.tsx",
   "35": "[locale]/layout.tsx",
-  "36": "apply-migration.mjs"
+  "36": "apply-migration.mjs",
+  "37": "requirePermission",
+  "38": "users/page.tsx",
+  "39": "schema.ts",
+  "40": "AdminHeader.tsx",
+  "41": "guard.ts",
+  "42": "admin/projects/page.tsx",
+  "43": "robots.ts"
 }

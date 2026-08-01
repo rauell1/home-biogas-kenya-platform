@@ -6,6 +6,7 @@ import SiteNav from "@/components/SiteNav";
 import BrandLogo from "@/components/BrandLogo";
 import NewsletterForm from "@/components/NewsletterForm";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import JsonLd from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -21,6 +22,39 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const t = getDict(locale);
+
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Home Biogas Kenya",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://homebiogas.co.ke",
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://homebiogas.co.ke"}/brand/home-biogas-kenya-logo.png`,
+    sameAs: [SOCIALS.linkedin, SOCIALS.facebook],
+    description: t.heroLead,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+  };
+
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Home Biogas Kenya",
+    description: t.capabilityLead,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -1.286389,
+      longitude: 36.817223,
+    },
+    priceRange: "$$",
+  };
 
   const columns = [
     {
@@ -54,6 +88,7 @@ export default async function LocaleLayout({
 
   return (
     <div lang={locale} className="min-h-screen flex flex-col">
+      <JsonLd schema={[orgSchema, businessSchema]} />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:m-3 focus:bg-ink focus:text-bone focus:px-4 focus:py-3"

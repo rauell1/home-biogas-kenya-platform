@@ -30,6 +30,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://homebiogas.co.ke"),
   title: {
     default: "Home Biogas Kenya  -  Waste contains energy",
     template: "%s · Home Biogas Kenya",
