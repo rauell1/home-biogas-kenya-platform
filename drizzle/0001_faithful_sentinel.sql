@@ -1,0 +1,2 @@
+ALTER TABLE "staff_profiles" ADD COLUMN "neon_auth_user_id" text;--> statement-breakpoint
+ALTER TABLE "staff_profiles" ADD CONSTRAINT "staff_profiles_neon_auth_user_id_unique" UNIQUE("neon_auth_user_id");

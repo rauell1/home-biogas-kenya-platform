@@ -14,6 +14,7 @@ import {
 
 export const staffProfiles = pgTable("staff_profiles", {
   id: uuid("id").primaryKey().defaultRandom(),
+  neonAuthUserId: text("neon_auth_user_id").unique(),
   email: text("email").notNull().unique(),
   fullName: text("full_name").notNull(),
   passwordHash: text("password_hash").notNull(),

@@ -8,6 +8,13 @@
       "when": 1785574056961,
       "tag": "0000_silky_ironclad",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1785592680774,
+      "tag": "0001_faithful_sentinel",
+      "breakpoints": true
     }
   ]
 }
