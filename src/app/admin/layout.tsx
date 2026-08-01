@@ -38,6 +38,8 @@ const GROUPS: { title: string; items: Item[] }[] = [
     items: [
       { href: "/admin/users", label: "Staff & access", permission: "users.manage" },
       { href: "/admin/audit-log", label: "Audit log", permission: "audit.read" },
+      { href: "/admin/cookie-settings", label: "Cookie & GDPR settings", permission: "settings.manage" },
+      { href: "/admin/consent-logs", label: "Consent logs", permission: "audit.read" },
       { href: "/admin/settings", label: "Settings", permission: "settings.manage" },
     ],
   },

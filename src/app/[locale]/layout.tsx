@@ -5,6 +5,7 @@ import { SOCIALS, PROCESS_CHAIN } from "@/lib/content";
 import SiteNav from "@/components/SiteNav";
 import BrandLogo from "@/components/BrandLogo";
 import NewsletterForm from "@/components/NewsletterForm";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -64,6 +65,8 @@ export default async function LocaleLayout({
         {children}
       </main>
 
+      <CookieConsentBanner locale={locale} labels={t.cookies} />
+
       <footer className="relative overflow-hidden bg-ink text-bone">
         <div aria-hidden className="absolute inset-0 grid-lines opacity-40" />
         <div className="shell relative pt-20 pb-10">
@@ -119,7 +122,16 @@ export default async function LocaleLayout({
 
           <div className="mt-10 hairline-invert pt-6 flex flex-wrap items-center justify-between gap-4 mono-label text-bone/45">
             <span>© {new Date().getFullYear()} Home Biogas Kenya · Nairobi</span>
-            <span className="flex gap-5">
+            <span className="flex flex-wrap gap-4 text-xs">
+              <Link href={`/${locale}/privacy-policy`} className="hover:text-bone">
+                Privacy Policy
+              </Link>
+              <Link href={`/${locale}/cookie-policy`} className="hover:text-bone">
+                Cookie Policy
+              </Link>
+              <Link href={`/${locale}/terms`} className="hover:text-bone">
+                Terms of Service
+              </Link>
               <Link href={locale === "en" ? "/sw" : "/en"} className="hover:text-bone">
                 {locale === "en" ? "Kiswahili" : "English"}
               </Link>

@@ -1,16 +1,16 @@
 # Graph Report - home-biogas-kenya-final  (2026-08-01)
 
 ## Corpus Check
-- 112 files · ~77,790 words
+- 124 files · ~84,189 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 531 nodes · 1013 edges · 32 communities (25 shown, 7 thin omitted)
+- 570 nodes · 1097 edges · 37 communities (29 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7b543b3a`
+- Built from commit: `839600e5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,56 +37,61 @@
 - workflows/graphify.md
 - next.config.ts
 - postcss.config.mjs
-- [locale]/layout.tsx
+- getDict
 - auth-client.ts
-- users/page.tsx
+- PageHeader.tsx
 - seed-db.mjs
+- [locale]/page.tsx
+- consent-manager.ts
 - check-forbidden-dashes.mjs
+- products/page.tsx
+- [locale]/layout.tsx
+- apply-migration.mjs
 
 ## God Nodes (most connected - your core abstractions)
-1. `requirePermission()` - 31 edges
-2. `db` - 25 edges
+1. `requirePermission()` - 37 edges
+2. `db` - 30 edges
 3. `audit()` - 25 edges
-4. `assertPermission()` - 18 edges
-5. `PageHeader()` - 17 edges
+4. `PageHeader()` - 20 edges
+5. `assertPermission()` - 18 edges
 6. `can()` - 17 edges
 7. `compilerOptions` - 17 edges
-8. `AdminHeader()` - 14 edges
+8. `AdminHeader()` - 16 edges
 9. `getDict()` - 12 edges
 10. `scripts` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `InviteForm()` --indirect_call--> `inviteStaffAction()`  [INFERRED]
-  src/components/admin/InviteForm.tsx → src/app/actions/admin.ts
 - `UsersPage()` --calls--> `requirePermission()`  [EXTRACTED]
   src/app/admin/users/page.tsx → src/lib/guard.ts
-- `InvitePage()` --calls--> `hashToken()`  [EXTRACTED]
-  src/app/auth/invite/[token]/page.tsx → src/lib/legacy-auth.ts
 - `AboutPage()` --references--> `SERVICE_GROUPS`  [EXTRACTED]
   src/app/[locale]/about/page.tsx → src/lib/content.ts
 - `ApplicationDetail()` --references--> `APPLICATIONS`  [EXTRACTED]
   src/app/[locale]/applications/[slug]/page.tsx → src/lib/content.ts
+- `HomePage()` --calls--> `getDict()`  [EXTRACTED]
+  src/app/[locale]/page.tsx → src/lib/i18n.ts
+- `HomePage()` --calls--> `getPublishedProjects()`  [EXTRACTED]
+  src/app/[locale]/page.tsx → src/lib/queries.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (32 total, 7 thin omitted)
+## Communities (37 total, 8 thin omitted)
 
 ### Community 0 - "schema.ts"
-Cohesion: 0.06
-Nodes (54): Approvals(), dynamic, ArticlesPage(), dynamic, AuditLogPage(), dynamic, Dashboard(), dynamic (+46 more)
+Cohesion: 0.05
+Nodes (70): Approvals(), dynamic, ArticlesPage(), dynamic, AuditLogPage(), dynamic, AdminConsentLogsPage(), dynamic (+62 more)
 
 ### Community 1 - "content.ts"
-Cohesion: 0.07
-Nodes (34): dynamic, SettingsPage(), AboutPage(), ApplicationDetail(), dynamic, HomePage(), inquiryLinks(), ProductsPage() (+26 more)
+Cohesion: 0.16
+Nodes (12): AboutPage(), HomePage(), SolutionsPage(), SolutionDetail(), ALL_SERVICES, AppItem, COMPANY, DIGESTER_TECHNOLOGIES (+4 more)
 
 ### Community 2 - "admin.ts"
-Cohesion: 0.14
-Nodes (28): addLeadActivityAction(), approveTechnicalAction(), createSurveyAction(), FormState, importSourceAction(), inviteStaffAction(), listField(), projectSchema (+20 more)
+Cohesion: 0.12
+Nodes (33): addLeadActivityAction(), approveTechnicalAction(), createSurveyAction(), FormState, importSourceAction(), inviteStaffAction(), listField(), projectSchema (+25 more)
 
 ### Community 3 - "actions/auth.ts"
-Cohesion: 0.14
-Nodes (25): acceptInvitationAction(), ActionState, bootstrapAction(), ensureNeonAuthUser(), requestPasswordResetAction(), signInAction(), signOutAction(), { GET, POST } (+17 more)
+Cohesion: 0.11
+Nodes (32): acceptInvitationAction(), ActionState, bootstrapAction(), ensureNeonAuthUser(), requestPasswordResetAction(), signInAction(), signOutAction(), dynamic (+24 more)
 
 ### Community 4 - "devDependencies"
 Cohesion: 0.05
@@ -97,8 +102,8 @@ Cohesion: 0.07
 Nodes (28): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts (+20 more)
 
 ### Community 6 - "leads/route.ts"
-Cohesion: 0.09
-Nodes (25): POST(), POST(), subscriptionSchema, APPS, Configurator(), SITE_FIELDS, STEPS, emailList() (+17 more)
+Cohesion: 0.11
+Nodes (22): POST(), POST(), subscriptionSchema, APPS, Configurator(), SITE_FIELDS, STEPS, emailList() (+14 more)
 
 ### Community 7 - "dependencies"
 Cohesion: 0.07
@@ -140,37 +145,53 @@ Nodes (5): Added or consolidated, Final consolidation changelog, Foundation sele
 Cohesion: 0.40
 Nodes (3): config, FRAME_ANCESTORS, SECURITY_HEADERS
 
-### Community 23 - "[locale]/layout.tsx"
-Cohesion: 0.12
-Nodes (16): LocaleLayout(), RequestAssessment(), FuelSavingsPage(), ConfiguratorPage(), AssessmentForm(), FIELDS, BrandLogo(), FuelSavings() (+8 more)
+### Community 23 - "getDict"
+Cohesion: 0.16
+Nodes (13): LocaleLayout(), RequestAssessment(), FuelSavingsPage(), ConfiguratorPage(), AssessmentForm(), FIELDS, FuelSavings(), Dict (+5 more)
 
-### Community 29 - "users/page.tsx"
-Cohesion: 0.15
-Nodes (17): AdminLayout(), dynamic, GROUPS, Item, dynamic, UsersPage(), dynamic, InvitePage() (+9 more)
+### Community 29 - "PageHeader.tsx"
+Cohesion: 0.11
+Nodes (10): dynamic, dynamic, GUIDES, dynamic, dynamic, ROWS, TONE, COURSES (+2 more)
+
+### Community 31 - "[locale]/page.tsx"
+Cohesion: 0.18
+Nodes (8): ApplicationDetail(), dynamic, ApplicationScene(), DigesterCutaway(), FEEDSTOCKS, HOTSPOTS, APPLICATIONS, PLANT_COMPONENTS
+
+### Community 32 - "consent-manager.ts"
+Cohesion: 0.22
+Nodes (12): POST(), CookieConsentBanner(), ALL_GRANTED_CONSENT, applyGoogleConsentModeV2(), buildConsentModeV2(), ConsentCategories, ConsentModeV2Payload, ConsentRegion (+4 more)
 
 ### Community 33 - "check-forbidden-dashes.mjs"
 Cohesion: 0.40
 Nodes (3): excludedDirectories, textExtensions, violations
 
+### Community 34 - "products/page.tsx"
+Cohesion: 0.26
+Nodes (7): inquiryLinks(), ProductsPage(), ProductDetail(), ShopPreview(), CatalogueItem, PLANT_SIZES, PRODUCTS
+
+### Community 35 - "[locale]/layout.tsx"
+Cohesion: 0.43
+Nodes (3): BrandLogo(), NewsletterForm(), SiteNav()
+
 ## Knowledge Gaps
-- **209 isolated node(s):** `nextConfig`, `name`, `private`, `dev`, `build` (+204 more)
+- **219 isolated node(s):** `nextConfig`, `name`, `private`, `dev`, `build` (+214 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `db` connect `schema.ts` to `admin.ts`, `actions/auth.ts`, `leads/route.ts`, `queries.ts`, `users/page.tsx`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `PageHeader()` connect `content.ts` to `schema.ts`, `queries.ts`, `[locale]/layout.tsx`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `requirePermission()` connect `schema.ts` to `content.ts`, `admin.ts`, `users/page.tsx`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `db` connect `schema.ts` to `admin.ts`, `actions/auth.ts`, `leads/route.ts`, `queries.ts`, `PageHeader.tsx`?**
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
+- **Why does `PageHeader()` connect `PageHeader.tsx` to `content.ts`, `products/page.tsx`, `queries.ts`, `getDict`, `[locale]/page.tsx`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+- **Why does `requirePermission()` connect `schema.ts` to `admin.ts`, `actions/auth.ts`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **What connects `nextConfig`, `name`, `private` to the rest of the system?**
-  _209 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _219 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `schema.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06394027913015254 - nodes in this community are weakly interconnected._
-- **Should `content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06557377049180328 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05256648113790971 - nodes in this community are weakly interconnected._
 - **Should `admin.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.14393939393939395 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11923076923076924 - nodes in this community are weakly interconnected._
+- **Should `actions/auth.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.10676532769556026 - nodes in this community are weakly interconnected._

@@ -214,3 +214,40 @@ export const siteSurveys = pgTable("site_surveys", {
   status: text("status").notNull().default("scheduled"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 });
+
+/* ---------------- GDPR & Cookie Compliance ---------------- */
+
+export const cookieConsentLogs = pgTable("cookie_consent_logs", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  consentId: text("consent_id").notNull(),
+  categories: jsonb("categories").$type<{ necessary: boolean; functional: boolean; analytics: boolean; marketing: boolean }>().notNull(),
+  region: text("region").notNull().default("GLOBAL"), // EU | US_CA | GLOBAL
+  ipHash: text("ip_hash"),
+  userAgent: text("user_agent"),
+  consentModeV2: jsonb("consent_mode_v2").$type<{ ad_storage: string; analytics_storage: string; ad_user_data: string; ad_personalization: string }>(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const cookieConsentSettings = pgTable("cookie_consent_settings", {
+  id: serial("id").primaryKey(),
+  bannerTheme: text("banner_theme").notNull().default("dark"), // dark | light | organic
+  bannerPosition: text("banner_position").notNull().default("bottom_bar"), // bottom_bar | modal
+  geotargetingMode: text("geotargeting_mode").notNull().default("auto"), // auto | eu_opt_in | us_ca_opt_out | global_opt_in
+  consentModeV2Enabled: boolean("consent_mode_v2_enabled").notNull().default(true),
+  autoBlockTrackers: boolean("auto_block_trackers").notNull().default(true),
+  customCss: text("custom_css"),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const cookieTrackers = pgTable("cookie_trackers", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  name: text("name").notNull(),
+  domain: text("domain").notNull(),
+  category: text("category").notNull(), // necessary | functional | analytics | marketing
+  provider: text("provider").notNull(),
+  expiry: text("expiry"),
+  descriptionEn: text("description_en"),
+  descriptionSw: text("description_sw"),
+  isAutoScanned: boolean("is_auto_scanned").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+});

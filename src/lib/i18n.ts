@@ -19,6 +19,23 @@ type Dict = {
   zeroProjectsNotice: string;
   disclaimer: string;
   footerNote: string;
+  cookies: {
+    bannerTitle: string;
+    bannerBody: string;
+    acceptAll: string;
+    rejectOptional: string;
+    customize: string;
+    savePreferences: string;
+    manageTitle: string;
+    necessaryTitle: string;
+    necessaryDesc: string;
+    functionalTitle: string;
+    functionalDesc: string;
+    analyticsTitle: string;
+    analyticsDesc: string;
+    marketingTitle: string;
+    marketingDesc: string;
+  };
 };
 
 export const dictionaries: Record<Locale, Dict> = {
@@ -58,6 +75,24 @@ export const dictionaries: Record<Locale, Dict> = {
     disclaimer:
       "This is a preliminary educational assessment and not a final engineering design, performance guarantee or quotation. Final sizing requires a Home Biogas Kenya site survey and technical assessment.",
     footerNote: "Engineering-led renewable energy and organic-waste solutions.",
+    cookies: {
+      bannerTitle: "Privacy & Cookie Compliance",
+      bannerBody:
+        "We use essential cookies for system security and session management. With your consent, we also use functional, analytics, and marketing tags compliant with GDPR, CCPA, and Kenyan Data Protection regulations.",
+      acceptAll: "Accept all",
+      rejectOptional: "Reject optional",
+      customize: "Customize preferences",
+      savePreferences: "Save preferences",
+      manageTitle: "Cookie & Preference Management",
+      necessaryTitle: "Essential System Cookies",
+      necessaryDesc: "Required for core security, session validation, and site navigation. Cannot be disabled.",
+      functionalTitle: "Functional Preferences",
+      functionalDesc: "Remembers your language choice (English/Kiswahili) and preliminary configurator inputs.",
+      analyticsTitle: "Performance & Analytics",
+      analyticsDesc: "Helps us measure site usage and platform performance via Google Consent Mode v2.",
+      marketingTitle: "Marketing & Communication",
+      marketingDesc: "Allows localized assessment reminders and tailored engineering communications.",
+    },
   },
   sw: {
     nav: {
@@ -95,6 +130,24 @@ export const dictionaries: Record<Locale, Dict> = {
     disclaimer:
       "Hii ni tathmini ya awali ya kielimu, si muundo wa mwisho wa uhandisi, dhamana ya utendaji wala nukuu ya bei. Ukubwa wa mwisho unahitaji uchunguzi wa eneo na tathmini ya kiufundi ya Home Biogas Kenya.",
     footerNote: "Suluhisho za nishati mbadala na taka za kikaboni zinazoongozwa na uhandisi.",
+    cookies: {
+      bannerTitle: "Ulinzi wa Data na Vidakuzi",
+      bannerBody:
+        "Tunatumia vidakuzi muhimu kwa ajili ya usalama wa mfumo. Kwa idhini yako, tunatumia pia vitambulisho vya uchanganuzi na masoko kulingana na sheria za GDPR, CCPA na Sheria ya Ulinzi wa Data ya Kenya.",
+      acceptAll: "Kubali vyote",
+      rejectOptional: "Kataa yasiyo ya lazima",
+      customize: "Boresha mapendeleo",
+      savePreferences: "Hifadhi mapendeleo",
+      manageTitle: "Usimamizi wa Vidakuzi na Mapendeleo",
+      necessaryTitle: "Vidakuzi Muhimu vya Mfumo",
+      necessaryDesc: "Vinahitajika kwa ajili ya usalama, uthibitisho na urambazaji. Haviwezi kuzimwa.",
+      functionalTitle: "Mapendeleo ya Utendaji",
+      functionalDesc: "Hukumbuka lugha uliyochagua (Kiingereza/Kiswahili) na maelezo ya awali ya zana.",
+      analyticsTitle: "Uchanganuzi wa Mfumo",
+      analyticsDesc: "Hutusaidia kupima matumizi ya tovuti na utendaji kupitia Google Consent Mode v2.",
+      marketingTitle: "Masoko na Mawasiliano",
+      marketingDesc: "Huruhusu vikumbusho vya tathmini na mawasiliano maalum ya uhandisi.",
+    },
   },
 };
 

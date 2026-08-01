@@ -22,13 +22,18 @@
   "20": "next.config.ts",
   "21": "postcss.config.mjs",
   "22": "admin/page.tsx",
-  "23": "[locale]/layout.tsx",
+  "23": "getDict",
   "24": "pending/page.tsx",
   "25": "app/page.tsx",
   "26": "auth-client.ts",
   "27": "drizzle.config.ts",
   "28": "eslint.config.mjs",
-  "29": "users/page.tsx",
+  "29": "PageHeader.tsx",
   "30": "seed-db.mjs",
-  "33": "check-forbidden-dashes.mjs"
+  "31": "[locale]/page.tsx",
+  "32": "consent-manager.ts",
+  "33": "check-forbidden-dashes.mjs",
+  "34": "products/page.tsx",
+  "35": "[locale]/layout.tsx",
+  "36": "apply-migration.mjs"
 }
