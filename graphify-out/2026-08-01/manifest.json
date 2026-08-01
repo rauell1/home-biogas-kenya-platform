@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "src/app/[locale]/page.tsx": {
-    "mtime": 1785600795.3715315,
-    "ast_hash": "f64acd10b180a89d8626f1d04474bb91",
+    "mtime": 1785605576.5503235,
+    "ast_hash": "5158378922469a2d74261e7e2ce595cc",
     "semantic_hash": ""
   },
   "src/app/[locale]/products/[slug]/page.tsx": {
@@ -295,8 +295,8 @@
     "semantic_hash": "b20393dc4fc908eceae0c1303c55cb05"
   },
   "src/app/auth/layout.tsx": {
-    "mtime": 1785597022.318631,
-    "ast_hash": "880891b9fe81e181c4fa3a1ea67c96cc",
+    "mtime": 1785602832.8554137,
+    "ast_hash": "ffcfe9a1cae71db4bec0658bf6115515",
     "semantic_hash": ""
   },
   "src/app/auth/pending/page.tsx": {
@@ -330,9 +330,9 @@
     "semantic_hash": ""
   },
   "src/components/AuthForm.tsx": {
-    "mtime": 1785593128.9649768,
-    "ast_hash": "0438c7295612269c9a3a976d54eb4779",
-    "semantic_hash": "0438c7295612269c9a3a976d54eb4779"
+    "mtime": 1785602834.2180853,
+    "ast_hash": "c7efe9c0406bb957e4fffe3da39eae0a",
+    "semantic_hash": ""
   },
   "src/components/Configurator.tsx": {
     "mtime": 1785600795.381824,
@@ -340,9 +340,9 @@
     "semantic_hash": ""
   },
   "src/components/DigesterCutaway.tsx": {
-    "mtime": 1785588296.0,
-    "ast_hash": "9cbd39e9082313706243f4c03933e0c9",
-    "semantic_hash": "9cbd39e9082313706243f4c03933e0c9"
+    "mtime": 1785604207.2848606,
+    "ast_hash": "dad7e1e92e6135ae42f2c6447e37a664",
+    "semantic_hash": ""
   },
   "src/components/FuelSavings.tsx": {
     "mtime": 1785600795.3871074,

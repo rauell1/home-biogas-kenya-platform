@@ -1,16 +1,16 @@
 # Graph Report - home-biogas-kenya-final  (2026-08-01)
 
 ## Corpus Check
-- 111 files · ~77,033 words
+- 111 files · ~77,072 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 528 nodes · 1009 edges · 31 communities (25 shown, 6 thin omitted)
+- 528 nodes · 1011 edges · 30 communities (24 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `79d5530e`
+- Built from commit: `f06c266f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,7 +39,6 @@
 - postcss.config.mjs
 - [locale]/layout.tsx
 - auth-client.ts
-- Configurator.tsx
 - check-forbidden-dashes.mjs
 
 ## God Nodes (most connected - your core abstractions)
@@ -55,8 +54,6 @@
 10. `scripts` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ConfiguratorPage()` --calls--> `getDict()`  [EXTRACTED]
-  src/app/[locale]/tools/solution-configurator/page.tsx → src/lib/i18n.ts
 - `UsersPage()` --calls--> `requirePermission()`  [EXTRACTED]
   src/app/admin/users/page.tsx → src/lib/guard.ts
 - `AboutPage()` --references--> `SERVICE_GROUPS`  [EXTRACTED]
@@ -65,11 +62,13 @@
   src/app/[locale]/applications/[slug]/page.tsx → src/lib/content.ts
 - `HomePage()` --calls--> `getDict()`  [EXTRACTED]
   src/app/[locale]/page.tsx → src/lib/i18n.ts
+- `HomePage()` --calls--> `getPublishedProjects()`  [EXTRACTED]
+  src/app/[locale]/page.tsx → src/lib/queries.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (31 total, 6 thin omitted)
+## Communities (30 total, 6 thin omitted)
 
 ### Community 0 - "schema.ts"
 Cohesion: 0.06
@@ -96,8 +95,8 @@ Cohesion: 0.07
 Nodes (28): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts (+20 more)
 
 ### Community 6 - "leads/route.ts"
-Cohesion: 0.17
-Nodes (14): POST(), POST(), subscriptionSchema, emailList(), escapeHtml(), Mail, renderBrandEmail(), sendMail() (+6 more)
+Cohesion: 0.09
+Nodes (25): POST(), POST(), subscriptionSchema, APPS, Configurator(), SITE_FIELDS, STEPS, emailList() (+17 more)
 
 ### Community 7 - "dependencies"
 Cohesion: 0.07
@@ -141,11 +140,7 @@ Nodes (3): config, FRAME_ANCESTORS, SECURITY_HEADERS
 
 ### Community 23 - "[locale]/layout.tsx"
 Cohesion: 0.10
-Nodes (19): dynamic, GROUPS, Item, LocaleLayout(), RequestAssessment(), FuelSavingsPage(), AssessmentForm(), FIELDS (+11 more)
-
-### Community 29 - "Configurator.tsx"
-Cohesion: 0.17
-Nodes (12): ConfiguratorPage(), APPS, Configurator(), SITE_FIELDS, STEPS, estimate(), EstimatorInput, EstimatorResult (+4 more)
+Nodes (20): dynamic, GROUPS, Item, LocaleLayout(), RequestAssessment(), FuelSavingsPage(), ConfiguratorPage(), AssessmentForm() (+12 more)
 
 ### Community 33 - "check-forbidden-dashes.mjs"
 Cohesion: 0.40
@@ -161,7 +156,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `db` connect `schema.ts` to `queries.ts`, `admin.ts`, `actions/auth.ts`, `leads/route.ts`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `PageHeader()` connect `content.ts` to `schema.ts`, `queries.ts`, `Configurator.tsx`, `[locale]/layout.tsx`?**
+- **Why does `PageHeader()` connect `content.ts` to `schema.ts`, `queries.ts`, `[locale]/layout.tsx`?**
   _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Why does `requirePermission()` connect `schema.ts` to `admin.ts`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._

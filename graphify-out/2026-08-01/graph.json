@@ -1429,8 +1429,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_locale_tools_solution_configurator_page",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 23,
+      "community_name": "[locale]/layout.tsx",
       "norm_label": "solution-configurator/page.tsx"
     },
     {
@@ -1440,8 +1440,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_locale_tools_solution_configurator_page_configuratorpage",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 23,
+      "community_name": "[locale]/layout.tsx",
       "norm_label": "configuratorpage()"
     },
     {
@@ -2647,7 +2647,7 @@
       "label": "AuthLayout()",
       "file_type": "code",
       "source_file": "src/app/auth/layout.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_auth_layout_authlayout",
       "community": 23,
@@ -2925,8 +2925,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_configurator",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "configurator.tsx"
     },
     {
@@ -2936,8 +2936,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_configurator_apps",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "apps"
     },
     {
@@ -2947,8 +2947,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_components_configurator_site_fields",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "site_fields"
     },
     {
@@ -2958,8 +2958,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_components_configurator_steps",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "steps"
     },
     {
@@ -2969,8 +2969,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_components_configurator_configurator",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "configurator()"
     },
     {
@@ -3871,8 +3871,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_estimator",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "estimator.ts"
     },
     {
@@ -3882,8 +3882,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_estimator_feedstockid",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "feedstockid"
     },
     {
@@ -3893,8 +3893,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_lib_estimator_feedstock_options",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "feedstock_options"
     },
     {
@@ -3904,8 +3904,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_lib_estimator_kg_per_unit",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "kg_per_unit"
     },
     {
@@ -3915,8 +3915,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_lib_estimator_gas_per_kg",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "gas_per_kg"
     },
     {
@@ -3926,8 +3926,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_lib_estimator_estimatorinput",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "estimatorinput"
     },
     {
@@ -3937,8 +3937,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_lib_estimator_estimatorresult",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "estimatorresult"
     },
     {
@@ -3948,8 +3948,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_lib_estimator_round",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "round()"
     },
     {
@@ -3959,8 +3959,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_lib_estimator_estimate",
-      "community": 29,
-      "community_name": "Configurator.tsx",
+      "community": 6,
+      "community_name": "leads/route.ts",
       "norm_label": "estimate()"
     },
     {
@@ -14019,7 +14019,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/layout.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_layout",
@@ -14048,6 +14048,30 @@
       "_origin": "ast",
       "source": "src_app_auth_layout",
       "target": "src_components_brandlogo_brandlogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_layout",
+      "target": "src_lib_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_layout",
+      "target": "src_lib_content_company",
       "confidence_score": 1.0
     },
     {
@@ -17531,5 +17555,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "79d5530e40645870be669e8e4b6b601311f5d2ed"
+  "built_at_commit": "f06c266fa8566267cd37ab13caf75b27b1bcaaab"
 }
