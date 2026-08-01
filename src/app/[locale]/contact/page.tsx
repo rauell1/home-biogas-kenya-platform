@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { SOCIALS } from "@/lib/content";
+import { COMPANY, SOCIALS } from "@/lib/content";
 import PageHeader from "@/components/PageHeader";
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "+254 700 000 000";
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@homebiogaskenya.co.ke";
+  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER ?? COMPANY.phone;
+  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? COMPANY.email;
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? phone;
 
   return (
@@ -18,7 +18,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           { label: "Phone", value: phone },
           { label: "WhatsApp", value: whatsapp },
           { label: "Email", value: email },
-          { label: "Base", value: "Nairobi, Kenya" },
+          { label: "Office", value: "Koinange Street, Nairobi" },
         ]}
         actions={[
           { label: "Request an assessment", href: `/${locale}/request-assessment`, accent: true },
@@ -43,6 +43,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       </div>
 
       <div className="shell pb-24 flex flex-wrap gap-3">
+        <div className="w-full mb-7 border-l-2 border-clay pl-5">
+          <p className="mono-label text-clay">Visit or write to us</p>
+          <p className="mt-2 text-sm text-ink/75">{COMPANY.address}</p>
+          <p className="text-sm text-ink/60">{COMPANY.postalAddress}</p>
+        </div>
         <a className="btn btn-outline btn-sm" href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer">
           LinkedIn ↗
         </a>

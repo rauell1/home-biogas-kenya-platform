@@ -1,4 +1,4 @@
-import { SOCIALS, PROCESS_CHAIN, SERVICE_GROUPS } from "@/lib/content";
+import { COMPANY, DIGESTER_TECHNOLOGIES, SOCIALS, PROCESS_CHAIN, SERVICE_GROUPS } from "@/lib/content";
 import PageHeader from "@/components/PageHeader";
 
 export default function AboutPage() {
@@ -10,7 +10,7 @@ export default function AboutPage() {
         lede="Home Biogas Kenya designs, builds, commissions and maintains biogas and organic-waste systems for households, farms, institutions and commercial facilities across Kenya."
         meta={[
           { label: "Base", value: "Nairobi, Kenya" },
-          { label: "Technologies", value: "Fixed-dome · Flexible PVC · Wastewater" },
+          { label: "Technologies", value: "Fixed-dome · Floating-drum · Flexible · Tank" },
           { label: "Services", value: String(SERVICE_GROUPS.flatMap((g) => g.items).length) },
           { label: "Approach", value: "Measure first, then design" },
         ]}
@@ -23,8 +23,9 @@ export default function AboutPage() {
             actually consumes, and what the ground, water and drainage conditions allow.
           </p>
           <p>
-            We install flexible/PVC and fixed-dome concrete plants, supply and connect biogas appliances, and provide
-            feasibility studies, planning, engineering design, construction, operation support and technical consultancy.
+            We build professional, reliable biogas plants for homes, farms, institutions and industries. Organic waste is
+            converted into gas for cooking, water heating, poultry brooding, lighting and appropriately treated engines
+            that can power farm machinery such as chaff cutters, milking machines and water pumps.
           </p>
           <p>
             A plant that produces gas but cannot deliver it at the pressure an appliance needs is a failed plant. So we
@@ -59,6 +60,31 @@ export default function AboutPage() {
           </ol>
         </aside>
       </div>
+
+      <section className="bg-bone">
+        <div className="shell section">
+          <div className="max-w-3xl">
+            <p className="chapter-marker text-clay">Systems we work with</p>
+            <h2 className="display-xl mt-4">A technology selected for the site—not forced onto it</h2>
+            <p className="lede mt-6 text-ink/72">
+              The company materials identify four principal digester families. Final selection follows a site survey,
+              measured daily feedstock and the energy demand the system must serve.
+            </p>
+          </div>
+          <div className="mt-10 grid border-l border-t border-ink/12 sm:grid-cols-2 lg:grid-cols-4">
+            {DIGESTER_TECHNOLOGIES.map((technology, index) => (
+              <article key={technology.name} className="border-b border-r border-ink/12 p-6">
+                <p className="mono-label text-clay">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="display-md mt-5">{technology.name}</h3>
+                <p className="mt-3 text-sm text-ink/70">{technology.description}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mono-data mt-7 text-ink/55">
+            Office: {COMPANY.address} · {COMPANY.phone} · {COMPANY.email}
+          </p>
+        </div>
+      </section>
     </>
   );
 }

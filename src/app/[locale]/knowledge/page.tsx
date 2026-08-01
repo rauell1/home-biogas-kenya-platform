@@ -9,6 +9,7 @@ export const dynamic = "force-dynamic";
 const GUIDES = [
   { slug: "daily-feeding", title: "Daily feeding guide", note: "Loading discipline and pressure checks" },
   { slug: "site-selection", title: "Site selection guide", note: "Ground, drainage, trees and groundwater" },
+  { slug: "pineapple-livestock-co-digestion", title: "Pineapple and livestock-waste co-digestion", note: "Kenyan research summary · Heliyon, 2023" },
 ];
 
 export default async function KnowledgePage({ params }: { params: Promise<{ locale: string }> }) {

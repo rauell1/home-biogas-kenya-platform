@@ -3,6 +3,21 @@ export const SOCIALS = {
   facebook: "https://www.facebook.com/homebiogask/",
 };
 
+export const COMPANY = {
+  phone: "+254 724 738 393",
+  email: "info@homebiogaskenya.co.ke",
+  address: "Kenya House Complex, 2nd Floor, Koinange Street, near University Way",
+  postalAddress: "P.O. Box 51437-00100, Nairobi, Kenya",
+  website: "https://www.homebiogaskenya.co.ke",
+};
+
+export const DIGESTER_TECHNOLOGIES = [
+  { name: "Fixed-dome", description: "A durable masonry or concrete digester built in situ for long-term household, farm and institutional use." },
+  { name: "Floating-drum", description: "A digester with a moving gas holder that makes stored gas volume and delivery pressure easy to observe." },
+  { name: "Flexible PVC", description: "A tubular or balloon digester suited to rapid installation and sites where a lighter civil-work footprint is useful." },
+  { name: "Container and tank systems", description: "Modular packaged systems configured around the available feedstock, site constraints and intended gas use." },
+];
+
 export const PROCESS_CHAIN = [
   "Organic waste",
   "Collection",

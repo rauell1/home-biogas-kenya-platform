@@ -2,6 +2,9 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 
 export const PRODUCTS = [
+  { slug: "food-waste-biodigester", name: "Food-waste biodigester", spec: "Compact system for measured daily kitchen-waste input" },
+  { slug: "flexible-pvc-biodigester", name: "Flexible PVC biodigester", spec: "Rapid-installation tubular system in multiple capacities" },
+  { slug: "fixed-dome-biodigester", name: "Fixed-dome concrete biodigester", spec: "Site-built system sized after survey and feedstock measurement" },
   { slug: "two-burner-biogas-cooker", name: "Two-burner biogas cooker", spec: "Low-pressure burners, cast iron grate, 8–12 mbar" },
   { slug: "four-burner-cooker-and-oven", name: "Four-burner cooker and oven", spec: "Institutional range with biogas oven cavity" },
   { slug: "biogas-water-heater", name: "Biogas water heater", spec: "Instant heating for kitchens and dairies" },
@@ -23,7 +26,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         lede="Supplied, installed and commissioned with correctly sized piping, isolation valves, condensate management and user training."
         meta={[
           { label: "Catalogue", value: `${PRODUCTS.length} items` },
-          { label: "Delivery pressure", value: "Typically 8–12 mbar" },
+          { label: "System selection", value: "Confirmed after assessment" },
           { label: "Engine uses", value: "Require filtration" },
           { label: "Availability", value: "Confirmed on quotation" },
         ]}

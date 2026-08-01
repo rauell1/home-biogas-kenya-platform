@@ -20,6 +20,16 @@ const GUIDES: Record<string, { title: string; lede: string; body: string[] }> = 
       "Protect groundwater: keep the digester and slurry store a safe distance from wells and boreholes, and design drainage away from the plant.",
     ],
   },
+  "pineapple-livestock-co-digestion": {
+    title: "Pineapple and livestock-waste co-digestion",
+    lede: "A 2023 Kenyan study examined how feedstock ratio, temperature and pH influence biogas production from pineapple and livestock wastes.",
+    body: [
+      "Researchers from the Pan African University Institute for Basic Sciences, Technology and Innovation and Jomo Kenyatta University of Agriculture and Technology tested pineapple waste co-digested with cow dung and abattoir waste in 6 m³ systems.",
+      "The study evaluated mixing ratios alongside temperature and pH. Its reported numerical optimum was a 62.5% pineapple-waste ratio at pH 6.0 and 30 °C, with a maximum biogas yield of 1.98 m³ under the experimental conditions.",
+      "The result is research evidence, not a universal sizing rule. Actual plant output depends on feedstock composition, loading rate, retention time, operating discipline and site conditions; a project still requires measurement and engineering assessment.",
+      "Source: Otieno, Kiplimo and Mutwiwa, ‘Optimization of anaerobic digestion parameters for biogas production from pineapple wastes co-digested with livestock wastes,’ Heliyon 9 (2023), e14041. DOI: 10.1016/j.heliyon.2023.e14041.",
+    ],
+  },
 };
 
 export function generateStaticParams() {
