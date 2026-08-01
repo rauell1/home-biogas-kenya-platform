@@ -1,0 +1,6 @@
+Contact: mailto:security@homebiogaskenya.co.ke
+Contact: https://www.homebiogaskenya.co.ke/en/contact
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, sw
+Canonical: https://www.homebiogaskenya.co.ke/.well-known/security.txt
+Policy: https://www.homebiogaskenya.co.ke/en/privacy-policy

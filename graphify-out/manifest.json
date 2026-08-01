@@ -733,5 +733,30 @@
     "mtime": 1785608349.1935596,
     "ast_hash": "bf247cdcda5f0d555ad88a7376826f61",
     "semantic_hash": ""
+  },
+  "src/app/[locale]/error.tsx": {
+    "mtime": 1785609318.7081053,
+    "ast_hash": "146b2c4da4d58506b5826fa959f13d2a",
+    "semantic_hash": ""
+  },
+  "src/app/[locale]/not-found.tsx": {
+    "mtime": 1785609315.0364993,
+    "ast_hash": "511caf41d85170e9665fc926a5e301a7",
+    "semantic_hash": ""
+  },
+  "src/app/manifest.ts": {
+    "mtime": 1785609311.3156624,
+    "ast_hash": "35f17c0eb10962ed3fdb8736380b884b",
+    "semantic_hash": ""
+  },
+  "src/app/opengraph-image.tsx": {
+    "mtime": 1785609323.5499635,
+    "ast_hash": "d4b7560a91f4acc820e48beda2399212",
+    "semantic_hash": ""
+  },
+  "public/.well-known/security.txt": {
+    "mtime": 1785609306.8739896,
+    "ast_hash": "21addd4371156cf1e4f631493febb2df",
+    "semantic_hash": ""
   }
 }
