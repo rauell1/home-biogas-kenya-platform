@@ -3,7 +3,16 @@
 import { useActionState } from "react";
 import type { ActionState } from "@/app/actions/auth";
 
-type Field = { name: string; label: string; type?: string; required?: boolean; hidden?: boolean; value?: string };
+type Field = {
+  name: string;
+  label: string;
+  type?: string;
+  required?: boolean;
+  hidden?: boolean;
+  value?: string;
+  placeholder?: string;
+  autoComplete?: string;
+};
 
 export default function AuthForm({
   action,
@@ -33,13 +42,16 @@ export default function AuthForm({
           <input key={f.name} type="hidden" name={f.name} value={f.value} />
         ) : (
           <label key={f.name} className="block">
-            <span className="field-label text-bone/55">{f.label}</span>
+            <span className="block font-mono text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-bone/70">
+              {f.label}
+            </span>
             <input
               name={f.name}
               type={f.type ?? "text"}
               required={f.required}
-              autoComplete={f.type === "password" ? "new-password" : "on"}
-              className="mt-1.5 w-full border border-bone/25 bg-bone/5 px-3.5 py-2.5 text-bone placeholder:text-bone/30 focus:border-methane focus:outline-none transition-colors"
+              placeholder={f.placeholder}
+              autoComplete={f.autoComplete ?? "on"}
+              className="mt-2 w-full border border-bone/30 bg-bone/5 px-3.5 py-3 text-bone caret-methane placeholder:text-bone/35 transition-colors hover:border-bone/50 focus:border-methane focus:outline-none focus:ring-2 focus:ring-methane/25"
             />
           </label>
         ),

@@ -21,14 +21,29 @@ export default async function SignInPage() {
           action={bootstrapAction}
           submitLabel="Complete setup"
           fields={[
-            { name: "fullName", label: "Full name", required: true },
+            {
+              name: "fullName",
+              label: "Full name",
+              required: true,
+              placeholder: "Your full name",
+              autoComplete: "name",
+            },
             {
               name: "email",
               label: bootstrap.expectedEmail ? `Bootstrap email (${bootstrap.expectedEmail})` : "Email",
               type: "email",
               required: true,
+              placeholder: "you@example.com",
+              autoComplete: "email",
             },
-            { name: "password", label: "Password (min 12 characters)", type: "password", required: true },
+            {
+              name: "password",
+              label: "Password (min 12 characters)",
+              type: "password",
+              required: true,
+              placeholder: "Create a secure password",
+              autoComplete: "new-password",
+            },
           ]}
         />
       </div>
@@ -43,8 +58,22 @@ export default async function SignInPage() {
         action={signInAction}
         submitLabel="Sign in"
         fields={[
-          { name: "email", label: "Email", type: "email", required: true },
-          { name: "password", label: "Password", type: "password", required: true },
+          {
+            name: "email",
+            label: "Email address",
+            type: "email",
+            required: true,
+            placeholder: "you@example.com",
+            autoComplete: "email",
+          },
+          {
+            name: "password",
+            label: "Password",
+            type: "password",
+            required: true,
+            placeholder: "Enter your password",
+            autoComplete: "current-password",
+          },
         ]}
       />
       <p className="mt-8 text-sm text-bone/55">

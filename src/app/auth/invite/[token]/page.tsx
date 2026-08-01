@@ -44,8 +44,21 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
         submitLabel="Activate account"
         fields={[
           { name: "token", label: "token", hidden: true, value: token },
-          { name: "fullName", label: "Full name", required: true },
-          { name: "password", label: "Password (min 12 characters)", type: "password", required: true },
+          {
+            name: "fullName",
+            label: "Full name",
+            required: true,
+            placeholder: "Your full name",
+            autoComplete: "name",
+          },
+          {
+            name: "password",
+            label: "Password (min 12 characters)",
+            type: "password",
+            required: true,
+            placeholder: "Create a secure password",
+            autoComplete: "new-password",
+          },
         ]}
       />
     </div>

@@ -9,7 +9,16 @@ export default function ForgotPassword() {
       <AuthForm
         action={requestPasswordResetAction}
         submitLabel="Send reset link"
-        fields={[{ name: "email", label: "Email", type: "email", required: true }]}
+        fields={[
+          {
+            name: "email",
+            label: "Email address",
+            type: "email",
+            required: true,
+            placeholder: "you@example.com",
+            autoComplete: "email",
+          },
+        ]}
       />
     </div>
   );
