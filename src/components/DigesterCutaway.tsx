@@ -90,14 +90,14 @@ export default function DigesterCutaway() {
               <stop offset="0%" stopColor="#5db7c4" stopOpacity="0.62" />
               <stop offset="100%" stopColor="#5db7c4" stopOpacity="0.08" />
             </linearGradient>
-            <marker id="gasArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-              <path d="M0,0 L8,4 L0,8 Z" fill="#5db7c4" />
+            <marker id="gasArrow" markerWidth="5" markerHeight="5" refX="4.5" refY="2.5" orient="auto">
+              <path d="M0,0 L5,2.5 L0,5 Z" fill="#5db7c4" />
             </marker>
-            <marker id="feedArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-              <path d="M0,0 L8,4 L0,8 Z" fill="#8d965c" />
+            <marker id="feedArrow" markerWidth="5" markerHeight="5" refX="4.5" refY="2.5" orient="auto">
+              <path d="M0,0 L5,2.5 L0,5 Z" fill="#8d965c" />
             </marker>
-            <marker id="slurryArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-              <path d="M0,0 L8,4 L0,8 Z" fill="#e5b83b" />
+            <marker id="slurryArrow" markerWidth="5" markerHeight="5" refX="4.5" refY="2.5" orient="auto">
+              <path d="M0,0 L5,2.5 L0,5 Z" fill="#e5b83b" />
             </marker>
           </defs>
 
@@ -111,8 +111,8 @@ export default function DigesterCutaway() {
           <path d="M57 133 H125 V168 H57 Z" fill="#6e7445" opacity="0.95" />
           <path d="M69 109 V96 M113 109 V96 M65 96 H117" stroke="#b9b7ae" strokeWidth="3" />
 
-          <path d="M128 161 L214 252" stroke="#b9b7ae" strokeWidth="14" fill="none" opacity="0.85" />
-          <path d="M132 162 L208 242" stroke="#8d965c" strokeWidth="6" fill="none" markerEnd="url(#feedArrow)" />
+          <path d="M128 161 L246 286" stroke="#b9b7ae" strokeWidth="14" fill="none" opacity="0.85" />
+          <path d="M132 162 L240 276" stroke="#8d965c" strokeWidth="6" fill="none" markerEnd="url(#feedArrow)" />
 
           <path d="M237 260 A120 112 0 0 1 477 260 Z" fill="#171a17" stroke="#d4d1c7" strokeWidth="2" />
           <path d="M237 260 H477 V354 H237 Z" fill="#171a17" stroke="#d4d1c7" strokeWidth="2" />
@@ -124,7 +124,7 @@ export default function DigesterCutaway() {
           </g>
 
           <path
-            d="M357 151 V118 H514 V147 L535 164 L557 147 H735"
+            d="M357 151 V118 H514 V147 L535 164 L557 147 H574 V118 H735"
             stroke="#5db7c4"
             strokeWidth="4"
             fill="none"
@@ -133,7 +133,7 @@ export default function DigesterCutaway() {
           >
             {!paused && <animate attributeName="stroke-dashoffset" from="34" to="0" dur="1.25s" repeatCount="indefinite" />}
           </path>
-          <path d="M423 108 L437 118 L423 128 Z" fill="#5db7c4" />
+          <path d="M426 112 L434 118 L426 124 Z" fill="#5db7c4" />
           <rect x="594" y="103" width="42" height="30" fill="#171a17" stroke="#5db7c4" strokeWidth="2" />
           <path d="M604 110 V126 M614 110 V126 M624 110 V126" stroke="#5db7c4" strokeWidth="2" opacity="0.75" />
           <circle cx="700" cy="119" r="17" fill="#171a17" stroke="#5db7c4" strokeWidth="2" />

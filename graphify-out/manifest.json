@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "src/components/DigesterCutaway.tsx": {
-    "mtime": 1785603488.5220416,
-    "ast_hash": "b13f9047bc6bb2c626ab1b51478cf696",
+    "mtime": 1785604207.2848606,
+    "ast_hash": "dad7e1e92e6135ae42f2c6447e37a664",
     "semantic_hash": ""
   },
   "src/components/FuelSavings.tsx": {
