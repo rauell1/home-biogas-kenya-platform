@@ -1,6 +1,13 @@
 import "server-only";
 
-type Mail = { to: string; subject: string; text: string };
+export type Mail = { to: string; subject: string; text: string };
+
+function emailList(value: string | undefined) {
+  return value
+    ?.split(",")
+    .map((address) => address.trim())
+    .filter(Boolean) ?? [];
+}
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (character) => ({
@@ -48,6 +55,7 @@ export function renderBrandEmail(subject: string, text: string) {
 export async function sendMail(mail: Mail): Promise<{ delivered: boolean }> {
   const key = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
+  const bcc = emailList(process.env.EMAIL_BCC);
   if (!key || !from || !mail.to) {
     console.info("[email:skipped]", mail.subject, "->", mail.to || "(no recipient)");
     return { delivered: false };
@@ -55,13 +63,15 @@ export async function sendMail(mail: Mail): Promise<{ delivered: boolean }> {
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json", "User-Agent": "home-biogas-kenya-platform/1.0" },
       body: JSON.stringify({
         from,
         to: [mail.to],
         subject: mail.subject,
         text: mail.text,
         html: renderBrandEmail(mail.subject, mail.text),
+        ...(process.env.EMAIL_REPLY_TO ? { reply_to: process.env.EMAIL_REPLY_TO } : {}),
+        ...(bcc.length ? { bcc } : {}),
       }),
     });
     return { delivered: res.ok };

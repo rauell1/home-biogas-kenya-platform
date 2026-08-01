@@ -4,6 +4,7 @@ import { getDict, isLocale, locales } from "@/lib/i18n";
 import { SOCIALS, PROCESS_CHAIN } from "@/lib/content";
 import SiteNav from "@/components/SiteNav";
 import BrandLogo from "@/components/BrandLogo";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -66,6 +67,16 @@ export default async function LocaleLayout({
       <footer className="relative overflow-hidden bg-ink text-bone">
         <div aria-hidden className="absolute inset-0 grid-lines opacity-40" />
         <div className="shell relative pt-20 pb-10">
+          <section className="mb-16 grid gap-8 border-y border-bone/15 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="chapter-marker text-methane">Field notes</p>
+              <h2 className="display-lg mt-4">{locale === "sw" ? "Habari kutoka kwa miradi yetu" : "Useful updates from the field"}</h2>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-bone/65">
+                {locale === "sw" ? "Pokea mafunzo ya vitendo, habari za miradi na suluhisho mpya za biogas." : "Practical guidance, project stories, training dates and new biogas solutions, delivered occasionally."}
+              </p>
+            </div>
+            <NewsletterForm locale={locale} />
+          </section>
           <div className="grid gap-14 lg:grid-cols-[1.4fr_2fr]">
             <div>
               <div className="inline-block bg-white p-3"><BrandLogo className="w-[190px]" /></div>

@@ -57,8 +57,8 @@ export default function SiteNav({
       }`}
     >
       <div className="shell flex h-[72px] items-center justify-between gap-6">
-        <Link href={`/${locale}`} className="group" aria-label="Home Biogas Kenya home">
-          <BrandLogo className="w-[150px] sm:w-[164px]" />
+        <Link href={`/${locale}`} className="group flex h-full shrink-0 items-center" aria-label="Home Biogas Kenya home">
+          <BrandLogo className="!h-[56px] !w-auto max-w-[132px] sm:!h-[60px] sm:max-w-[142px]" />
         </Link>
 
         <nav aria-label="Primary" className="hidden xl:flex items-center gap-7 text-[0.9rem]">
