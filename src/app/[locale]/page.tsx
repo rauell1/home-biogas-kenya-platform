@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getDict } from "@/lib/i18n";
 import { PROCESS_CHAIN, SERVICE_GROUPS } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import DigesterCutaway from "@/components/DigesterCutaway";
 import ApplicationScene from "@/components/ApplicationScene";
 import ProjectExplorer from "@/components/ProjectExplorer";
@@ -8,7 +10,13 @@ import Configurator from "@/components/Configurator";
 import ShopPreview from "@/components/ShopPreview";
 import { getPublishedProjects } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = getDict(locale);
+  return pageMetadata({ locale, path: "", description: t.heroLead });
+}
 
 function Chapter({
   n,
@@ -51,12 +59,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const projects = await getPublishedProjects();
 
   const capacities = projects.map((p) => Number(p.capacityM3 ?? 0)).filter((n) => n > 0);
-  const stats = [
-    { value: String(projects.length), label: "Published projects" },
-    { value: capacities.length ? `${Math.max(...capacities)} m³` : "0 m³", label: "Largest published system" },
-    { value: String(new Set(projects.map((p) => p.county).filter(Boolean)).size), label: "Counties served" },
-    { value: String(SERVICE_GROUPS.flatMap((g) => g.items).length), label: "Engineering services" },
-  ];
+  const stats =
+    projects.length > 0
+      ? [
+          { value: String(projects.length), label: "Published projects" },
+          { value: capacities.length ? `${Math.max(...capacities)} m³` : " - ", label: "Largest published system" },
+          { value: String(new Set(projects.map((p) => p.county).filter(Boolean)).size), label: "Counties served" },
+          { value: String(SERVICE_GROUPS.flatMap((g) => g.items).length), label: "Engineering services" },
+        ]
+      : [
+          { value: String(SERVICE_GROUPS.flatMap((g) => g.items).length), label: "Engineering services" },
+          { value: String(SERVICE_GROUPS.length), label: "Service categories" },
+          { value: "4", label: "Digester technologies" },
+          { value: "2", label: "Working days to first response" },
+        ];
 
   return (
     <>

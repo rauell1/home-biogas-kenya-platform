@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { COURSES } from "../page";
 import PageHeader from "@/components/PageHeader";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return COURSES.map((c) => ({ slug: c.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const course = COURSES.find((c) => c.slug === slug);
+  if (!course) return {};
+  return pageMetadata({ locale, path: `/training/${slug}`, title: course.name, description: course.summary });
 }
 
 export default async function CourseDetail({ params }: { params: Promise<{ locale: string; slug: string }> }) {

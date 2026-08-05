@@ -1,10 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { articles } from "@/db/schema";
 import PageHeader from "@/components/PageHeader";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/knowledge",
+    title: "Biogas knowledge centre",
+    description: "Plain explanations of how digestion works, how plants are sized honestly, and how to keep a system running.",
+  });
+}
 
 const GUIDES = [
   { slug: "daily-feeding", title: "Daily feeding guide", note: "Loading discipline and pressure checks" },

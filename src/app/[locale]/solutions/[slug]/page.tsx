@@ -1,10 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ALL_SERVICES } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 
 export function generateStaticParams() {
   return ALL_SERVICES.map((s) => ({ slug: s.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const service = ALL_SERVICES.find((s) => s.slug === slug);
+  if (!service) return {};
+  return pageMetadata({ locale, path: `/solutions/${slug}`, title: service.name, description: service.summary });
 }
 
 export default async function SolutionDetail({ params }: { params: Promise<{ locale: string; slug: string }> }) {

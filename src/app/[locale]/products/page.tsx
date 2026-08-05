@@ -1,9 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import BrandLogo from "@/components/BrandLogo";
 import { COMPANY, DIGESTER_TECHNOLOGIES, SOCIALS } from "@/lib/content";
 import { PLANT_SIZES, PRODUCTS } from "@/lib/catalogue";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/products",
+    title: "Biogas appliances, equipment and plant systems",
+    description: "Browse the equipment we supply and the plant sizes we build. Prices are confirmed only after availability, demand and site requirements have been checked.",
+  });
+}
 
 function inquiryLinks(name: string) {
   const message = encodeURIComponent(`Hello Home Biogas Kenya, I would like to enquire about ${name}.`);

@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import ProjectExplorer from "@/components/ProjectExplorer";
 import PageHeader from "@/components/PageHeader";
 import { getPublishedProjects } from "@/lib/queries";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/projects",
+    title: "A verified project portfolio",
+    description: "Only technically reviewed projects with approved media rights are published. Every outcome carries its evidence type.",
+  });
+}
 
 export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

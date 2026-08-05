@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import { pageMetadata } from "@/lib/seo";
 
 export const COURSES = [
   { slug: "operator-basics", name: "Biogas operator basics", days: 2, summary: "Feeding routines, safety, leak checks and daily operation." },
@@ -7,6 +9,16 @@ export const COURSES = [
   { slug: "appliance-installation", name: "Appliance installation", days: 3, summary: "Pipe sizing, filtration, pressure control and commissioning." },
   { slug: "farm-slurry-management", name: "Farm slurry management", days: 1, summary: "Storage, dilution and safe agricultural application of digestate." },
 ];
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/training",
+    title: "Training and capacity building",
+    description: "A plant is only as good as the person feeding it. We train operators, masons and technicians on real systems.",
+  });
+}
 
 export default async function TrainingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

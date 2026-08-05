@@ -1,9 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPublishedProject, getPublishedProjects, type ProjectRow } from "@/lib/queries";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const project = await getPublishedProject(slug);
+  if (!project) return {};
+  return pageMetadata({
+    locale,
+    path: `/projects/${slug}`,
+    title: project.title,
+    description: project.summary ?? `${project.title}: a Home Biogas Kenya project in ${[project.locality, project.county].filter(Boolean).join(", ") || "Kenya"}.`,
+  });
+}
 
 const SECTIONS: { key: keyof ProjectRow; label: string }[] = [
   { key: "challenge", label: "Client challenge" },

@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SERVICE_GROUPS } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/solutions",
+    title: "What we design, build and maintain",
+    description: "Engineering services across the full chain, from the first feasibility study to long-term maintenance of a running plant.",
+  });
+}
 
 export default async function SolutionsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

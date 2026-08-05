@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/privacy-policy",
+    title: locale === "sw" ? "Sera ya Ulinzi wa Data" : "Privacy & Data Protection Policy",
+    description:
+      locale === "sw"
+        ? "Home Biogas Kenya inalinda data yako binafsi kulingana na Sheria ya Ulinzi wa Data ya Kenya (2019), GDPR, na CCPA."
+        : "Home Biogas Kenya protects your personal data under the Kenyan Data Protection Act (2019), GDPR, and CCPA standards.",
+  });
+}
 
 export default async function PrivacyPolicyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

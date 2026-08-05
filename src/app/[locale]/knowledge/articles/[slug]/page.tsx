@@ -1,19 +1,38 @@
+import type { Metadata } from "next";
+import { cache } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { and, eq } from "drizzle-orm";
 import { db } from "@/db";
 import { articles } from "@/db/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
-export default async function ArticlePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-  const { locale, slug } = await params;
+const getArticle = cache(async (slug: string) => {
   const rows = await db
     .select()
     .from(articles)
     .where(and(eq(articles.slug, slug), eq(articles.workflowState, "published")))
     .limit(1);
-  const article = rows[0];
+  return rows[0] ?? null;
+});
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const article = await getArticle(slug);
+  if (!article) return {};
+  return pageMetadata({
+    locale,
+    path: `/knowledge/articles/${slug}`,
+    title: article.title,
+    description: article.excerpt ?? article.title,
+  });
+}
+
+export default async function ArticlePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const article = await getArticle(slug);
   if (!article) notFound();
 
   return (

@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { APPLICATIONS } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 
 export function generateStaticParams() {
   return APPLICATIONS.map((a) => ({ slug: a.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const app = APPLICATIONS.find((a) => a.slug === slug);
+  if (!app) return {};
+  return pageMetadata({ locale, path: `/applications/${slug}`, title: app.name, description: app.use });
 }
 
 export default async function ApplicationDetail({ params }: { params: Promise<{ locale: string; slug: string }> }) {

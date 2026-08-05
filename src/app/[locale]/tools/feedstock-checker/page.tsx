@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
+import { pageMetadata } from "@/lib/seo";
 
 const ROWS = [
   { f: "Cow manure", suit: "Excellent", tone: "olive", note: "Stable digestion, good buffering, requires 1:1 water mixing." },
@@ -17,6 +19,16 @@ const TONE: Record<string, string> = {
   safety: "border-safety text-[#8a6d13]",
   oxide: "border-oxide text-oxide",
 };
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/tools/feedstock-checker",
+    title: "Feedstock checker",
+    description: "Not everything organic belongs in a digester. Check what your waste stream will actually do to the process.",
+  });
+}
 
 export default function FeedstockChecker() {
   return (

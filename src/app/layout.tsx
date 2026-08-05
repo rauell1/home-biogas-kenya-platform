@@ -44,7 +44,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Home Biogas Kenya  -  Waste contains energy",
     description: "Biogas and organic-waste systems for homes, farms, institutions and commercial facilities.",
-    images: [{ url: "/brand/home-biogas-kenya-logo.png", width: 460, height: 219, alt: "Home Biogas Kenya" }],
+    siteName: "Home Biogas Kenya",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Home Biogas Kenya  -  Waste contains energy",
+    description: "Biogas and organic-waste systems for homes, farms, institutions and commercial facilities.",
   },
 };
 

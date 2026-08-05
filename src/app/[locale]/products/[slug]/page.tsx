@@ -1,11 +1,20 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { PRODUCTS } from "@/lib/catalogue";
 import { COMPANY } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const product = PRODUCTS.find((p) => p.slug === slug);
+  if (!product) return {};
+  return pageMetadata({ locale, path: `/products/${slug}`, title: product.name, description: product.spec });
 }
 
 export default async function ProductDetail({ params }: { params: Promise<{ locale: string; slug: string }> }) {

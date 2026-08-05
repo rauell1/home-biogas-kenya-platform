@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { COMPANY, DIGESTER_TECHNOLOGIES, SOCIALS, PROCESS_CHAIN, SERVICE_GROUPS } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/about",
+    title: "An engineering-led waste-to-energy company",
+    description:
+      "Home Biogas Kenya designs, builds, commissions and maintains biogas and organic-waste systems for households, farms, institutions and commercial facilities across Kenya.",
+  });
+}
 
 export default function AboutPage() {
   return (

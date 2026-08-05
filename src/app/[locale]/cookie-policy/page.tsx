@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import { db } from "@/db";
 import { cookieTrackers } from "@/db/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/cookie-policy",
+    title: locale === "sw" ? "Sera ya Vidakuzi" : "Cookie Policy",
+    description:
+      locale === "sw"
+        ? "Orodha kamili ya vidakuzi na vitambulisho vinavyotumika kwenye jukwaa la Home Biogas Kenya."
+        : "Complete inventory of cookies and tags used on the Home Biogas Kenya platform.",
+  });
+}
 
 export default async function CookiePolicyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

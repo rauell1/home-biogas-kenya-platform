@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { pageMetadata } from "@/lib/seo";
 
 const GUIDES: Record<string, { title: string; lede: string; body: string[] }> = {
   "daily-feeding": {
@@ -34,6 +36,13 @@ const GUIDES: Record<string, { title: string; lede: string; body: string[] }> = 
 
 export function generateStaticParams() {
   return Object.keys(GUIDES).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const guide = GUIDES[slug];
+  if (!guide) return {};
+  return pageMetadata({ locale, path: `/knowledge/guides/${slug}`, title: guide.title, description: guide.lede });
 }
 
 export default async function GuidePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {

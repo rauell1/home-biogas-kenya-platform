@@ -13,6 +13,21 @@ import { sendMail } from "@/lib/email";
 
 export type FormState = { error?: string; ok?: string };
 
+function revalidatePublicProject(slug: string) {
+  for (const locale of ["en", "sw"]) {
+    revalidatePath(`/${locale}`);
+    revalidatePath(`/${locale}/projects`);
+    revalidatePath(`/${locale}/projects/${slug}`);
+  }
+}
+
+function revalidatePublicArticle(slug: string) {
+  for (const locale of ["en", "sw"]) {
+    revalidatePath(`/${locale}/knowledge`);
+    revalidatePath(`/${locale}/knowledge/articles/${slug}`);
+  }
+}
+
 const listField = (value: FormDataEntryValue | null) =>
   String(value ?? "")
     .split(",")
@@ -67,6 +82,7 @@ export async function saveProjectAction(_prev: FormState, formData: FormData): P
     redirect(`/admin/projects/${row.id}`);
   }
   revalidatePath("/admin/projects");
+  revalidatePublicProject(values.slug);
   return { ok: "Saved." };
 }
 
@@ -94,6 +110,7 @@ export async function setProjectWorkflowAction(formData: FormData): Promise<void
   await audit(user, `project.workflow.${target}`, "project", id);
   revalidatePath("/admin/projects");
   revalidatePath(`/admin/projects/${id}`);
+  revalidatePublicProject(project.slug);
 }
 
 export async function approveTechnicalAction(formData: FormData): Promise<void> {
@@ -274,5 +291,6 @@ export async function saveArticleAction(_prev: FormState, formData: FormData): P
   else await db.insert(articles).values(values);
   await audit(user, "article.saved", "article", String(id ?? parsed.data.slug));
   revalidatePath("/admin/articles");
+  revalidatePublicArticle(parsed.data.slug);
   return { ok: "Saved." };
 }

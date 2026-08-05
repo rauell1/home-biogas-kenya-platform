@@ -1,7 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { APPLICATIONS } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import ApplicationScene from "@/components/ApplicationScene";
 import PageHeader from "@/components/PageHeader";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/applications",
+    title: "What the gas powers",
+    description: "Biogas is only useful where it does work. Every application below changes what the plant must deliver in volume, pressure and gas quality.",
+  });
+}
 
 export default async function ApplicationsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

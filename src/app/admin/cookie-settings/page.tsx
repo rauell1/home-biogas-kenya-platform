@@ -38,6 +38,8 @@ export default async function AdminCookieSettingsPage() {
       });
     }
     revalidatePath("/admin/cookie-settings");
+    revalidatePath("/en/cookie-policy");
+    revalidatePath("/sw/cookie-policy");
   }
 
   return (

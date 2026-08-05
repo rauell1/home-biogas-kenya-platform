@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
+import { pageMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/terms",
+    title: locale === "sw" ? "Masharti ya Huduma" : "Terms & Engineering Disclaimer",
+    description:
+      locale === "sw"
+        ? "Kanuni za matumizi ya jukwaa la Home Biogas Kenya, ombi la tathmini, na nukuu za uhandisi."
+        : "Terms governing use of the Home Biogas Kenya platform, site survey requests, and engineering assessments.",
+  });
+}
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
