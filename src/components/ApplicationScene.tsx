@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -103,7 +103,7 @@ export default function ApplicationScene({ locale }: { locale: string }) {
       </div>
 
       <div className="lg:sticky lg:top-28">
-        <p className="mono-label text-clay">
+        <p className="mono-label text-clay-text">
           Application {String(APPLICATIONS.findIndex((a) => a.slug === active) + 1).padStart(2, "0")} /{" "}
           {APPLICATIONS.length}
         </p>
@@ -111,7 +111,7 @@ export default function ApplicationScene({ locale }: { locale: string }) {
         <p className="lede mt-4 text-ink/78">{current.use}</p>
 
         <div className="mt-8 border-t border-ink/12 pt-5">
-          <p className="mono-label text-ink/45">System requirement</p>
+          <p className="mono-label text-ink/70">System requirement</p>
           <p className="mono-data mt-2">{current.requirement}</p>
         </div>
 

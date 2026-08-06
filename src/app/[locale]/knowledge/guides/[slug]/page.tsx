@@ -52,16 +52,16 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
 
   return (
     <article className="shell-narrow py-16 md:py-24">
-      <Link href={`/${locale}/knowledge`} className="mono-label text-ink/50 hover:text-clay">
+      <Link href={`/${locale}/knowledge`} className="mono-label text-ink/50 hover:text-clay-text">
         ← Knowledge centre
       </Link>
-      <p className="chapter-marker text-clay mt-8">Guide</p>
+      <p className="chapter-marker text-clay-text mt-8">Guide</p>
       <h1 className="display-xl mt-5">{guide.title}</h1>
       <p className="lede mt-6 text-ink/75">{guide.lede}</p>
       <ol className="mt-10 border-t border-ink/12">
         {guide.body.map((p, i) => (
           <li key={p} className="flex gap-6 border-b border-ink/10 py-6">
-            <span className="mono-label text-clay pt-1">{String(i + 1).padStart(2, "0")}</span>
+            <span className="mono-label text-clay-text pt-1">{String(i + 1).padStart(2, "0")}</span>
             <p className="editorial text-ink/85">{p}</p>
           </li>
         ))}

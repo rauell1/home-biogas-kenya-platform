@@ -16,7 +16,7 @@ export default function ErrorBoundary({
 
   return (
     <div className="shell py-24 text-center max-w-2xl mx-auto">
-      <p className="chapter-marker text-clay mb-4">System Exception</p>
+      <p className="chapter-marker text-clay-text mb-4">System Exception</p>
       <h1 className="display-lg">An unexpected error occurred</h1>
       <p className="editorial mt-4 text-ink/75">
         Our engineering monitoring systems have logged this issue. You may attempt to reload the view or return to the platform homepage.

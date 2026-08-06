@@ -44,12 +44,12 @@ export default async function KnowledgePage({ params }: { params: Promise<{ loca
 
       <div className="shell section grid gap-16 lg:grid-cols-[2fr_1fr] lg:items-start">
         <section>
-          <h2 className="mono-label text-clay border-b border-ink/12 pb-3">Articles</h2>
+          <h2 className="mono-label text-clay-text border-b border-ink/12 pb-3">Articles</h2>
           <ul>
             {published.map((a) => (
               <li key={a.slug}>
                 <Link href={`/${locale}/knowledge/articles/${a.slug}`} className="row-link group">
-                  <span className="display-md group-hover:text-clay transition-colors">{a.title}</span>
+                  <span className="display-md group-hover:text-clay-text transition-colors">{a.title}</span>
                   <span className="text-ink/72">{a.excerpt}</span>
                 </Link>
               </li>
@@ -59,11 +59,11 @@ export default async function KnowledgePage({ params }: { params: Promise<{ loca
         </section>
 
         <aside className="panel p-6">
-          <h2 className="mono-label text-clay">Practical guides</h2>
+          <h2 className="mono-label text-clay-text">Practical guides</h2>
           <ul className="mt-4 space-y-4">
             {GUIDES.map((g) => (
               <li key={g.slug}>
-                <Link href={`/${locale}/knowledge/guides/${g.slug}`} className="link-quiet display-md hover:text-clay">
+                <Link href={`/${locale}/knowledge/guides/${g.slug}`} className="link-quiet display-md hover:text-clay-text">
                   {g.title}
                 </Link>
                 <p className="mono-label text-ink/45 mt-1.5">{g.note}</p>

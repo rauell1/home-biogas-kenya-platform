@@ -37,10 +37,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ locale
 
   return (
     <article className="shell-narrow py-16 md:py-24">
-      <Link href={`/${locale}/knowledge`} className="mono-label text-ink/50 hover:text-clay">
+      <Link href={`/${locale}/knowledge`} className="mono-label text-ink/50 hover:text-clay-text">
         ← Knowledge centre
       </Link>
-      <p className="chapter-marker text-clay mt-8">Article</p>
+      <p className="chapter-marker text-clay-text mt-8">Article</p>
       <h1 className="display-xl mt-5">{article.title}</h1>
       <p className="lede mt-6 text-ink/75">{article.excerpt}</p>
       <div className="mt-10 border-t border-ink/12 pt-8 prose-body space-y-6">

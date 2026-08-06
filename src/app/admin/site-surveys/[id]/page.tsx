@@ -23,7 +23,7 @@ export default async function SurveyDetail({ params }: { params: Promise<{ id: s
 
   return (
     <div className="max-w-4xl">
-      <p className="mono-label text-clay">Site survey</p>
+      <p className="mono-label text-clay-text">Site survey</p>
       <h1 className="display-lg mt-1">{survey.clientName}</h1>
       <p className="mono-label text-ink/50 mt-2">Engineer: {survey.engineer ?? "unassigned"} · status {survey.status}</p>
       {Object.entries(CHECKLIST).map(([section, fields]) => (

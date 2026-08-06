@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
 
         <aside className="panel p-6 md:p-8">
-          <h2 className="mono-label text-clay">The chain we engineer</h2>
+          <h2 className="mono-label text-clay-text">The chain we engineer</h2>
           <ol className="mt-5">
             {PROCESS_CHAIN.map((s, i) => (
               <li key={s} className="flex gap-4 border-b border-ink/10 py-2.5 last:border-b-0">
@@ -77,7 +77,7 @@ export default function AboutPage() {
       <section className="bg-bone">
         <div className="shell section">
           <div className="max-w-3xl">
-            <p className="chapter-marker text-clay">Systems we work with</p>
+            <p className="chapter-marker text-clay-text">Systems we work with</p>
             <h2 className="display-xl mt-4">A technology selected for the site - not forced onto it</h2>
             <p className="lede mt-6 text-ink/72">
               The company materials identify four principal digester families. Final selection follows a site survey,
@@ -87,7 +87,7 @@ export default function AboutPage() {
           <div className="mt-10 grid border-l border-t border-ink/12 sm:grid-cols-2 lg:grid-cols-4">
             {DIGESTER_TECHNOLOGIES.map((technology, index) => (
               <article key={technology.name} className="border-b border-r border-ink/12 p-6">
-                <p className="mono-label text-clay">{String(index + 1).padStart(2, "0")}</p>
+                <p className="mono-label text-clay-text">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="display-md mt-5">{technology.name}</h3>
                 <p className="mt-3 text-sm text-ink/70">{technology.description}</p>
               </article>

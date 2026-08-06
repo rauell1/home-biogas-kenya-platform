@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import BrandLogo from "@/components/BrandLogo";
 import { COMPANY } from "@/lib/content";
 
@@ -17,7 +17,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           <Link href="/en" className="flex h-full shrink-0 items-center" aria-label="Home Biogas Kenya public site">
             <BrandLogo className="!h-[56px] !w-auto max-w-[132px] sm:!h-[60px] sm:max-w-[142px]" />
           </Link>
-          <Link href="/en" className="mono-label text-ink/55 transition-colors hover:text-clay">
+          <Link href="/en" className="mono-label text-ink/55 transition-colors hover:text-clay-text">
             ← Public site
           </Link>
         </div>

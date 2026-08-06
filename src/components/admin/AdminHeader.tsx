@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export default function AdminHeader({
   eyebrow,
@@ -14,7 +14,7 @@ export default function AdminHeader({
   return (
     <header className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/12 pb-5 mb-8">
       <div>
-        <p className="chapter-marker text-clay">{eyebrow}</p>
+        <p className="chapter-marker text-clay-text">{eyebrow}</p>
         <h1 className="display-lg mt-3">{title}</h1>
         {description && <p className="mt-2.5 text-sm text-ink/60 max-w-2xl">{description}</p>}
       </div>

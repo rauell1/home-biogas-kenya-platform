@@ -26,7 +26,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
 
   return (
     <div className="max-w-4xl">
-      <p className="mono-label text-clay">{lead.reference}</p>
+      <p className="mono-label text-clay-text">{lead.reference}</p>
       <h1 className="display-lg mt-1">{lead.fullName}</h1>
       <dl className="mt-6 grid gap-4 sm:grid-cols-3 mono-data">
         <div><dt className="text-ink/50">PHONE</dt><dd className="mt-1">{lead.phone}</dd></div>

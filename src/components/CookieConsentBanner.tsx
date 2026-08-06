@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -138,7 +138,7 @@ export default function CookieConsentBanner({
           <div className="relative w-full max-w-2xl bg-cream border border-ink/20 text-ink p-6 md:p-8 shadow-2xl rounded-sm my-8">
             <div className="flex items-center justify-between border-b border-ink/15 pb-4 mb-6">
               <div>
-                <p className="mono-label text-clay">Consent Center</p>
+                <p className="mono-label text-clay-text">Consent Center</p>
                 <h3 className="display-lg mt-1">{labels.manageTitle}</h3>
               </div>
               <button
@@ -155,7 +155,7 @@ export default function CookieConsentBanner({
               <div className="border border-ink/12 bg-bone p-4">
                 <div className="flex items-center justify-between">
                   <span className="display-md text-base">{labels.necessaryTitle}</span>
-                  <span className="mono-label text-clay border border-clay/30 px-2 py-0.5 text-[0.65rem]">ALWAYS ACTIVE</span>
+                  <span className="mono-label text-clay-text border border-clay/30 px-2 py-0.5 text-[0.65rem]">ALWAYS ACTIVE</span>
                 </div>
                 <p className="text-sm mt-2 text-ink/70">{labels.necessaryDesc}</p>
               </div>

@@ -71,7 +71,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/en" className="inline-block bg-white p-2">
             <BrandLogo className="w-[145px]" />
           </Link>
-          <p className="mono-label text-bone/40 mt-1.5">Operations console</p>
+          <p className="mono-label text-bone/65 mt-1.5">Operations console</p>
 
           <nav aria-label="Admin" className="mt-9 space-y-7">
             {groups.map((g) => (

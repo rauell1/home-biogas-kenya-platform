@@ -36,14 +36,14 @@ export default async function SolutionsPage({ params }: { params: Promise<{ loca
         {SERVICE_GROUPS.map((group, gi) => (
           <section key={group.category} className={gi > 0 ? "mt-20" : ""}>
             <div className="flex items-baseline gap-4 border-b border-ink/12 pb-3">
-              <span className="mono-label text-clay">{String(gi + 1).padStart(2, "0")}</span>
+              <span className="mono-label text-clay-text">{String(gi + 1).padStart(2, "0")}</span>
               <h2 className="display-lg">{group.category}</h2>
             </div>
             <ul>
               {group.items.map((item) => (
                 <li key={item.slug}>
                   <Link href={`/${locale}/solutions/${item.slug}`} className="row-link md:grid-cols-[1fr_2fr] group">
-                    <span className="display-md group-hover:text-clay transition-colors">{item.name}</span>
+                    <span className="display-md group-hover:text-clay-text transition-colors">{item.name}</span>
                     <span className="text-ink/72">{item.summary}</span>
                   </Link>
                 </li>

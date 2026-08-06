@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -39,8 +39,8 @@ export default function FuelSavings({ disclaimer }: { disclaimer: string }) {
       <div className="mt-10 border-t border-ink/12 pt-7">
         {valid ? (
           <>
-            <p className="mono-label text-ink/45">Indicative monthly saving</p>
-            <p className="display-figure mt-2 text-clay">
+            <p className="mono-label text-ink/70">Indicative monthly saving</p>
+            <p className="display-figure mt-2 text-clay-text">
               KES {low.toLocaleString()} - {high.toLocaleString()}
             </p>
           </>

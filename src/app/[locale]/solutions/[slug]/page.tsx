@@ -42,12 +42,12 @@ export default async function SolutionDetail({ params }: { params: Promise<{ loc
 
       {related.length > 0 && (
         <div className="shell section">
-          <h2 className="mono-label text-clay border-b border-ink/12 pb-3">More in {service.category}</h2>
+          <h2 className="mono-label text-clay-text border-b border-ink/12 pb-3">More in {service.category}</h2>
           <ul>
             {related.map((r) => (
               <li key={r.slug}>
                 <Link href={`/${locale}/solutions/${r.slug}`} className="row-link md:grid-cols-[1fr_2fr] group">
-                  <span className="display-md group-hover:text-clay transition-colors">{r.name}</span>
+                  <span className="display-md group-hover:text-clay-text transition-colors">{r.name}</span>
                   <span className="text-ink/72">{r.summary}</span>
                 </Link>
               </li>

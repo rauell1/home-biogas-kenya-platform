@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export default function PageHeader({
   eyebrow,
@@ -25,7 +25,7 @@ export default function PageHeader({
         }}
       />
       <div className="shell relative pt-16 pb-14 md:pt-24 md:pb-20">
-        <p className="chapter-marker text-clay">{eyebrow}</p>
+        <p className="chapter-marker text-clay-text">{eyebrow}</p>
         <h1 className="display-xl mt-5 max-w-4xl">{title}</h1>
         {lede && <p className="lede mt-6 max-w-2xl text-ink/75">{lede}</p>}
 
@@ -33,7 +33,7 @@ export default function PageHeader({
           <dl className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 border-t border-ink/12 pt-6">
             {meta.map((m) => (
               <div key={m.label}>
-                <dt className="mono-label text-ink/45">{m.label}</dt>
+                <dt className="mono-label text-ink/70">{m.label}</dt>
                 <dd className="mono-data mt-1.5">{m.value}</dd>
               </div>
             ))}

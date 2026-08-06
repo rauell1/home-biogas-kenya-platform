@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -52,7 +52,7 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
   if (items.length === 0) {
     return (
       <div className="tech-card p-8 md:p-12 text-center max-w-xl mx-auto">
-        <p className="mono-label text-clay">Verification & Review Standard</p>
+        <p className="mono-label text-clay-text">Verification & Review Standard</p>
         <h3 className="display-md mt-2">No published project records currently match public clearance</h3>
         <p className="editorial mt-3 text-ink/75">
           All verified engineering installations undergo multi-step technical and media-rights review before public display.
@@ -94,7 +94,7 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
         >
           Reset{activeFilterCount > 0 ? ` (${activeFilterCount})` : ""}
         </button>
-        <p className="mono-label text-ink/45 ml-auto self-end pb-3">
+        <p className="mono-label text-ink/70 ml-auto self-end pb-3">
           {filtered.length} / {items.length} projects
         </p>
       </div>
@@ -113,7 +113,7 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
                 >
                   <span className="mono-label opacity-55">{String(i + 1).padStart(2, "0")}</span>
                   <span className="display-md mt-1.5 block leading-tight">{p.title}</span>
-                  <span className={`mono-label mt-2 block ${on ? "text-methane" : "text-ink/45"}`}>
+                  <span className={`mono-label mt-2 block ${on ? "text-methane" : "text-ink/70"}`}>
                     {p.county ?? "Kenya"}
                     {p.capacityM3 ? ` · ${Number(p.capacityM3)} m³` : ""}
                   </span>
@@ -121,7 +121,7 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
               </li>
             );
           })}
-          {filtered.length === 0 && <li className="px-5 py-8 text-sm text-ink/60">No projects match these filters.</li>}
+          {filtered.length === 0 && <li className="px-5 py-8 text-sm text-ink/75">No projects match these filters.</li>}
         </ol>
 
         {active && (
@@ -142,33 +142,33 @@ export default function ProjectExplorer({ locale, items }: { locale: string; ite
                 />
               </div>
             )}
-            <p className="chapter-marker text-clay">{active.theme ?? "Project"}</p>
+            <p className="chapter-marker text-clay-text">{active.theme ?? "Project"}</p>
             <h3 className="display-xl mt-5">{active.title}</h3>
             <p className="lede mt-5 max-w-2xl text-ink/78">{active.summary}</p>
 
             <dl className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 border-t border-ink/12 pt-6">
               <div className="sm:col-span-2 lg:col-span-1">
-                <dt className="mono-label text-ink/45">Capacity</dt>
-                <dd className="display-figure mt-1 text-clay">{active.capacityM3 ? `${Number(active.capacityM3)} m³` : " - "}</dd>
+                <dt className="mono-label text-ink/70">Capacity</dt>
+                <dd className="display-figure mt-1 text-clay-text">{active.capacityM3 ? `${Number(active.capacityM3)} m³` : " - "}</dd>
               </div>
               <div>
-                <dt className="mono-label text-ink/45">Technology</dt>
+                <dt className="mono-label text-ink/70">Technology</dt>
                 <dd className="mono-data mt-1.5">{pretty(active.plantType ?? " - ")}</dd>
               </div>
               <div>
-                <dt className="mono-label text-ink/45">Status</dt>
+                <dt className="mono-label text-ink/70">Status</dt>
                 <dd className="mono-data mt-1.5">{pretty(active.projectStatus)}</dd>
               </div>
               <div>
-                <dt className="mono-label text-ink/45">Location</dt>
+                <dt className="mono-label text-ink/70">Location</dt>
                 <dd className="mono-data mt-1.5">{[active.locality, active.county].filter(Boolean).join(", ") || " - "}</dd>
               </div>
               <div>
-                <dt className="mono-label text-ink/45">Feedstock</dt>
+                <dt className="mono-label text-ink/70">Feedstock</dt>
                 <dd className="mono-data mt-1.5">{active.feedstocks.join(", ") || " - "}</dd>
               </div>
               <div>
-                <dt className="mono-label text-ink/45">Applications</dt>
+                <dt className="mono-label text-ink/70">Applications</dt>
                 <dd className="mono-data mt-1.5">{active.applications.join(", ") || " - "}</dd>
               </div>
             </dl>

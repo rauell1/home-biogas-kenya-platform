@@ -38,8 +38,8 @@ export default async function ApplicationsPage({ params }: { params: Promise<{ l
           {APPLICATIONS.map((a, i) => (
             <li key={a.slug}>
               <Link href={`/${locale}/applications/${a.slug}`} className="row-link md:grid-cols-[auto_1fr_1.4fr_1fr] md:items-baseline md:gap-6 group">
-                <span className="mono-label text-clay">{String(i + 1).padStart(2, "0")}</span>
-                <span className="display-md group-hover:text-clay transition-colors">{a.name}</span>
+                <span className="mono-label text-clay-text">{String(i + 1).padStart(2, "0")}</span>
+                <span className="display-md group-hover:text-clay-text transition-colors">{a.name}</span>
                 <span className="text-ink/72">{a.use}</span>
                 <span className="mono-label text-ink/45">{a.requirement}</span>
               </Link>

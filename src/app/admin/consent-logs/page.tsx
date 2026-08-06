@@ -1,4 +1,4 @@
-import { requirePermission } from "@/lib/guard";
+﻿import { requirePermission } from "@/lib/guard";
 import AdminHeader from "@/components/admin/AdminHeader";
 import { db } from "@/db";
 import { cookieConsentLogs } from "@/db/schema";
@@ -79,7 +79,7 @@ export default async function AdminConsentLogsPage() {
               <tbody className="divide-y divide-ink/10">
                 {logs.map((l) => (
                   <tr key={l.id} className="hover:bg-bone/50">
-                    <td className="p-3 font-semibold text-clay">{l.consentId.substring(0, 16)}…</td>
+                    <td className="p-3 font-semibold text-clay-text">{l.consentId.substring(0, 16)}…</td>
                     <td className="p-3">
                       <span className={`px-2 py-0.5 border ${l.region === "EU" ? "border-methane text-methane" : l.region === "US_CA" ? "border-safety text-safety" : "border-ink/20"}`}>
                         {l.region}

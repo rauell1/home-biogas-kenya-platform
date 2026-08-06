@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, type FormEvent } from "react";
 
@@ -62,7 +62,7 @@ export default function NewsletterForm({ locale }: { locale: string }) {
       <p className="mt-3 text-xs leading-relaxed text-bone/50">
         {isSwahili ? "Pata habari za miradi, mafunzo na teknolojia. Unaweza kujiondoa wakati wowote." : "Get project, training and technology updates. Unsubscribe at any time."}
       </p>
-      {message && <p role="status" className={`mt-3 text-sm ${status === "error" ? "text-clay" : "text-methane"}`}>{message}</p>}
+      {message && <p role="status" className={`mt-3 text-sm ${status === "error" ? "text-clay-text" : "text-methane"}`}>{message}</p>}
     </form>
   );
 }

@@ -1,4 +1,4 @@
-import { requirePermission } from "@/lib/guard";
+﻿import { requirePermission } from "@/lib/guard";
 import AdminHeader from "@/components/admin/AdminHeader";
 import { db } from "@/db";
 import { cookieConsentSettings, cookieTrackers } from "@/db/schema";
@@ -106,7 +106,7 @@ export default async function AdminCookieSettingsPage() {
       <section className="panel bg-cream p-6 md:p-8">
         <div className="flex items-center justify-between border-b border-ink/12 pb-4 mb-6">
           <div>
-            <p className="mono-label text-clay">Tracker Inventory</p>
+            <p className="mono-label text-clay-text">Tracker Inventory</p>
             <h2 className="display-md mt-1">Detected Cookies & Scripts ({trackers.length})</h2>
           </div>
         </div>

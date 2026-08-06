@@ -1,4 +1,4 @@
-import { desc } from "drizzle-orm";
+﻿import { desc } from "drizzle-orm";
 import { db } from "@/db";
 import { sourceRecords } from "@/db/schema";
 import { requirePermission } from "@/lib/guard";
@@ -23,7 +23,7 @@ export default async function SourceRecordsPage() {
         {rows.map((s) => (
           <li key={s.id} className="py-5">
             <div className="flex flex-wrap gap-3 justify-between">
-              <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" className="display-md hover:text-clay">
+              <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" className="display-md hover:text-clay-text">
                 {s.title ?? s.sourceUrl}
               </a>
               <span className="mono-label text-ink/50">{s.platform} · confidence {Number(s.confidenceScore).toFixed(2)}</span>

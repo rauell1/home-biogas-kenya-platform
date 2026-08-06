@@ -40,8 +40,8 @@ export default async function TrainingPage({ params }: { params: Promise<{ local
           {COURSES.map((c, i) => (
             <li key={c.slug}>
               <Link href={`/${locale}/training/${c.slug}`} className="row-link md:grid-cols-[auto_1fr_1.6fr_auto] md:items-baseline md:gap-6 group">
-                <span className="mono-label text-clay">{String(i + 1).padStart(2, "0")}</span>
-                <span className="display-md group-hover:text-clay transition-colors">{c.name}</span>
+                <span className="mono-label text-clay-text">{String(i + 1).padStart(2, "0")}</span>
+                <span className="display-md group-hover:text-clay-text transition-colors">{c.name}</span>
                 <span className="text-ink/72">{c.summary}</span>
                 <span className="mono-label text-ink/45">{c.days} days</span>
               </Link>

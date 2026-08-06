@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ne } from "drizzle-orm";
 import { db } from "@/db";
 import { projects } from "@/db/schema";
@@ -17,7 +17,7 @@ export default async function Approvals() {
       <ul className="mt-8 divide-y divide-ink/10 border-t border-ink/20">
         {pending.map((p) => (
           <li key={p.id} className="py-4 flex flex-wrap gap-4 justify-between">
-            <Link href={`/admin/projects/${p.id}`} className="display-md hover:text-clay">{p.title}</Link>
+            <Link href={`/admin/projects/${p.id}`} className="display-md hover:text-clay-text">{p.title}</Link>
             <span className="mono-label text-ink/60">{p.workflowState} · technical: {p.technicalReviewStatus} · media: {p.mediaRightsStatus}</span>
           </li>
         ))}

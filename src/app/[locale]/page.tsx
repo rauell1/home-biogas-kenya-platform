@@ -42,10 +42,10 @@ function Chapter({
           style={{ borderColor: dark ? "var(--hairline-invert)" : "var(--hairline)" }}
         >
           <div>
-            <p className={`chapter-marker ${dark ? "text-methane" : "text-clay"}`}>Chapter {n}</p>
+            <p className={`chapter-marker ${dark ? "text-methane" : "text-clay-text"}`}>Chapter {n}</p>
             <h2 className="display-xl mt-4 max-w-3xl">{title}</h2>
           </div>
-          {kicker && <p className={`mono-label max-w-xs ${dark ? "text-bone/45" : "text-ink/45"}`}>{kicker}</p>}
+          {kicker && <p className={`mono-label max-w-xs ${dark ? "text-bone/70" : "text-ink/70"}`}>{kicker}</p>}
         </div>
         {children}
       </div>
@@ -98,7 +98,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="flex flex-wrap items-center gap-3">
               <span className="chapter-marker text-methane">Chapter 01 - {t.chapters[0]}</span>
               <span className="tech-badge">{t.heroKicker}</span>
-              <span className="mono-label text-bone/40 hidden sm:inline-block">· ISO-Compliant Engineering</span>
+              <span className="mono-label text-bone/65 hidden sm:inline-block">· ISO-Compliant Engineering</span>
             </div>
 
             <div className="mt-8 grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center">
@@ -236,7 +236,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Chapter n="04" title={t.chapters[3]} kicker="Only technically reviewed projects with cleared media rights appear here">
         {projects.length === 0 && (
           <div className="mb-8 border border-clay/30 bg-clay/10 p-5 rounded-sm">
-            <p className="mono-label text-clay font-semibold">Verification Standard</p>
+            <p className="mono-label text-clay-text font-semibold">Verification Standard</p>
             <p className="mt-2 text-sm text-ink/80">{t.zeroProjectsNotice}</p>
           </div>
         )}
@@ -265,7 +265,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="shell section">
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
             <div>
-              <p className="chapter-marker text-clay">Capability Matrix</p>
+              <p className="chapter-marker text-clay-text">Capability Matrix</p>
               <h2 className="display-lg mt-4">{t.capabilityTitle}</h2>
               <p className="editorial mt-4 text-ink/75 max-w-md">{t.capabilityLead}</p>
               <Link href={`/${locale}/solutions`} className="btn btn-primary mt-8">
@@ -276,13 +276,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               {SERVICE_GROUPS.map((group, gIdx) => (
                 <div key={group.category} className="tech-card p-6">
                   <div className="flex items-center justify-between border-b border-ink/12 pb-3 mb-4">
-                    <p className="mono-label text-clay font-semibold">{group.category}</p>
-                    <span className="mono-label text-ink/40">0{gIdx + 1}</span>
+                    <p className="mono-label text-clay-text font-semibold">{group.category}</p>
+                    <span className="mono-label text-ink/70">0{gIdx + 1}</span>
                   </div>
                   <ul className="space-y-2.5 text-sm text-ink/85">
                     {group.items.slice(0, 4).map((item) => (
                       <li key={item.slug}>
-                        <Link href={`/${locale}/solutions/${item.slug}`} className="link-quiet font-medium hover:text-clay">
+                        <Link href={`/${locale}/solutions/${item.slug}`} className="link-quiet font-medium hover:text-clay-text">
                           {item.name}
                         </Link>
                       </li>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { PRODUCTS } from "@/lib/catalogue";
 
@@ -8,7 +8,7 @@ export default function ShopPreview({ locale }: { locale: string }) {
     <section className="bg-bone border-y border-ink/10">
       <div className="shell section">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div><p className="chapter-marker text-clay">Shop & equipment</p><h2 className="display-xl mt-4 max-w-3xl">Appliances that complete the system</h2></div>
+          <div><p className="chapter-marker text-clay-text">Shop & equipment</p><h2 className="display-xl mt-4 max-w-3xl">Appliances that complete the system</h2></div>
           <Link href={`/${locale}/products`} className="btn btn-primary">View the catalogue →</Link>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -76,7 +76,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                   on ? "bg-ink text-bone" : done ? "bg-bone/70 hover:bg-bone" : "hover:bg-bone/50"
                 }`}
               >
-                <span className={`mono-label ${on ? "text-methane" : done ? "text-olive" : "text-ink/40"}`}>
+                <span className={`mono-label ${on ? "text-methane" : done ? "text-olive" : "text-ink/70"}`}>
                   {String(n).padStart(2, "0")} {done ? "✓" : ""}
                 </span>
                 <span className="block text-sm font-semibold mt-1">{label}</span>
@@ -90,7 +90,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
         {step === 1 && (
           <fieldset>
             <legend className="display-lg mb-2">Which waste do you have?</legend>
-            <p className="text-sm text-ink/60 mb-6">Select every stream available on the site.</p>
+            <p className="text-sm text-ink/75 mb-6">Select every stream available on the site.</p>
             <div className="grid gap-3 sm:grid-cols-3">
               {FEEDSTOCK_OPTIONS.map((f) => {
                 const on = f.id in selected;
@@ -104,7 +104,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                     <input type="checkbox" checked={on} onChange={() => toggleFeedstock(f.id)} className="accent-[#a85532]" />
                     <span>
                       {f.label}
-                      <span className="mono-label block text-ink/40 mt-0.5">{f.unit}</span>
+                      <span className="mono-label block text-ink/70 mt-0.5">{f.unit}</span>
                     </span>
                   </label>
                 );
@@ -116,7 +116,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
         {step === 2 && (
           <fieldset>
             <legend className="display-lg mb-2">How much, every day?</legend>
-            <p className="text-sm text-ink/60 mb-6">Nothing is estimated without a measured quantity.</p>
+            <p className="text-sm text-ink/75 mb-6">Nothing is estimated without a measured quantity.</p>
             {Object.keys(selected).length === 0 ? (
               <p className="note border-oxide text-oxide">Select at least one waste source in step 01.</p>
             ) : (
@@ -146,7 +146,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
         {step === 3 && (
           <fieldset>
             <legend className="display-lg mb-2">What should the gas do?</legend>
-            <p className="text-sm text-ink/60 mb-6">The end use determines filtration, pressure and storage.</p>
+            <p className="text-sm text-ink/75 mb-6">The end use determines filtration, pressure and storage.</p>
             <div className="grid gap-3 sm:grid-cols-3">
               {APPS.map(([id, label]) => {
                 const on = apps.includes(id);
@@ -174,7 +174,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
         {step === 4 && (
           <fieldset>
             <legend className="display-lg mb-2">Tell us about the site</legend>
-            <p className="text-sm text-ink/60 mb-6">Anything you leave blank is listed as missing information.</p>
+            <p className="text-sm text-ink/75 mb-6">Anything you leave blank is listed as missing information.</p>
             <div className="grid gap-5 sm:grid-cols-2">
               {SITE_FIELDS.map(([k, label]) => (
                 <label key={k} className="block">
@@ -199,26 +199,26 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
               <div className="grid gap-10 lg:grid-cols-2">
                 <div>
                   <div className="border border-ink/15 bg-bone p-6">
-                    <p className="mono-label text-ink/45">Possible system range</p>
-                    <p className="display-figure mt-2 text-clay">
+                    <p className="mono-label text-ink/70">Possible system range</p>
+                    <p className="display-figure mt-2 text-clay-text">
                       {result.digesterM3Min}-{result.digesterM3Max} m³
                     </p>
                     <dl className="mt-6 grid grid-cols-2 gap-5 border-t border-ink/12 pt-5">
                       <div>
-                        <dt className="mono-label text-ink/45">Fresh material</dt>
+                        <dt className="mono-label text-ink/70">Fresh material</dt>
                         <dd className="mono-data mt-1">
                           {result.freshKgPerDayMin}-{result.freshKgPerDayMax} kg/day
                         </dd>
                       </div>
                       <div>
-                        <dt className="mono-label text-ink/45">Indicative biogas</dt>
+                        <dt className="mono-label text-ink/70">Indicative biogas</dt>
                         <dd className="mono-data mt-1">
                           {result.gasM3PerDayMin}-{result.gasM3PerDayMax} m³/day
                         </dd>
                       </div>
                     </dl>
                   </div>
-                  <p className="mono-label mt-6 text-ink/45">Possible technologies</p>
+                  <p className="mono-label mt-6 text-ink/70">Possible technologies</p>
                   <ul className="mt-3 space-y-1.5 text-sm">
                     {result.technologies.map((t) => (
                       <li key={t} className="flex gap-2">
@@ -229,7 +229,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
                   </ul>
                 </div>
                 <div>
-                  <p className="mono-label text-ink/45">Assumptions</p>
+                  <p className="mono-label text-ink/70">Assumptions</p>
                   <ul className="mt-3 space-y-2 text-sm text-ink/75">
                     {result.assumptions.map((a) => (
                       <li key={a} className="flex gap-2">

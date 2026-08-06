@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -67,14 +67,14 @@ export default function SiteNav({
               key={key}
               href={href}
               data-active={pathname === href}
-              className="link-quiet py-1 hover:text-clay data-[active=true]:text-clay"
+              className="link-quiet py-1 hover:text-clay-text data-[active=true]:text-clay-text"
             >
               {labels[key]}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden xl:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link href={swapped} className="mono-label border border-ink/25 px-2.5 py-1.5 hover:bg-ink hover:text-bone transition-colors">
             {otherLocale.toUpperCase()}
           </Link>
@@ -108,7 +108,7 @@ export default function SiteNav({
           <div className="shell py-6">
             {links.map(([key, href], i) => (
               <Link key={key} href={href} className="flex items-baseline gap-4 border-b border-ink/10 py-4">
-                <span className="mono-label text-clay">{String(i + 1).padStart(2, "0")}</span>
+                <span className="mono-label text-clay-text">{String(i + 1).padStart(2, "0")}</span>
                 <span className="display-md">{labels[key]}</span>
               </Link>
             ))}

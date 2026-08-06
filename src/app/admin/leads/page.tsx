@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { desc } from "drizzle-orm";
 import { db } from "@/db";
 import { leads } from "@/db/schema";
@@ -35,7 +35,7 @@ export default async function LeadsPage() {
             {rows.map((l) => (
               <tr key={l.id} className="hover:bg-bone/60 transition-colors">
                 <td className="px-5 py-4">
-                  <Link href={`/admin/leads/${l.id}`} className="mono-data hover:text-clay transition-colors">
+                  <Link href={`/admin/leads/${l.id}`} className="mono-data hover:text-clay-text transition-colors">
                     {l.reference}
                   </Link>
                 </td>

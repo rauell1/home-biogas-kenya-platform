@@ -116,7 +116,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
           <ol className="mt-3 space-y-1.5">
             {sections.map((s, i) => (
               <li key={String(s.key)}>
-                <a href={`#s-${String(s.key)}`} className="mono-label text-ink/55 hover:text-clay">
+                <a href={`#s-${String(s.key)}`} className="mono-label text-ink/55 hover:text-clay-text">
                   {String(i + 1).padStart(2, "0")} {s.label}
                 </a>
               </li>
@@ -182,12 +182,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
       {others.length > 0 && (
         <section className="bg-bone">
           <div className="shell py-16">
-            <h2 className="mono-label text-clay border-b border-ink/12 pb-3">Related projects</h2>
+            <h2 className="mono-label text-clay-text border-b border-ink/12 pb-3">Related projects</h2>
             <ul>
               {others.map((o) => (
                 <li key={o.slug}>
                   <Link href={`/${locale}/projects/${o.slug}`} className="row-link md:grid-cols-[1fr_auto] md:items-baseline group">
-                    <span className="display-md group-hover:text-clay transition-colors">{o.title}</span>
+                    <span className="display-md group-hover:text-clay-text transition-colors">{o.title}</span>
                     <span className="mono-label text-ink/45">
                       {o.county}
                       {o.capacityM3 ? ` · ${Number(o.capacityM3)} m³` : ""}

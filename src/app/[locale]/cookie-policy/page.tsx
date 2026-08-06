@@ -68,7 +68,7 @@ export default async function CookiePolicyPage({ params }: { params: Promise<{ l
               <tbody className="divide-y divide-ink/10 font-mono text-xs">
                 {allTrackers.map((t) => (
                   <tr key={t.name} className="hover:bg-cream/50">
-                    <td className="p-3 font-semibold text-clay">{t.name}</td>
+                    <td className="p-3 font-semibold text-clay-text">{t.name}</td>
                     <td className="p-3">{t.category}</td>
                     <td className="p-3">{t.provider}</td>
                     <td className="p-3">{t.expiry}</td>

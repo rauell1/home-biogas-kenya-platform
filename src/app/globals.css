@@ -6,6 +6,7 @@
   --color-ink: #121412;
   --color-concrete: #b9b7ae;
   --color-clay: #a85532;
+  --color-clay-text: #8a4228;
   --color-soil: #372b22;
   --color-methane: #5db7c4;
   --color-olive: #6e7445;
@@ -142,7 +143,7 @@ body {
 
 .mono-label {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -158,7 +159,7 @@ body {
 
 .chapter-marker {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   display: inline-flex;
@@ -244,7 +245,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--color-ink) 58%, transparent);
+  color: color-mix(in srgb, var(--color-ink) 72%, transparent);
 }
 
 .field-input {
@@ -424,6 +425,15 @@ body {
 
 .animate-flow-pulse {
   animation: flowPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s ease both;
 }
 
 /* Custom Scrollbar for Process Chain & Diagrams */

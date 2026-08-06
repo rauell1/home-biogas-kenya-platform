@@ -56,7 +56,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
       <div className="shell pb-24 flex flex-wrap gap-3">
         <div className="w-full mb-7 border-l-2 border-clay pl-5">
-          <p className="mono-label text-clay">Visit or write to us</p>
+          <p className="mono-label text-clay-text">Visit or write to us</p>
           <p className="mt-2 text-sm text-ink/75">{COMPANY.address}</p>
           <p className="text-sm text-ink/60">{COMPANY.postalAddress}</p>
         </div>

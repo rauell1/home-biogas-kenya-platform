@@ -45,7 +45,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
       <section className="shell section">
         <div className="flex flex-wrap items-end justify-between gap-5 border-b border-ink/15 pb-6">
           <div>
-            <p className="chapter-marker text-clay">Appliance shop</p>
+            <p className="chapter-marker text-clay-text">Appliance shop</p>
             <h2 className="display-lg mt-4">Ask, confirm, then order</h2>
           </div>
           <p className="max-w-md text-sm text-ink/65">
@@ -71,7 +71,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="display-md">{product.name}</h3>
                   <p className="mt-3 flex-1 text-sm text-ink/68">{product.spec}</p>
-                  <p className="mono-label mt-5 text-clay">Price on enquiry</p>
+                  <p className="mono-label mt-5 text-clay-text">Price on enquiry</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">WhatsApp</a>
                     <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="btn btn-outline btn-sm">Call</a>
@@ -87,12 +87,12 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
       <section className="shell section border-t border-ink/15">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="chapter-marker text-clay">Installed systems</p>
+            <p className="chapter-marker text-clay-text">Installed systems</p>
             <h2 className="display-xl mt-5">Built for real Kenyan homes, farms and institutions</h2>
           </div>
           <div>
             <p className="lede text-ink/70">These company images show the main system formats we install. Recent official project updates include 8, 12 and 16 m³ plants serving cooking, poultry brooding, lighting, hot water and farm machinery.</p>
-            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm font-semibold text-clay underline underline-offset-4">See official project updates on LinkedIn</a>
+            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm font-semibold text-clay-text underline underline-offset-4">See official project updates on LinkedIn</a>
           </div>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">

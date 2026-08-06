@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { sql, eq, and, isNull, lte, count } from "drizzle-orm";
 import { db } from "@/db";
 import { leads, leadActivities, projects, projectMedia, sourceRecords, siteSurveys, articles } from "@/db/schema";
@@ -94,7 +94,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
         {primary.map((c) => (
           <Link key={c.label} href={c.href} className="bg-cream p-6 hover:bg-bone transition-colors">
             <p className="mono-label text-ink/45">{c.label}</p>
-            <p className={`display-figure mt-3 ${c.accent && c.value > 0 ? "text-clay" : ""}`}>{c.value}</p>
+            <p className={`display-figure mt-3 ${c.accent && c.value > 0 ? "text-clay-text" : ""}`}>{c.value}</p>
           </Link>
         ))}
       </div>
@@ -110,15 +110,15 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
 
       <div className="mt-12 grid gap-10 lg:grid-cols-3">
         <section className="panel p-6">
-          <h2 className="mono-label text-clay">Leads by county</h2>
+          <h2 className="mono-label text-clay-text">Leads by county</h2>
           <Bars rows={byCounty.map((r) => ({ label: r.k ?? "Unspecified", value: r.value }))} />
         </section>
         <section className="panel p-6">
-          <h2 className="mono-label text-clay">Projects by technology</h2>
+          <h2 className="mono-label text-clay-text">Projects by technology</h2>
           <Bars rows={byTech.map((r) => ({ label: (r.k ?? "Unspecified").replaceAll("_", " "), value: r.value }))} />
         </section>
         <section className="panel p-6">
-          <h2 className="mono-label text-clay">Conversion funnel</h2>
+          <h2 className="mono-label text-clay-text">Conversion funnel</h2>
           <Bars rows={stages.map((r) => ({ label: r.k, value: r.value }))} />
         </section>
       </div>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { desc } from "drizzle-orm";
 import { db } from "@/db";
 import { siteSurveys } from "@/db/schema";
@@ -17,7 +17,7 @@ export default async function SurveysPage() {
       <ul className="mt-8 divide-y divide-ink/10 border-t border-ink/20">
         {rows.map((s) => (
           <li key={s.id} className="py-4 flex justify-between">
-            <Link href={`/admin/site-surveys/${s.id}`} className="display-md hover:text-clay">{s.clientName}</Link>
+            <Link href={`/admin/site-surveys/${s.id}`} className="display-md hover:text-clay-text">{s.clientName}</Link>
             <span className="mono-label text-ink/50">{s.status} · {s.engineer ?? "unassigned"}</span>
           </li>
         ))}
