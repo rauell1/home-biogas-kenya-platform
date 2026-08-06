@@ -52,6 +52,7 @@ export default function SiteNav({
         return;
       }
       if (e.key !== "Tab") return;
+      if (!nav) return;
       const focusable = Array.from(
         nav.querySelectorAll<HTMLElement>("a[href], button:not([disabled])")
       );
