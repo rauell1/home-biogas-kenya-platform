@@ -10,7 +10,7 @@ export default function PageHeader({
   eyebrow: string;
   title: string;
   lede?: string;
-  meta?: { label: string; value: string }[];
+  meta?: { label: string; value: string; href?: string }[];
   actions?: { label: string; href: string; accent?: boolean }[];
 }) {
   return (
@@ -34,7 +34,11 @@ export default function PageHeader({
             {meta.map((m) => (
               <div key={m.label}>
                 <dt className="mono-label text-ink/70">{m.label}</dt>
-                <dd className="mono-data mt-1.5">{m.value}</dd>
+                <dd className="mono-data mt-1.5">
+                  {m.href ? (
+                    <a href={m.href} className="hover:text-clay-text transition-colors underline-offset-2 hover:underline">{m.value}</a>
+                  ) : m.value}
+                </dd>
               </div>
             ))}
           </dl>

@@ -27,9 +27,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         title="Talk to the engineering team"
         lede="Tell us about your waste stream and your energy demand. We will tell you honestly whether biogas is the right answer."
         meta={[
-          { label: "Phone", value: phone },
-          { label: "WhatsApp", value: whatsapp },
-          { label: "Email", value: email },
+          { label: "Phone", value: phone, href: `tel:${phone.replace(/\s/g, "")}` },
+          { label: "WhatsApp", value: whatsapp, href: `https://wa.me/${whatsapp.replace(/[^\d]/g, "")}` },
+          { label: "Email", value: email, href: `mailto:${email}` },
           { label: "Office", value: "Koinange Street, Nairobi" },
         ]}
         actions={[

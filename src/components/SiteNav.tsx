@@ -1,8 +1,8 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BrandLogo from "@/components/BrandLogo";
 
 export default function SiteNav({
@@ -15,6 +15,8 @@ export default function SiteNav({
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,9 +33,42 @@ export default function SiteNav({
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  // Focus trap + Escape key when mobile nav is open
+  useEffect(() => {
+    if (!open) return;
+    const nav = navRef.current;
+    if (!nav) return;
+
+    // Focus first focusable element on open
+    nav.querySelector<HTMLElement>("a[href], button:not([disabled])")?.focus();
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const focusable = Array.from(
+        nav.querySelectorAll<HTMLElement>("a[href], button:not([disabled])")
+      );
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
   const links = [
@@ -84,6 +119,7 @@ export default function SiteNav({
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           className="xl:hidden flex items-center gap-2 mono-label border border-ink/25 px-3 py-2"
           aria-expanded={open}
@@ -101,9 +137,10 @@ export default function SiteNav({
 
       {open && (
         <nav
+          ref={navRef}
           id="mobile-nav"
           aria-label="Mobile"
-          className="xl:hidden fixed inset-x-0 top-[72px] bottom-0 overflow-y-auto bg-cream border-t border-ink/12"
+          className="xl:hidden fixed inset-x-0 top-[72px] bottom-0 overflow-y-auto bg-cream border-t border-ink/12 animate-slide-down"
         >
           <div className="shell py-6">
             {links.map(([key, href], i) => (

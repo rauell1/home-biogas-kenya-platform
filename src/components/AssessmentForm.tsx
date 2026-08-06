@@ -4,15 +4,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const FIELDS = [
-  { name: "fullName", label: "Full name", required: true },
-  { name: "organisation", label: "Company or institution" },
-  { name: "phone", label: "Phone", required: true },
-  { name: "whatsapp", label: "WhatsApp" },
-  { name: "email", label: "Email", type: "email" },
-  { name: "county", label: "County" },
-  { name: "locality", label: "Locality" },
-  { name: "timeline", label: "Project timeline" },
-  { name: "budgetRange", label: "Budget range" },
+  { name: "fullName",     label: "Full name",           required: true,  placeholder: "e.g. Joseph Kamau" },
+  { name: "organisation", label: "Company or institution",               placeholder: "e.g. Kiambu Farm Ltd" },
+  { name: "phone",        label: "Phone",               required: true,  placeholder: "+254 7XX XXX XXX" },
+  { name: "whatsapp",     label: "WhatsApp",                             placeholder: "If different from phone" },
+  { name: "email",        label: "Email",   type: "email",               placeholder: "you@example.com" },
+  { name: "county",       label: "County",                               placeholder: "e.g. Nairobi, Kiambu" },
+  { name: "locality",     label: "Locality",                             placeholder: "Town or area" },
+  { name: "timeline",     label: "Project timeline",                     placeholder: "e.g. ASAP, 3–6 months" },
+  { name: "budgetRange",  label: "Budget range",                         placeholder: "e.g. KES 200k–500k" },
 ] as const;
 
 export default function AssessmentForm({ locale, disclaimer }: { locale: string; disclaimer: string }) {
@@ -20,6 +20,7 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
   const [reference, setReference] = useState("");
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const raw = window.sessionStorage.getItem("hbk_config");
@@ -57,13 +58,36 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
     }
   }
 
+  async function copyReference() {
+    try {
+      await navigator.clipboard.writeText(reference);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard not available — user can select manually */
+    }
+  }
+
   if (status === "done") {
     return (
       <div className="border border-olive bg-olive/10 p-8 md:p-12">
         <p className="mono-label text-olive">Request received</p>
-        <h2 className="display-lg mt-3">Your reference is {reference}</h2>
-        <p className="editorial mt-4 max-w-xl text-ink/78">
-          Keep this reference. Our engineering team will contact you within two working days to arrange a site survey.
+        <h2 className="display-lg mt-3">We will be in touch within two working days.</h2>
+        <p className="mt-4 text-sm text-ink/75">Your reference number — save it for any follow-up:</p>
+        <div className="mt-3 flex items-center gap-3">
+          <code className="font-mono text-xl font-semibold tracking-wide bg-bone border border-ink/15 px-4 py-2">
+            {reference}
+          </code>
+          <button
+            type="button"
+            onClick={copyReference}
+            className="mono-label border border-ink/25 px-3 py-2 hover:bg-ink hover:text-bone transition-colors"
+          >
+            {copied ? "Copied ✓" : "Copy"}
+          </button>
+        </div>
+        <p className="mt-5 text-sm text-ink/65">
+          Our engineering team will contact you to arrange a site survey.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href={`/${locale}/projects`} className="btn btn-primary">
@@ -96,6 +120,7 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
               name={f.name}
               type={"type" in f ? f.type : "text"}
               required={"required" in f ? f.required : false}
+              placeholder={f.placeholder}
               className="field-input"
             />
           </label>
@@ -112,7 +137,12 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
 
       <label className="block">
         <span className="field-label">Notes  -  waste stream, energy need, site</span>
-        <textarea name="notes" rows={5} className="field-input" />
+        <textarea
+          name="notes"
+          rows={5}
+          placeholder="Describe your waste source, daily volume, energy goals, and anything notable about the site."
+          className="field-input"
+        />
       </label>
 
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
