@@ -89,24 +89,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div aria-hidden className="absolute inset-0 grid-lines opacity-40" />
         <div
           aria-hidden
-          className="absolute -right-24 top-1/4 h-[36rem] w-[36rem] rounded-full blur-[140px] opacity-20"
+          className="absolute -right-24 top-1/4 h-[36rem] w-[36rem] rounded-full blur-[140px] opacity-20 pointer-events-none"
           style={{ background: "radial-gradient(circle, #5db7c4 0%, transparent 65%)" }}
         />
 
         <div className="shell relative pt-16 pb-16 md:pt-24 md:pb-20 min-h-[88vh] flex flex-col justify-between">
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="chapter-marker text-methane">Chapter 01  -  {t.chapters[0]}</span>
+              <span className="chapter-marker text-methane">Chapter 01 - {t.chapters[0]}</span>
               <span className="tech-badge">{t.heroKicker}</span>
+              <span className="mono-label text-bone/40 hidden sm:inline-block">· ISO-Compliant Engineering</span>
             </div>
 
             <div className="mt-8 grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center">
               <div>
                 <h1 className="display-hero max-w-[19ch]">
                   {t.heroTitleA}
-                  <span className="mt-3 block text-methane">{t.heroTitleB}</span>
+                  <span className="mt-3 block text-methane font-normal">{t.heroTitleB}</span>
                 </h1>
-                <p className="lede mt-8 max-w-xl text-bone/80">{t.heroLead}</p>
+                <p className="lede mt-8 max-w-xl text-bone/85">{t.heroLead}</p>
 
                 <div className="mt-10 flex flex-wrap gap-4 items-center">
                   <a href="#chapter-02" className="btn btn-accent shadow-lg shadow-methane/10">
@@ -119,8 +120,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
 
               {/* Technical Blueprint SVG Motif */}
-              <div className="relative border border-bone/15 bg-ink/70 p-6 md:p-8 rounded-sm shadow-2xl backdrop-blur-sm hidden sm:block">
-                <div aria-hidden className="absolute -top-3 left-4 bg-soil border border-bone/20 px-2 py-0.5 mono-label text-methane text-[0.65rem]">
+              <div className="relative border border-bone/20 bg-ink/80 p-6 md:p-8 rounded-sm shadow-2xl backdrop-blur-md hidden sm:block">
+                <div aria-hidden className="absolute -top-3 left-4 bg-soil border border-bone/20 px-2.5 py-0.5 mono-label text-methane text-[0.65rem] tracking-widest">
                   SCHEMATIC · HBK-DS-2026
                 </div>
 
@@ -306,7 +307,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="mono-label text-methane mb-3">Site Survey & Project Kickoff</p>
             <p className="lede text-bone/85 max-w-2xl">
               Bring us your waste stream, your energy demand and your site. We survey, design and build the system that
-              connects them  -  then train the people who run it.
+              connects them - then train the people who run it.
             </p>
           </div>
           <div className="lg:text-right">
@@ -320,3 +321,4 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     </>
   );
 }
+
