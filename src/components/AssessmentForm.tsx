@@ -11,8 +11,8 @@ const FIELDS = [
   { name: "email",        label: "Email",   type: "email",               placeholder: "you@example.com" },
   { name: "county",       label: "County",                               placeholder: "e.g. Nairobi, Kiambu" },
   { name: "locality",     label: "Locality",                             placeholder: "Town or area" },
-  { name: "timeline",     label: "Project timeline",                     placeholder: "e.g. ASAP, 3–6 months" },
-  { name: "budgetRange",  label: "Budget range",                         placeholder: "e.g. KES 200k–500k" },
+  { name: "timeline",     label: "Project timeline",                     placeholder: "e.g. ASAP, 3-6 months" },
+  { name: "budgetRange",  label: "Budget range",                         placeholder: "e.g. KES 200k-500k" },
 ] as const;
 
 export default function AssessmentForm({ locale, disclaimer }: { locale: string; disclaimer: string }) {
@@ -64,7 +64,7 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      /* clipboard not available — user can select manually */
+      /* clipboard not available - user can select manually */
     }
   }
 
@@ -73,7 +73,7 @@ export default function AssessmentForm({ locale, disclaimer }: { locale: string;
       <div className="border border-olive bg-olive/10 p-8 md:p-12">
         <p className="mono-label text-olive">Request received</p>
         <h2 className="display-lg mt-3">We will be in touch within two working days.</h2>
-        <p className="mt-4 text-sm text-ink/75">Your reference number — save it for any follow-up:</p>
+        <p className="mt-4 text-sm text-ink/75">Your reference number - save it for any follow-up:</p>
         <div className="mt-3 flex items-center gap-3">
           <code className="font-mono text-xl font-semibold tracking-wide bg-bone border border-ink/15 px-4 py-2">
             {reference}
