@@ -147,7 +147,7 @@ export default async function LocaleLayout({
             </div>
           </div>
 
-          <ol className="mt-16 flex flex-wrap gap-x-5 gap-y-2 mono-label text-bone/35">
+          <ol className="mt-16 flex flex-wrap gap-x-5 gap-y-2 mono-label text-bone/55">
             {PROCESS_CHAIN.map((step, i) => (
               <li key={step} className={i === 3 ? "text-methane" : undefined}>
                 {String(i + 1).padStart(2, "0")} {step}
@@ -155,7 +155,7 @@ export default async function LocaleLayout({
             ))}
           </ol>
 
-          <div className="mt-10 hairline-invert pt-6 flex flex-wrap items-center justify-between gap-4 mono-label text-bone/45">
+          <div className="mt-10 hairline-invert pt-6 flex flex-wrap items-center justify-between gap-4 mono-label text-bone/55">
             <span>© {new Date().getFullYear()} Home Biogas Kenya · Nairobi</span>
             <span className="flex flex-wrap gap-4 text-xs">
               <Link href={`/${locale}/privacy-policy`} className="hover:text-bone">

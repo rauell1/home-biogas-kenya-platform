@@ -76,7 +76,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <nav aria-label="Admin" className="mt-9 space-y-7">
             {groups.map((g) => (
               <div key={g.title}>
-                <p className="mono-label text-bone/35">{g.title}</p>
+                <p className="mono-label text-bone/55">{g.title}</p>
                 <ul className="mt-2.5 space-y-0.5">
                   {g.items.map((item) => (
                     <li key={item.href}>

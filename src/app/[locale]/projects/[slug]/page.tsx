@@ -73,37 +73,37 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
 
           <dl className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 hairline-invert pt-8">
             <div>
-              <dt className="mono-label text-bone/45">Capacity</dt>
+              <dt className="mono-label text-bone/65">Capacity</dt>
               <dd className="display-figure mt-2" style={{ color: accent }}>
                 {project.capacityM3 ? `${Number(project.capacityM3)} m³` : "Study"}
               </dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Technology</dt>
+              <dt className="mono-label text-bone/65">Technology</dt>
               <dd className="mono-data mt-2">{pretty(project.plantType ?? " - ")}</dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Location</dt>
+              <dt className="mono-label text-bone/65">Location</dt>
               <dd className="mono-data mt-2">{[project.locality, project.county].filter(Boolean).join(", ")}</dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Completed</dt>
+              <dt className="mono-label text-bone/65">Completed</dt>
               <dd className="mono-data mt-2">{project.completionDate ?? " - "}</dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Sector</dt>
+              <dt className="mono-label text-bone/65">Sector</dt>
               <dd className="mono-data mt-2">{pretty(project.clientCategory ?? " - ")}</dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Feedstock</dt>
+              <dt className="mono-label text-bone/65">Feedstock</dt>
               <dd className="mono-data mt-2">{project.feedstocks.join(", ")}</dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Applications</dt>
+              <dt className="mono-label text-bone/65">Applications</dt>
               <dd className="mono-data mt-2">{project.applications.join(", ")}</dd>
             </div>
             <div>
-              <dt className="mono-label text-bone/45">Technical review</dt>
+              <dt className="mono-label text-bone/65">Technical review</dt>
               <dd className="mono-data mt-2">{pretty(project.technicalReviewStatus)}</dd>
             </div>
           </dl>
