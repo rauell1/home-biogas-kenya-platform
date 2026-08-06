@@ -67,7 +67,7 @@ export default function Configurator({ locale, disclaimer }: { locale: string; d
           const done = step > n;
           const on = step === n;
           return (
-            <li key={label} className="border-r border-ink/10 last:border-r-0">
+            <li key={label} className="border-r border-ink/10 last:border-r-0 last:col-span-2 sm:last:col-span-1">
               <button
                 type="button"
                 onClick={() => setStep(n)}
