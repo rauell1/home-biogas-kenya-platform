@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "home-biogas-kenya-platform",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  // Runtime secrets are set with `npx wrangler secret put NAME` or in the Cloudflare dashboard.
+  "keep_vars": true,
+  "workers_dev": true,
+  // Add a custom domain once it is on this Cloudflare account, e.g.
+  // "routes": [{ "pattern": "example.co.ke", "custom_domain": true }],
+  "observability": { "enabled": true }
+}
