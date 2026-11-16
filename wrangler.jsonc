@@ -14,5 +14,10 @@
   "workers_dev": true,
   // Add a custom domain once it is on this Cloudflare account, e.g.
   // "routes": [{ "pattern": "example.co.ke", "custom_domain": true }],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Page cache for open-next.config.ts.
+  "kv_namespaces": [
+    { "binding": "NEXT_INC_CACHE_KV", "id": "5f4ed96567204471820e051f4bc52c1f" },
+    { "binding": "NEXT_TAG_CACHE_KV", "id": "5a4d34dba93e4ed5b712d936732a11e9" }
+  ]
 }
