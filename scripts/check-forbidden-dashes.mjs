@@ -6,6 +6,8 @@ const excludedDirectories = new Set([
   ".agents",
   ".git",
   ".next",
+  ".open-next",
+  ".wrangler",
   "graphify-out",
   "node_modules",
   "public",

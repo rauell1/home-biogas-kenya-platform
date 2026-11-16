@@ -92,3 +92,13 @@ Do not publish imported social content automatically.
 5. Run type checking, linting, tests and production build in an environment with full npm registry access.
 6. Test invitation, lead, survey, approval and publication workflows.
 7. Verify mobile performance and reduced-motion behaviour.
+
+## Cloudflare deployment
+
+The site runs on Cloudflare Workers through the OpenNext Cloudflare adapter (`open-next.config.ts`, `wrangler.jsonc`). `.github/workflows/deploy-cloudflare.yml` builds and deploys on every push to `main`.
+
+- GitHub repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `DATABASE_URL`, `NEON_AUTH_BASE_URL`, `NEON_AUTH_COOKIE_SECRET`, `BETTER_AUTH_SECRET`.
+- GitHub repository variables: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_APP_NAME`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_PHONE_NUMBER`, `NEXT_PUBLIC_WHATSAPP_NUMBER`.
+- Worker secrets (`npx wrangler secret put NAME` or the Cloudflare dashboard): every runtime variable in `.env.example`.
+- On Workers the database pool is created per request (`src/db/index.ts`), because Workers cannot share a socket between requests.
+- Local check: `npm run cf:preview` with the variables in a `.dev.vars` file.
