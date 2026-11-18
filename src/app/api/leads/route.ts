@@ -7,7 +7,7 @@ import { audit } from "@/lib/auth";
 import { sendMail } from "@/lib/email";
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ip = request.headers.get("cf-connecting-ip")?.trim() ?? request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   const limited = rateLimit(`lead:${ip}`, 5, 10 * 60 * 1000);
   if (!limited.ok) {
     return NextResponse.json({ error: "Too many submissions. Please try again later." }, { status: 429 });

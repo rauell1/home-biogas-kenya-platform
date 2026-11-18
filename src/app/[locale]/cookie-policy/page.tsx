@@ -28,7 +28,6 @@ export default async function CookiePolicyPage({ params }: { params: Promise<{ l
     { name: "hbk_cookie_consent_v2", category: "Necessary", provider: "Home Biogas Kenya", expiry: "1 year", desc: "Stores your GDPR/CCPA cookie consent preferences" },
     { name: "hbk_config", category: "Functional", provider: "Home Biogas Kenya", expiry: "Session", desc: "Stores preliminary configurator choices for assessment form" },
     { name: "_ga", category: "Analytics", provider: "Google Analytics (Consent Mode v2)", expiry: "2 years", desc: "Anonymised performance and site usage metrics" },
-    { name: "_vercel_analytics", category: "Analytics", provider: "Vercel", expiry: "Session", desc: "Real-time web application performance monitoring" },
   ];
 
   const allTrackers = trackers.length > 0
