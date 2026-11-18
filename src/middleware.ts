@@ -1,10 +1,12 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 /**
- * Hosts allowed to embed the application (preview and deployment platforms).
+ * Hosts allowed to embed the application (preview platforms). Any
+ * *.vercel.app site was allowed too, which let anyone frame the app; it no
+ * longer runs on Vercel.
  * Everything else is still blocked by the frame-ancestors directive.
  */
-const FRAME_ANCESTORS = ["'self'", "https://*.arena.site", "https://*.e2b.app", "https://*.vercel.app"].join(" ");
+const FRAME_ANCESTORS = ["'self'", "https://*.arena.site", "https://*.e2b.app"].join(" ");
 
 const SECURITY_HEADERS: Record<string, string> = {
   "X-Content-Type-Options": "nosniff",
