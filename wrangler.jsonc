@@ -19,9 +19,13 @@
   // Add a custom domain once it is on this Cloudflare account, e.g.
   // "routes": [{ "pattern": "example.co.ke", "custom_domain": true }],
   "observability": { "enabled": true },
-  // Page cache for open-next.config.ts.
+  // Page cache for open-next.config.ts (pages kept in R2; the bucket was
+  // created ahead of the deploy).
+  "r2_buckets": [
+    { "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "home-biogas-kenya-platform-next-cache" }
+  ],
+  // Tag cache for revalidatePath/revalidateTag (open-next.config.ts).
   "kv_namespaces": [
-    { "binding": "NEXT_INC_CACHE_KV", "id": "5f4ed96567204471820e051f4bc52c1f" },
     { "binding": "NEXT_TAG_CACHE_KV", "id": "5a4d34dba93e4ed5b712d936732a11e9" }
   ]
 }
