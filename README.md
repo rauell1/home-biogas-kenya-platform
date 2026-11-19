@@ -1,6 +1,8 @@
-# Home Biogas Kenya  -  Final Consolidated Platform
+# Home Biogas Kenya platform
 
-This package consolidates the strongest work from the A2 and B2 directions and uses the uploaded B1 prototype only as a learning reference.
+Bilingual (English and Kiswahili) website and operations platform for Home Biogas Kenya: household biogas information, a verified project explorer, a preliminary system configurator, site-assessment requests and an invitation-only admin for projects, leads, approvals and content.
+
+It consolidates the strongest work from the earlier A2 and B2 design directions; the B1 prototype served only as a learning reference.
 
 ## What is included
 
@@ -102,3 +104,33 @@ The site runs on Cloudflare Workers through the OpenNext Cloudflare adapter (`op
 - Worker secrets (`npx wrangler secret put NAME` or the Cloudflare dashboard): every runtime variable in `.env.example`.
 - On Workers the database pool is created per request (`src/db/index.ts`), because Workers cannot share a socket between requests.
 - Local check: `npm run cf:preview` with the variables in a `.dev.vars` file.
+
+## Project information
+
+| | |
+|---|---|
+| Live site | https://home-biogas-kenya-platform.rauell.workers.dev/en |
+| Hosting | Cloudflare Workers |
+| Default branch | `main` |
+| Repository | Public |
+
+### Stack
+
+- Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4
+- Drizzle ORM with Neon PostgreSQL
+- Neon Auth and Better Auth
+- Vitest for tests
+
+### Deployment
+
+Production runs on Cloudflare Workers at https://home-biogas-kenya-platform.rauell.workers.dev/en. `.github/workflows/deploy-cloudflare.yml` builds and deploys on every push to `main`, using the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets. Public build-time values are repository variables; runtime secrets are Worker secrets.
+
+### Contributing and security
+
+- How to set up, test and submit changes: [CONTRIBUTING.md](CONTRIBUTING.md)
+- How to report a vulnerability: [SECURITY.md](SECURITY.md)
+- Expected behaviour in project spaces: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+### Licence
+
+No open-source licence has been granted. The code, content and brand assets belong to the project owner and all rights are reserved. Ask the owner before reusing any part of this repository.
