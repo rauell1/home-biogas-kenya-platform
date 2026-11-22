@@ -1,4 +1,20 @@
-# Home Biogas Kenya platform
+<!-- header:start -->
+<div align="center">
+
+# Home Biogas Kenya
+
+**Home Biogas Kenya platform: bilingual (English and Kiswahili) site for household biogas systems, with a project explorer, configurator, site assessments and an invitation-only admin.**
+
+[![Live: home-biogas-kenya-platform.rauell.workers.dev](https://img.shields.io/badge/Live-home--biogas--kenya--platform.rauell.workers.dev-0d9488?style=for-the-badge&logo=cloudflare&logoColor=white)](https://home-biogas-kenya-platform.rauell.workers.dev/en) ![Status: live](https://img.shields.io/badge/Status-Live-2ea44f?style=for-the-badge) ![Public repository](https://img.shields.io/badge/Repo-Public-555555?style=for-the-badge&logo=github)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) ![Drizzle](https://img.shields.io/badge/Drizzle-c5f74f?style=flat-square&logo=drizzle&logoColor=white) ![Neon Postgres](https://img.shields.io/badge/Neon_Postgres-00e599?style=flat-square&logo=postgresql&logoColor=white) ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white)
+
+[Live site](https://home-biogas-kenya-platform.rauell.workers.dev/en) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Code of conduct](CODE_OF_CONDUCT.md)
+
+</div>
+
+---
+<!-- header:end -->
 
 Bilingual (English and Kiswahili) website and operations platform for Home Biogas Kenya: household biogas information, a verified project explorer, a preliminary system configurator, site-assessment requests and an invitation-only admin for projects, leads, approvals and content.
 
